@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Language } from '../types';
-import { Sparkles, Music, Mic2, Scroll, Layers, ChevronLeft, BookOpen, MapPin, ArrowRight, Library } from 'lucide-react';
+import { Sparkles, Music, Mic2, Scroll, Layers, ChevronLeft, MapPin, ArrowRight, Library } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface HeritageProps {
