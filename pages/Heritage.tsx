@@ -331,7 +331,42 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
                 </div>
               </section>
 
-              {/* Module 3 | General Characteristics */}
+              {/* Module 3 | Era Relationship Fragment */}
+              <section className="mb-24 py-12 px-10 bg-white/40 border border-ink/5 shadow-sm relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-[0.03] pointer-events-none">
+                   <Library size={120} />
+                </div>
+                <h3 className="font-calligraphy text-3xl text-cinnabar mb-6">{language === 'en' ? 'The Living Continuity' : '非遗与活态传承'}</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <p className="text-ink-soft font-serif text-base leading-relaxed">
+                    {language === 'en'
+                      ? 'Unlike physical monuments, "Intangible Cultural Heritage" (ICH) exists in the human spirit. The legend of Liang-Zhu survived for 1700 years because it was not just archived—it was lived.'
+                      : '与坚硬的纪念碑不同，“非物质文化遗产”存在于人的精神之中。梁祝传说之所以能延续 1700 年，是因为它不仅仅被记载，更被无数次地“生活过”。'}
+                  </p>
+                  <p className="text-ink-soft font-serif text-base leading-relaxed">
+                    {language === 'en'
+                      ? 'As a National ICH of China (listed 2006), it represents the crystallization of regional wisdom and emotional resilience, adapting to every era while maintaining its moral core.'
+                      : '作为 2006 年列入的首批国家级非遗，它代表了地域智慧与情感韧性的结晶。它随时代变迁而不断演化，却始终保持着最核心的伦理与情感底色。'}
+                  </p>
+                </div>
+              </section>
+
+              {/* Module 4 | Classification Logic */}
+              <section className="mb-40 text-center">
+                <div className="inline-flex items-center gap-4 px-6 py-2 border border-ink/10 rounded-full mb-12">
+                  <Layers size={14} className="text-gold" />
+                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-ink/40">
+                    {language === 'en' ? 'Classification: By Transmission Medium' : '分类逻辑：基于传播媒介视角'}
+                  </span>
+                </div>
+                <p className="text-ink-soft font-elegant text-sm max-w-2xl mx-auto leading-relaxed italic opacity-60">
+                  {language === 'en'
+                    ? 'We present the legacy through four essential carriers: the stage, the score, the artifact, and the voice.'
+                    : '我们通过四个核心载体呈现这份遗产：舞台的律动、乐谱的旋律、器物的匠心、以及口传的记忆。'}
+                </p>
+              </section>
+
+              {/* Module 5 | General Characteristics */}
               <section className="mb-40 py-20 px-12 bg-ink text-paper relative">
                  <div className="max-w-3xl mx-auto text-center">
                     <h3 className={`mb-10 ${language === 'zh' ? 'font-calligraphy text-5xl' : 'font-serif text-4xl italic'}`}>

@@ -139,7 +139,7 @@ const Resources: React.FC<ResourcesProps> = ({ language }) => {
         icon={<GraduationCap size={20} />}
         title={{ en: 'Academic Research Platforms', zh: '学术研究与专业平台' }}
         desc={{ 
-          en: 'Academic institutions and research platforms contribute critical perspectives on the Liang-Zhu narrative through folklore studies, cultural history, gender discourse, and heritage heritage conservation research.', 
+          en: 'Academic institutions and research platforms contribute critical perspectives on the Liang-Zhu narrative through folklore studies, cultural history, gender discourse, and heritage conservation research.', 
           zh: '学术研究平台通过民俗学、文化史、性别研究及遗产保护等多重视角，对梁祝文化展开系统性研究，为其当代阐释与传承提供理论支持。' 
         }}
         links={[
