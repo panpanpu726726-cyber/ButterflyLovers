@@ -29,11 +29,11 @@ const App: React.FC = () => {
         return <Home language={language} onNavigate={setCurrentSection} />;
       case SectionId.LEGEND:
         return <Legend language={language} />;
-      case SectionId.CONTEXT:
+      case SectionId.HISTORY:
         return <Context language={language} />;
       case SectionId.HERITAGE:
         return <Heritage language={language} />;
-      case SectionId.CONTEMPORARY:
+      case SectionId.MODERN:
         return <Contemporary language={language} />;
       case SectionId.RESOURCES:
         return <Resources language={language} />;
@@ -43,7 +43,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-ink-black selection:bg-cinnabar selection:text-white">
+    <div className="min-h-screen flex flex-col font-serif text-ink bg-paper selection:bg-cinnabar selection:text-white">
       <Navigation 
         currentSection={currentSection} 
         onNavigate={setCurrentSection} 
@@ -51,7 +51,8 @@ const App: React.FC = () => {
         onToggleLanguage={toggleLanguage}
       />
       
-      <main className="flex-grow pt-20">
+      {/* Reduced padding-top to 16 (64px) to match the slimmed-down Navigation bar */}
+      <main className="flex-grow pt-16">
         <Section key={currentSection}>
           {renderSection()}
         </Section>

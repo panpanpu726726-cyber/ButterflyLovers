@@ -7,24 +7,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Mrs+Saint+Delafield&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@200..900&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              'ink-black': '#2C2C2C',
-              'rice-paper': '#F9F7F2',
-              'cinnabar': '#A83F39',
-              'stone-gray': '#8E9AA8',
-              'antique-gold': '#C5A065'
+              'ink': '#121212',
+              'ink-soft': '#4A4A4A',
+              'paper': '#F4F1E6',
+              'cinnabar': '#8E2E2A',
+              'jade': '#2D5246',
+              'gold': '#B08D57',
             },
             fontFamily: {
+              display: ['"ZCOOL XiaoWei"', 'serif'],
               serif: ['"Playfair Display"', '"Noto Serif SC"', 'serif'],
-              sans: ['"Lato"', '"Noto Serif SC"', 'sans-serif'],
-            },
-            backgroundImage: {
-              'texture': "url('https://www.transparenttextures.com/patterns/cream-paper.png')",
+              script: ['"Mrs Saint Delafield"', 'cursive'],
+              elegant: ['"Noto Serif SC"', 'serif'],
+              calligraphy: ['"Zhi Mang Xing"', 'cursive'],
             }
           }
         }
@@ -32,40 +33,47 @@
     </script>
     <style>
       body {
-        background-color: #F9F7F2;
-        color: #2C2C2C;
+        background-color: #F4F1E6;
+        color: #121212;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+        background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png');
+        font-family: "Playfair Display", "Noto Serif SC", serif;
       }
-      ::-webkit-scrollbar {
-        width: 8px;
+      
+      .font-display, .font-serif, .font-script {
+        letter-spacing: 0.02em;
       }
-      ::-webkit-scrollbar-track {
-        background: #F9F7F2; 
+
+      @keyframes ink-reveal-anim {
+        0% { opacity: 0; transform: translateY(5px); }
+        100% { opacity: 1; transform: translateY(0); }
       }
-      ::-webkit-scrollbar-thumb {
-        background: #D1D5DB; 
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #9CA3AF; 
-      }
+      .ink-reveal { animation: ink-reveal-anim 1.2s ease-out forwards; }
+      
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: #F4F1E6; }
+      ::-webkit-scrollbar-thumb { background: #121212; border-radius: 2px; }
+
+      p { line-height: 1.8; }
     </style>
-  <script type="importmap">
+    <script type="importmap">
 {
   "imports": {
-    "vite": "https://esm.sh/vite@^7.3.0",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react": "https://esm.sh/react@^19.0.0",
+    "react-dom": "https://esm.sh/react-dom@^19.0.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.0.0/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.460.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "framer-motion": "https://esm.sh/framer-motion@^12.23.26"
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
-</head>
+  </head>
   <body>
     <div id="root"></div>
-    <!-- Explicitly load the entry point -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>

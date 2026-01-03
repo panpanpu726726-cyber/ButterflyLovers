@@ -1,6 +1,5 @@
 import React from 'react';
 import { Language, SectionId } from '../types';
-import { ArrowRight, Feather } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface HomeProps {
@@ -10,87 +9,58 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
   return (
-    <div className="w-full">
-      {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] w-full overflow-hidden flex items-center justify-center">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://picsum.photos/seed/liangzhu5/1920/1080?grayscale&blur=2" 
-            alt="Traditional Chinese Landscape" 
-            className="w-full h-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-rice-paper/80 via-rice-paper/40 to-rice-paper"></div>
+    <div className="w-full relative min-h-[calc(100vh-64px)] bg-paper flex flex-col items-center justify-center overflow-hidden">
+      {/* Background - Soft Ink Texture */}
+      <div className="absolute inset-0 z-0 opacity-10 grayscale brightness-110 contrast-125">
+        <img 
+          src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=2000" 
+          alt="Ink Wash" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-paper/40 via-transparent to-paper"></div>
+      </div>
+
+      <motion.div 
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="relative z-10 max-w-4xl px-6 flex flex-col items-center text-center ink-reveal"
+      >
+        {/* Main Title - Using display font for Chinese and serif for English */}
+        <h1 className={`text-ink font-normal tracking-wide mb-8 leading-tight ${
+          language === 'zh' ? 'font-display text-6xl md:text-8xl' : 'font-serif text-5xl md:text-7xl'
+        }`}>
+          {language === 'en' ? 'The Butterfly Lovers' : '梁山伯与祝英台'}
+        </h1>
+
+        {/* Description Text - Added based on request */}
+        <div className="flex flex-col items-center space-y-4 mb-12">
+          <p className="font-serif italic text-lg md:text-2xl text-ink/80 max-w-2xl leading-relaxed">
+            {language === 'en' 
+              ? 'A timeless tale of love, tragedy, and metamorphosis that transcends centuries.' 
+              : '一段超越世纪的爱、悲剧与蜕变的永恒传说。'}
+          </p>
+          <span className="font-serif font-bold text-xs md:text-sm tracking-[0.3em] text-cinnabar uppercase">
+            {language === 'en' 
+              ? 'CHINESE INTANGIBLE CULTURAL HERITAGE' 
+              : '中国非物质文化遗产'}
+          </span>
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 text-center max-w-4xl px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <div className="w-16 h-16 mx-auto mb-6 bg-cinnabar/10 rounded-full flex items-center justify-center text-cinnabar border border-cinnabar/30">
-               <Feather size={32} />
-            </div>
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-ink-black mb-6 tracking-tight">
-              {language === 'en' ? 'The Butterfly Lovers' : '梁山伯与祝英台'}
-            </h1>
-            <p className="font-serif italic text-xl md:text-2xl text-stone-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-              {language === 'en' 
-                ? 'A timeless tale of love, tragedy, and metamorphosis that transcends centuries.'
-                : '一段超越世纪的爱、悲剧与蜕变的永恒传说。'}
-            </p>
-            <p className="font-sans text-sm uppercase tracking-[0.3em] text-cinnabar mb-12">
-              {language === 'en' ? 'Chinese Intangible Cultural Heritage' : '中国非物质文化遗产'}
-            </p>
-            
-            <button 
-              onClick={() => onNavigate(SectionId.LEGEND)}
-              className="group inline-flex items-center px-8 py-4 border border-ink-black text-ink-black hover:bg-ink-black hover:text-white transition-all duration-300 font-sans tracking-widest text-sm uppercase"
-            >
-              {language === 'en' ? 'Enter Exhibition' : '进入展馆'}
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
-            </button>
-          </motion.div>
-        </div>
-      </section>
+        <button 
+          onClick={() => onNavigate(SectionId.LEGEND)}
+          className="px-12 py-4 border border-ink/40 text-ink hover:bg-ink hover:text-paper transition-all duration-700 font-serif text-xl tracking-[0.2em] flex items-center group bg-paper/20 backdrop-blur-sm"
+        >
+          {language === 'en' ? 'ENTER EXHIBITION' : '进入展厅'}
+          <span className="ml-4 group-hover:translate-x-1 transition-transform opacity-60">→</span>
+        </button>
+      </motion.div>
 
-      {/* Intro Brief */}
-      <section className="py-24 px-6 max-w-5xl mx-auto text-center">
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
-            <div className="border-t border-stone-300 pt-6">
-              <h3 className="font-serif text-xl mb-4 text-cinnabar">
-                 {language === 'en' ? 'The Story' : '故事'}
-              </h3>
-              <p className="text-stone-600 leading-relaxed font-sans">
-                {language === 'en' 
-                  ? 'Often called the "Romeo and Juliet of the East", this legend tells of two scholars whose love was forbidden by societal norms.'
-                  : '这一传说常被称为“东方的罗密欧与朱丽叶”，讲述了两位书生因社会礼教而受阻的凄美爱情。'}
-              </p>
-            </div>
-            <div className="border-t border-stone-300 pt-6">
-              <h3 className="font-serif text-xl mb-4 text-cinnabar">
-                 {language === 'en' ? 'The Culture' : '文化'}
-              </h3>
-              <p className="text-stone-600 leading-relaxed font-sans">
-                {language === 'en' 
-                  ? 'Deeply rooted in Chinese tradition, the story reflects ancient views on gender, education, and marriage during the Jin Dynasty.'
-                  : '该故事深深植根于中国传统，反映了晋代关于性别、教育和婚姻的古老观念。'}
-              </p>
-            </div>
-            <div className="border-t border-stone-300 pt-6">
-              <h3 className="font-serif text-xl mb-4 text-cinnabar">
-                 {language === 'en' ? 'The Legacy' : '传承'}
-              </h3>
-              <p className="text-stone-600 leading-relaxed font-sans">
-                {language === 'en' 
-                  ? 'Celebrated through Yue Opera, the Violin Concerto, and festivals, it remains a vital part of global cultural history.'
-                  : '通过越剧、小提琴协奏曲和节日庆典，这一传说依然是全球文化历史的重要组成部分。'}
-              </p>
-            </div>
-         </div>
-      </section>
+      {/* Discrete Decoration */}
+      <div className="absolute bottom-8 right-8 opacity-10 pointer-events-none flex flex-col space-y-1">
+        <span className="font-display text-4xl text-ink">缘</span>
+        <span className="font-display text-4xl text-ink">梦</span>
+      </div>
     </div>
   );
 };
