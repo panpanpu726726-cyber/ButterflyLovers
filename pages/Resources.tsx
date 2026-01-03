@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Language } from '../types';
-import { ExternalLink, Landmark, BookOpen, MapPin, GraduationCap, ArrowRight } from 'lucide-react';
+import { ExternalLink, Landmark, BookOpen, MapPin, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface ResourcesProps {
@@ -10,7 +11,8 @@ interface ResourcesProps {
 const Resources: React.FC<ResourcesProps> = ({ language }) => {
   
   // Reusable Link Component for standardized entry points
-  const ResourceLink = ({ label, url }: { label: string; url: string }) => (
+  // Fixed: typed as React.FC to properly support implicit props like 'key' in list rendering
+  const ResourceLink: React.FC<{ label: string; url: string }> = ({ label, url }) => (
     <a 
       href={url} 
       target="_blank" 
@@ -23,18 +25,19 @@ const Resources: React.FC<ResourcesProps> = ({ language }) => {
   );
 
   // Reusable Module Component
-  const ResourceModule = ({ 
-    title, 
-    desc, 
-    links, 
-    icon, 
-    placeholderLabel 
-  }: { 
+  // Fixed: typed as React.FC for consistent typing
+  const ResourceModule: React.FC<{ 
     title: { en: string; zh: string }; 
     desc: { en: string; zh: string }; 
     links: { label: string; url: string }[]; 
     icon: React.ReactNode;
     placeholderLabel: string;
+  }> = ({ 
+    title, 
+    desc, 
+    links, 
+    icon, 
+    placeholderLabel 
   }) => (
     <section className="relative w-full min-h-[400px] flex items-center overflow-hidden border-b border-paper/10">
       {/* Module Background Placeholder */}
@@ -145,7 +148,7 @@ const Resources: React.FC<ResourcesProps> = ({ language }) => {
         placeholderLabel="Academic Research Visual"
         title={{ en: 'Academic Research Platforms', zh: '学术研究与专业平台' }}
         desc={{ 
-          en: 'Academic institutions and research platforms contribute critical perspectives on the Liang-Zhu narrative through folklore studies, cultural history, gender discourse, and heritage conservation research.', 
+          en: 'Academic institutions and research platforms contribute critical perspectives on the Liang-Zhu narrative through folklore studies, cultural history, gender discourse, and heritage heritage conservation research.', 
           zh: '学术研究平台通过民俗学、文化史、性别研究及遗产保护等多重视角，对梁祝文化展开系统性研究，为其当代阐释与传承提供理论支持。' 
         }}
         links={[
