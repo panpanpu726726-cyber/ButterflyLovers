@@ -19,10 +19,9 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language, onNavigate }) => 
   }, [activeSubPage]);
 
   // Image Placeholder Component for structural consistency
-  const ImagePlaceholder = ({ aspect = "aspect-video", label = "Image Placeholder" }) => (
+  const ImagePlaceholder = ({ aspect = "aspect-video" }) => (
     <div className={`w-full ${aspect} bg-ink/5 border border-ink/5 flex items-center justify-center relative overflow-hidden group`}>
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-ink via-transparent to-transparent"></div>
-      <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-ink/20 relative z-10">{label}</span>
+      <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity" />
     </div>
   );
 
@@ -66,7 +65,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language, onNavigate }) => 
   const StageCinemaPage = () => (
     <div className="max-w-5xl mx-auto py-24 px-8">
       <header className="mb-20">
-        <ImagePlaceholder aspect="aspect-[21/9]" label="Stage Performance Visual" />
+        <ImagePlaceholder aspect="aspect-[21/9]" />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Modern Stage & Cinema' : '现代舞台与影像表达'}
         </h2>
@@ -87,11 +86,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language, onNavigate }) => 
                 : '现代影视改编逐渐脱离线性叙事，转向对主角内心张力的挖掘。色彩与光影的符号化运用取代了直白的台词，使经典悲剧具备了现代电影的深邃感。'}
             </p>
           </div>
-          <ImagePlaceholder aspect="aspect-square" label="Cinema Still Placeholder" />
+          <ImagePlaceholder aspect="aspect-square" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
-          <ImagePlaceholder aspect="aspect-square" label="Dance Performance Placeholder" />
+          <ImagePlaceholder aspect="aspect-square" />
           <div>
             <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Experimental Performance' : '实验剧场与舞剧'}</h3>
             <p className="text-ink-soft font-serif text-base leading-loose">
@@ -109,7 +108,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language, onNavigate }) => 
   const DigitalInteractionPage = () => (
     <div className="max-w-5xl mx-auto py-24 px-8">
       <header className="mb-20">
-        <ImagePlaceholder aspect="aspect-[21/9]" label="Digital Art Installation" />
+        <ImagePlaceholder aspect="aspect-[21/9]" />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Digital Arts & Interaction' : '数字媒介与交互艺术'}
         </h2>
@@ -133,13 +132,13 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language, onNavigate }) => 
               </p>
             </div>
             <div className="w-full md:w-1/3">
-              <ImagePlaceholder aspect="aspect-square" label="UE Project Placeholder" />
+              <ImagePlaceholder aspect="aspect-square" />
             </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <ImagePlaceholder aspect="aspect-video" label="VR Experience Placeholder" />
+          <ImagePlaceholder aspect="aspect-video" />
           <div>
             <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Immersive Participation' : '沉浸式参与叙事'}</h3>
             <p className="text-ink-soft font-serif text-base leading-loose">
@@ -157,7 +156,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language, onNavigate }) => 
   const PopCulturePage = () => (
     <div className="max-w-5xl mx-auto py-24 px-8">
       <header className="mb-20">
-        <ImagePlaceholder aspect="aspect-[21/9]" label="Pop Culture Visual" />
+        <ImagePlaceholder aspect="aspect-[21/9]" />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Pop Culture & Icons' : '流行文化与大众传播'}
         </h2>
@@ -178,11 +177,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language, onNavigate }) => 
                 : '从现代动漫角色设计到商业跨界合作，“梁祝”已成为亚洲文化市场中代表浪漫理想主义的稳态视觉符号。'}
             </p>
           </div>
-          <ImagePlaceholder aspect="aspect-video" label="Animation Still Placeholder" />
+          <ImagePlaceholder aspect="aspect-video" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
-          <ImagePlaceholder aspect="aspect-video" label="Pop Music Album Placeholder" />
+          <ImagePlaceholder aspect="aspect-video" />
           <div>
             <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Musical Remakes' : '流行音乐的再创作'}</h3>
             <p className="text-ink-soft font-serif text-base leading-loose">
@@ -200,7 +199,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language, onNavigate }) => 
   const ThematicPage = () => (
     <div className="max-w-5xl mx-auto py-24 px-8">
       <header className="mb-20">
-        <ImagePlaceholder aspect="aspect-[21/9]" label="Conceptual Abstract Art" />
+        <ImagePlaceholder aspect="aspect-[21/9]" />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Thematic Re-interpretation' : '当代视角下的主题转译'}
         </h2>
@@ -221,11 +220,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language, onNavigate }) => 
                 : '现代学术语境重新审视祝英台的女扮男装，将其视为对性别平等与精神自由的早期追求，与当代的身份政治产生了深刻共鸣。'}
             </p>
           </div>
-          <ImagePlaceholder aspect="aspect-square" label="Abstract Concept Visual" />
+          <ImagePlaceholder aspect="aspect-square" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
-          <ImagePlaceholder aspect="aspect-square" label="Social Structure Visual" />
+          <ImagePlaceholder aspect="aspect-square" />
           <div>
             <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Individual vs. Structure' : '个体意志与社会结构'}</h3>
             <p className="text-ink-soft font-serif text-base leading-loose">
@@ -255,7 +254,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language, onNavigate }) => 
           >
             {/* OVERVIEW HERO */}
             <header className="mb-24">
-              <ImagePlaceholder aspect="aspect-[21/9]" label="Contemporary Main Visual" />
+              <ImagePlaceholder aspect="aspect-[21/9]" />
               <div className="mt-12 text-center">
                 <span className="text-[10px] font-bold tracking-[0.4em] text-cinnabar uppercase mb-4 block">Exhibition Portal</span>
                 <h2 className="font-serif text-5xl md:text-7xl mb-8 leading-tight italic font-medium">
@@ -275,7 +274,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language, onNavigate }) => 
               {[
                 { id: 'stage', title: { en: 'Stage & Cinema', zh: '现代舞台与影像表达' }, icon: <Film size={20} />, desc: { en: 'Drama, dance, and film reconstructions.', zh: '聚焦戏曲、舞剧及影视作品对经典叙事的再解读。' } },
                 { id: 'digital', title: { en: 'Digital & Interaction', zh: '数字媒介与交互艺术' }, icon: <Monitor size={20} />, desc: { en: 'VR, immersive art, and interactive projects.', zh: '探索沉浸式技术如何改变观众与传说的叙事关系。' } },
-                { id: 'pop', title: { en: 'Pop Culture', zh: '流行文化与大众传播' }, icon: <Zap size={20} />, desc: { en: 'Animation, music, and daily iconography.', zh: '梁祝如何进入大众流行文化与全球视觉语境。' } },
+                { id: 'pop', title: { en: 'Pop Culture', zh: '流行文化与传播' }, icon: <Zap size={20} />, desc: { en: 'Animation, music, and daily iconography.', zh: '梁祝如何进入大众流行文化与全球视觉语境。' } },
                 { id: 'thematic', title: { en: 'Thematic Translation', zh: '当代视角下的主题转译' }, icon: <Users size={20} />, desc: { en: 'Modern gender and social perspectives.', zh: '从性别意识、个体意志等现代维度重构传说核心。' } },
               ].map((module) => (
                 <div 
@@ -284,7 +283,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language, onNavigate }) => 
                   className="group cursor-pointer bg-white border border-ink/5 p-8 hover:border-ink/20 transition-all flex flex-col items-center text-center"
                 >
                   <div className="w-full mb-8">
-                    <ImagePlaceholder aspect="aspect-video" label={`${module.title.en} Card`} />
+                    <ImagePlaceholder aspect="aspect-video" />
                   </div>
                   <div className="text-ink/20 group-hover:text-gold transition-colors mb-4">{module.icon}</div>
                   <h3 className="font-calligraphy text-3xl mb-4">{language === 'en' ? module.title.en : module.title.zh}</h3>

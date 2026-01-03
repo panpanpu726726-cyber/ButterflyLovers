@@ -13,9 +13,9 @@ const Context: React.FC<ContextProps> = ({ language }) => {
       {/* 1. Cinematic Opening Module */}
       <section className="relative w-full py-32 px-6 flex flex-col items-center justify-center border-b border-ink/5 bg-paper/50 overflow-hidden">
         {/* Visual Background Placeholder Structure */}
-        <figure className="absolute inset-0 z-0 pointer-events-none image-placeholder">
+        <figure className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute inset-0 opacity-[0.03] grayscale brightness-110">
-            <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=2000" alt="Historical atmosphere" className="w-full h-full object-cover" />
+            <img src="/images/placeholder.jpg" alt="Historical atmosphere placeholder" className="w-full h-full object-cover" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-paper/80 via-transparent to-paper"></div>
           {/* Abstract geometric structure acting as an architectural placeholder */}
@@ -93,8 +93,8 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             whileHover={{ y: -5 }}
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
-            <div className="image-placeholder w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <div className="absolute inset-0 opacity-10 group-hover:scale-110 transition-transform duration-700 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-ink/20 via-transparent to-transparent"></div>
+            <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
+               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -116,8 +116,8 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             whileHover={{ y: -5 }}
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
-            <div className="image-placeholder w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <div className="absolute inset-0 opacity-10 group-hover:scale-110 transition-transform duration-700 bg-[conic-gradient(from_0deg_at_center,_var(--tw-gradient-stops))] from-ink/10 via-transparent to-transparent"></div>
+            <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
+               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -139,8 +139,8 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             whileHover={{ y: -5 }}
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
-            <div className="image-placeholder w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <div className="absolute inset-0 opacity-10 group-hover:scale-110 transition-transform duration-700 bg-[linear-gradient(to_bottom_right,_var(--tw-gradient-stops))] from-ink/20 via-transparent to-transparent"></div>
+            <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
+               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -162,8 +162,8 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             whileHover={{ y: -5 }}
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
-            <div className="image-placeholder w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <div className="absolute inset-0 opacity-10 group-hover:scale-110 transition-transform duration-700 bg-paper/20"></div>
+            <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
+               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -185,8 +185,8 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             whileHover={{ y: -5 }}
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
-            <div className="image-placeholder w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <div className="absolute inset-0 opacity-10 group-hover:scale-110 transition-transform duration-700 bg-ink/5"></div>
+            <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
+               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -208,8 +208,8 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             whileHover={{ y: -5 }}
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
-            <div className="image-placeholder w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <div className="absolute inset-0 opacity-10 group-hover:scale-110 transition-transform duration-700 bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-cinnabar/10 via-transparent to-transparent"></div>
+            <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
+               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -231,8 +231,8 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             whileHover={{ y: -5 }}
             className="md:col-span-2 lg:col-span-3 context-card group flex flex-col lg:flex-row gap-8 bg-paper border border-ink/10 p-8 shadow-sm transition-all duration-700 hover:border-gold/30"
           >
-            <figure className="lg:w-1/2 aspect-video overflow-hidden grayscale opacity-80 group-hover:grayscale-0 transition-all duration-1000 image-placeholder">
-               <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&q=80&w=1200" alt="Metamorphosis visualization" className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform" />
+            <figure className="lg:w-1/2 aspect-video overflow-hidden grayscale opacity-80 group-hover:grayscale-0 transition-all duration-1000">
+               <img src="/images/placeholder.jpg" alt="Metamorphosis visualization placeholder" className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform" />
             </figure>
             <div className="lg:w-1/2 flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-4">

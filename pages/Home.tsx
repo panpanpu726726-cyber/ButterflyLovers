@@ -10,13 +10,11 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
   return (
     <div className="w-full relative min-h-[calc(100vh-64px)] bg-paper flex flex-col items-center justify-center overflow-hidden">
-      {/* Background - Soft Ink Texture */}
+      {/* Background - Soft Ink Texture Placeholder */}
       <div className="absolute inset-0 z-0 opacity-10 grayscale brightness-110 contrast-125">
-        <img 
-          src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=2000" 
-          alt="Ink Wash" 
-          className="w-full h-full object-cover"
-        />
+        <div className="w-full h-full bg-ink/10 flex items-center justify-center">
+          <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover" />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-paper/40 via-transparent to-paper"></div>
       </div>
 

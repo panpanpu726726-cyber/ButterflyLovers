@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Language } from '../types';
 import { ExternalLink, Landmark, BookOpen, MapPin, GraduationCap } from 'lucide-react';
@@ -11,7 +10,6 @@ interface ResourcesProps {
 const Resources: React.FC<ResourcesProps> = ({ language }) => {
   
   // Reusable Link Component for standardized entry points
-  // Fixed: typed as React.FC to properly support implicit props like 'key' in list rendering
   const ResourceLink: React.FC<{ label: string; url: string }> = ({ label, url }) => (
     <a 
       href={url} 
@@ -25,27 +23,24 @@ const Resources: React.FC<ResourcesProps> = ({ language }) => {
   );
 
   // Reusable Module Component
-  // Fixed: typed as React.FC for consistent typing
   const ResourceModule: React.FC<{ 
     title: { en: string; zh: string }; 
     desc: { en: string; zh: string }; 
     links: { label: string; url: string }[]; 
     icon: React.ReactNode;
-    placeholderLabel: string;
   }> = ({ 
     title, 
     desc, 
     links, 
-    icon, 
-    placeholderLabel 
+    icon 
   }) => (
     <section className="relative w-full min-h-[400px] flex items-center overflow-hidden border-b border-paper/10">
       {/* Module Background Placeholder */}
       <div className="absolute inset-0 z-0 bg-ink">
         <div className="absolute inset-0 opacity-20 grayscale brightness-50">
-           {/* Structural Placeholder Pattern */}
-           <div className="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent flex items-center justify-center">
-             <span className="text-[10px] font-bold tracking-[1em] uppercase text-white/5">{placeholderLabel}</span>
+           {/* Structural Placeholder img tag as requested */}
+           <div className="w-full h-full flex items-center justify-center">
+             <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover" />
            </div>
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-transparent"></div>
@@ -98,7 +93,6 @@ const Resources: React.FC<ResourcesProps> = ({ language }) => {
       {/* 2. MODULE I: HISTORICAL & TEXTUAL */}
       <ResourceModule 
         icon={<BookOpen size={20} />}
-        placeholderLabel="Textual Archive Visual"
         title={{ en: 'Historical & Textual Records', zh: '历史文献与古籍记录' }}
         desc={{ 
           en: 'Liang-Zhu stands as a foundational narrative within Chinese folk literature. These textual records trace its transformation from early Tang dynasty anecdotes to the codified literary and theatrical scripts established during the Ming and Qing periods.', 
@@ -114,7 +108,6 @@ const Resources: React.FC<ResourcesProps> = ({ language }) => {
       {/* 3. MODULE II: MUSEUMS & INSTITUTIONS */}
       <ResourceModule 
         icon={<Landmark size={20} />}
-        placeholderLabel="Institutional Architecture Visual"
         title={{ en: 'Museums & Cultural Institutions', zh: '博物馆与文化机构' }}
         desc={{ 
           en: 'National and regional museums function as custodians of both material artifacts and intangible narratives, supporting the documentation, research, and public presentation of Liang-Zhu–related cultural heritage.', 
@@ -130,7 +123,6 @@ const Resources: React.FC<ResourcesProps> = ({ language }) => {
       {/* 4. MODULE III: SITES & ARCHITECTURE */}
       <ResourceModule 
         icon={<MapPin size={20} />}
-        placeholderLabel="Historical Site Landscape"
         title={{ en: 'Sites & Architecture', zh: '历史遗迹与空间建筑' }}
         desc={{ 
           en: 'Sites such as Wansong Academy provide spatial anchors for the Liang-Zhu narrative, bridging literary tradition with physical landscapes and forming key reference points for historical interpretation.', 
@@ -145,7 +137,6 @@ const Resources: React.FC<ResourcesProps> = ({ language }) => {
       {/* 5. MODULE IV: ACADEMIC RESEARCH */}
       <ResourceModule 
         icon={<GraduationCap size={20} />}
-        placeholderLabel="Academic Research Visual"
         title={{ en: 'Academic Research Platforms', zh: '学术研究与专业平台' }}
         desc={{ 
           en: 'Academic institutions and research platforms contribute critical perspectives on the Liang-Zhu narrative through folklore studies, cultural history, gender discourse, and heritage heritage conservation research.', 
