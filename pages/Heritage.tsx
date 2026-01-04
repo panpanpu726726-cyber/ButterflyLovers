@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Language } from '../types';
 import { Sparkles, Music, Mic2, Scroll, Layers, ChevronLeft, MapPin, ArrowRight, Library } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
