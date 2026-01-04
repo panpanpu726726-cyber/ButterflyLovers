@@ -5,12 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 interface ContemporaryProps {
   language: Language;
-  onNavigate?: (id: SectionId) => void;
 }
 
 type SubPageId = 'overview' | 'stage' | 'digital' | 'pop' | 'thematic';
 
-const Contemporary: React.FC<ContemporaryProps> = ({ language, onNavigate }) => {
+const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
   const [activeSubPage, setActiveSubPage] = useState<SubPageId>('overview');
 
   // Ensure scroll to top when changing internal views
