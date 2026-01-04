@@ -79,7 +79,7 @@ const Resources: React.FC<ResourcesProps> = ({ language }) => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="font-serif text-4xl md:text-6xl italic mb-8 tracking-tight">
-            Resources <span className="text-paper/30 ml-4 font-normal not-italic">· Authoritative References</span>
+            {language === 'en' ? 'Resources' : '资料'} <span className="text-paper/30 ml-4 font-normal not-italic">· {language === 'en' ? 'Authoritative References' : '权威资源'}</span>
           </h1>
           <div className="w-12 h-[1px] bg-gold/50 mb-8"></div>
           <p className="text-paper/50 font-serif text-base md:text-lg max-w-2xl leading-relaxed italic">

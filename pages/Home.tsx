@@ -24,9 +24,9 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative z-10 max-w-4xl px-6 flex flex-col items-center text-center ink-reveal"
       >
-        {/* Main Title - Using display font for Chinese and serif for English */}
+        {/* Main Title - Using calligraphy font for Chinese to match section headings and serif for English */}
         <h1 className={`text-ink font-normal tracking-wide mb-8 leading-tight ${
-          language === 'zh' ? 'font-display text-6xl md:text-8xl' : 'font-serif text-5xl md:text-7xl'
+          language === 'zh' ? 'font-calligraphy text-6xl md:text-8xl' : 'font-serif text-5xl md:text-7xl'
         }`}>
           {language === 'en' ? 'The Butterfly Lovers' : '梁山伯与祝英台'}
         </h1>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Language } from '../types';
 import { Sparkles, Music, Mic2, Scroll, Layers, ChevronLeft, MapPin, ArrowRight, Library } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -16,6 +16,37 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [activeView]);
+
+  // Dynamic image list for the sliders
+  const interpretationImages = [
+    "/images/placeholder.jpg",
+    "/images/placeholder.jpg",
+    "/images/placeholder.jpg"
+  ];
+
+  const paperCuttingImages = [
+    "/images/placeholder.jpg",
+    "/images/placeholder.jpg",
+    "/images/placeholder.jpg"
+  ];
+
+  const embroideryImages = [
+    "/images/placeholder.jpg",
+    "/images/placeholder.jpg",
+    "/images/placeholder.jpg"
+  ];
+
+  const ningboBranchImages = [
+    "/images/placeholder.jpg",
+    "/images/placeholder.jpg",
+    "/images/placeholder.jpg"
+  ];
+
+  const hangzhouBranchImages = [
+    "/images/placeholder.jpg",
+    "/images/placeholder.jpg",
+    "/images/placeholder.jpg"
+  ];
 
   // Helper component for Sub-view Navigation
   const SubViewNavigation = ({ current }: { current: SubView }) => {
@@ -59,13 +90,18 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
         <div className="w-full aspect-[21/9] bg-ink/5 border border-ink/10 mb-12 flex items-center justify-center overflow-hidden">
           <img src="/images/placeholder.jpg" alt="Yue Opera Visual Placeholder" className="w-full h-full object-cover opacity-30" />
         </div>
+        <p className="text-[10px] text-ink/40 font-serif italic mt-[-2rem] mb-12">
+          {language === 'en' 
+            ? 'What kind of visual content should be placed here (stage photography, costume detail, archival performance stills).' 
+            : '此处可放置舞台摄影、服饰细节或历史演出影像资料。'}
+        </p>
         <h2 className={`text-ink mb-6 ${language === 'zh' ? 'font-calligraphy text-6xl' : 'font-serif text-5xl italic font-medium'}`}>
           {language === 'en' ? 'Yue Opera: The Stage Classic' : '越剧《梁祝》：舞台经典与艺术定型'}
         </h2>
         <p className="text-ink-soft font-serif text-lg leading-loose italic opacity-70 max-w-3xl">
           {language === 'en' 
-            ? 'As the soul of Jiangnan performance arts, Yue Opera serves as the primary vessel for the legend’s emotional depth in the Intangible Heritage system.'
-            : '作为江南表演艺术的灵魂，越剧是梁祝传说在非遗体系中承载情感深度的核心载体。'}
+            ? 'As the soul of Jiangnan performance arts, Yue Opera serves as the primary vessel for the legend’s emotional depth in the Intangible Heritage system. Its lyrical nature and focus on psychological realism make it the ideal medium for a story that relies on subtle subtexts and emotional resonance. The aesthetic of "softness" (Rou) aligns perfectly with the gentle scholar imagery of the Jiangnan region.'
+            : '作为江南表演艺术的灵魂，越剧是梁祝传说在非遗体系中承载情感深度的核心载体。越剧的抒情本性与对心理写实的追求，使其成为表现梁祝这种极具委婉美感与情感共鸣故事的理想媒介。其“柔性”审美与江南地区温文尔雅的士人文化及书生形象达成了天然的契合。'}
         </p>
       </header>
 
@@ -82,6 +118,83 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
         </div>
       </section>
 
+      {/* NEW SECTION: Interpretive Traditions with Image Slider */}
+      <section>
+        <h4 className="font-calligraphy text-2xl text-cinnabar mb-6">{language === 'en' ? 'Interpretive Traditions' : '演绎传统与版本差异'}</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="text-ink-soft font-serif text-base leading-loose">
+            <p className="mb-4">
+              {language === 'en' 
+                ? 'Across different eras and troupes, the interpretation of Liang-Zhu has evolved to reflect shifting aesthetic values. While early versions emphasized scholarly restraint and poetic subtext, modern productions often lean towards tragic intensity and visual grandeur.' 
+                : '在不同的时代与剧团演绎中，梁祝的表达重心随审美变迁而演化。早期版本强调文人的内敛与诗化的潜台词，而现代创作则往往在悲剧张力与视觉宏大叙事上进行深度挖掘。'}
+            </p>
+            <p>
+              {language === 'en' 
+                ? 'Different artistic branches highlight unique emotional tones; the "Yuan School" focuses on lyrical tenderness, while other branches may emphasize the psychological conflict within the characters, showcasing the versatility of the Yue Opera form in cultural preservation.' 
+                : '不同艺术流派呈现出独特的情感基调；“袁派”追求抒情的委婉，而其他流派则可能着重表现人物内心的心理冲突，展现了越剧在文化传承中承载经典叙事的多维可能性。'}
+            </p>
+          </div>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+            <div className="relative group w-full aspect-video border border-ink/10 bg-ink/5 overflow-hidden">
+              {/* CSS Scroll Snap Slider */}
+              <div className="w-full h-full flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+                {interpretationImages.map((src, idx) => (
+                  <div key={idx} className="flex-shrink-0 w-full h-full snap-start flex items-center justify-center">
+                    <img 
+                      src={src} 
+                      alt={`Interpretive Variation ${idx + 1}`} 
+                      className="w-full h-full object-cover opacity-20" 
+                    />
+                  </div>
+                ))}
+              </div>
+              
+              {/* Subtle navigation dots */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {interpretationImages.map((_, idx) => (
+                  <div key={idx} className="w-1 h-1 rounded-full bg-ink/20"></div>
+                ))}
+              </div>
+            </div>
+            <p className="text-[10px] text-ink/40 font-serif italic mt-3">
+              {language === 'en' 
+                ? 'What kind of visual content should be placed here (stage photography, costume detail, archival performance stills).' 
+                : '此处可放置舞台摄影、服饰细节或历史演出影像资料。'}
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* NEW SECTION: Canonical Stage Performance (Video) */}
+      <section>
+        <h4 className="font-calligraphy text-2xl text-cinnabar mb-6">{language === 'en' ? 'Canonical Stage Performance' : '经典越剧舞台演绎'}</h4>
+        <p className="text-ink-soft font-serif text-base mb-8 italic opacity-80">
+          {language === 'en' 
+            ? 'This video represents a modern, canonical Yue Opera interpretation of Liang-Zhu.' 
+            : '该影像呈现近现代舞台语境下具有代表性的越剧《梁祝》经典演绎。'}
+        </p>
+        <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden relative">
+          <div className="w-full h-full bg-ink/5 flex items-center justify-center relative">
+            <iframe 
+              className="w-full h-full"
+              title="Canonical Yue Opera Performance"
+              src="about:blank"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+            <div className="absolute inset-0 pointer-events-none flex items-center justify-center bg-ink/[0.02]">
+               <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-ink/20">Stage Video Fragment Placeholder</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section>
         <h4 className="font-calligraphy text-2xl text-cinnabar mb-8">{language === 'en' ? 'Artistic Features' : '核心艺术特征'}</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -89,6 +202,11 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
             <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden">
                <img src="/images/placeholder.jpg" alt="Stage Feature Placeholder" className="w-full h-full object-cover opacity-20" />
             </div>
+            <p className="text-[10px] text-ink/40 font-serif italic mt-1">
+              {language === 'en' 
+                ? 'What kind of visual content should be placed here (stage photography, costume detail, archival performance stills).' 
+                : '此处可放置舞台摄影、服饰细节或历史演出影像资料。'}
+            </p>
             <div className="space-y-4">
               <h5 className="font-bold text-xs uppercase tracking-widest text-gold">{language === 'en' ? 'All-Female Cast' : '女子越剧特色'}</h5>
               <p className="text-ink-soft font-serif text-base">{language === 'en' ? 'The tradition of female actors playing male roles (Sheng) creates a unique lyrical softness that perfectly matches the scholar imagery.' : '女子演小生的传统赋予了角色独特的阴柔美与抒情性，与梁山伯的书生形象天然契合。'}</p>
@@ -98,6 +216,11 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
             <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden">
                <img src="/images/placeholder.jpg" alt="Lyric Feature Placeholder" className="w-full h-full object-cover opacity-20" />
             </div>
+            <p className="text-[10px] text-ink/40 font-serif italic mt-1">
+              {language === 'en' 
+                ? 'What kind of visual content should be placed here (stage photography, costume detail, archival performance stills).' 
+                : '此处可放置舞台摄影、服饰细节或历史演出影像资料。'}
+            </p>
             <div className="space-y-4">
               <h5 className="font-bold text-xs uppercase tracking-widest text-gold">{language === 'en' ? 'Poetic Lyrics' : '诗化唱词'}</h5>
               <p className="text-ink-soft font-serif text-base">{language === 'en' ? 'The libretto uses high-register metaphoric language, blending local dialects with literary elegance.' : '唱词高度诗化，将江南民间方言与文人文学传统完美结合。'}</p>
@@ -105,6 +228,15 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
           </div>
         </div>
       </section>
+
+      {/* CONCLUDING PARAGRAPH */}
+      <div className="pt-12 border-t border-ink/5 text-center">
+        <p className="text-ink-soft font-serif text-base italic opacity-60 max-w-2xl mx-auto leading-relaxed">
+          {language === 'en'
+            ? 'In conclusion, Yue Opera stands as the most emotionally complete and aesthetically cohesive stage realization of the Liang-Zhu legend, bridging the gap between historical narrative and living performance in Jiangnan culture.'
+            : '综上所述，越剧作为梁祝传说最完整、最具审美一致性的舞台呈现形式，在江南文化的历史叙事与活态表演之间架起了一座不可或缺的情感桥梁。'}
+        </p>
+      </div>
 
       <SubViewNavigation current="yue-opera" />
     </div>
@@ -122,8 +254,8 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
         </h2>
         <p className="text-ink-soft font-serif text-lg leading-loose italic opacity-70 max-w-3xl">
           {language === 'en' 
-            ? 'The auditory legacy of Liang-Zhu bridges the gap between traditional folk scales and the global language of symphonic music.'
-            : '梁祝的听觉遗产架起了传统民间音阶与全球交响乐语言之间的桥梁。'}
+            ? 'The musical legacy of Liang-Zhu represents a millennium of auditory evolution, tracing a path from the intimate whispers of regional folk ballads to the grand resonance of the global stage. Long before its symphonic codification, the legend breathed through the pentatonic scales of Jiangnan "Tanhuang" and the expressive vocalizations of Yue Opera. This auditory transmission serves as a bridge, where the soul of an ancient narrative is preserved not in static ink, but through the fluid dynamics of strings and woodwinds, translating a quintessentially Eastern tragedy into a universal language of emotional power.'
+            : '梁祝的音乐遗产凝结了长达千年的听觉演变，见证了叙事艺术从地域性民歌谣曲向全球化交响乐章的华丽蜕变。在进入交响乐殿堂之前，这段传说早已在江南“滩簧”的五声音阶与越剧委婉动人的唱腔中获得了生命。这种听觉上的薪火相传，使古老的故事不再仅仅受困于静态的文字，而是在弦乐与管乐的流动中，将这一具有典型东方色彩的悲剧转化为一种能够引起全球共鸣、跨越文化边界的情感语言。'}
         </p>
       </header>
 
@@ -139,13 +271,69 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
         </div>
       </section>
 
+      {/* VIDEO SECTION ONE: Violin Concerto */}
+      <section>
+        <h4 className="font-calligraphy text-2xl text-cinnabar mb-6">
+          {language === 'en' ? 'Violin Concerto: A Global Classic' : '小提琴协奏曲：世界化的梁祝'}
+        </h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="text-ink-soft font-serif text-base leading-loose">
+            <p>
+              {language === 'en' 
+                ? 'Created in 1959 by He Zhanhao and Chen Gang at the Shanghai Conservatory, this masterpiece transformed a regional legend into a symphonic milestone. By blending Western orchestral forms with the melodic DNA of Yue Opera, it achieved unprecedented global resonance, becoming the most widely performed Chinese orchestral work in history.'
+                : '1959年由何占豪、陈钢于上海音乐学院创作，这部杰作将地域性的传说转化为交响乐里程碑。通过将西方管弦乐形式与越剧旋律基因融合，它在世界范围内引起了前所未有的共鸣，成为历史上演出最广泛的中国管弦乐作品。'}
+            </p>
+          </div>
+          <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden relative">
+            <iframe 
+              className="w-full h-full"
+              title="Violin Concerto Performance"
+              src="about:blank"
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+            <div className="absolute inset-0 pointer-events-none flex items-center justify-center bg-ink/[0.02]">
+               <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-ink/20">Violin Concerto Placeholder</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VIDEO SECTION TWO: Chinese Instrumental */}
+      <section>
+        <h4 className="font-calligraphy text-2xl text-cinnabar mb-6">
+          {language === 'en' ? 'Chinese Instrumental Interpretations' : '民族器乐演绎：东方语境的回归'}
+        </h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden relative md:order-last">
+            <iframe 
+              className="w-full h-full"
+              title="Traditional Instrumental Performance"
+              src="about:blank"
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+            <div className="absolute inset-0 pointer-events-none flex items-center justify-center bg-ink/[0.02]">
+               <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-ink/20">Erhu Performance Placeholder</span>
+            </div>
+          </div>
+          <div className="text-ink-soft font-serif text-base leading-loose">
+            <p>
+              {language === 'en' 
+                ? 'While the violin concerto brought the legend to the world, traditional instruments like the Erhu return the narrative to its sonic roots. Through the nuanced slides and timbre of Chinese strings, these interpretations emphasize the "singing" quality of the melody, echoing the emotional weight and cultural aesthetic of the original Jiangnan spirit.'
+                : '虽然小提琴协奏曲让这段传说走向世界，但二胡等传统乐器将叙事带回了其声音根源。通过中国弦乐细微的滑音与音色，这些演绎强调了旋律的‘歌唱性’，呼应了原始江南精神的情感重量与文化审美。'}
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section>
         <h4 className="font-calligraphy text-2xl text-jade mb-8">{language === 'en' ? 'Artistic Structure' : '核心表现方式'}</h4>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { tag: 'Sonata Form', desc: { en: 'Narrating the story through Exposition (Encounter), Development (Betrothal), and Recapitulation (Metamorphosis).', zh: '通过呈示部（相爱）、展开部（抗婚）与再现部（化蝶）叙述完整故事。' } },
-            { tag: 'Technique', desc: { en: 'Applying violin slides to mimic the vocal nuances of Chinese opera singing.', zh: '运用小提琴滑音技巧模拟中国传统戏曲的运腔特色。' } },
-            { tag: 'Symbolism', desc: { en: 'Using cello and violin as the "voice" of Shanbo and Yingtai.', zh: '以大提琴与小提琴分别作为梁山伯与祝英台的“声音载体”。' } },
+            { tag: 'Sonata Form', desc: { en: 'Providing a unified narrative logic where symphonic sonata structures and traditional narrative music both track the story through Exposition (Encounter), Development (Betrothal), and Recapitulation (Metamorphosis).', zh: '提供统一的叙事逻辑，无论是在交响乐的奏鸣曲式中，还是在传统叙事音乐的框架下，均通过呈示部（相爱）、展开部（抗婚）与再现部（化蝶）来追踪完整的情感历程。' } },
+            { tag: 'Technique', desc: { en: 'Employing distinct technical vocabularies: while the violin utilizes portamento to mimic operatic vocalization, Chinese instruments like the erhu leverage unique timbral shifts and left-hand techniques to evoke the story\'s regional soul.', zh: '运用多元的技术话语：小提琴通过滑音模拟戏曲运腔的细腻，而以二胡为代表的民族乐器则利用独特的音色流转与指法技巧，唤起故事深处的地域灵魂。' } },
+            { tag: 'Symbolism', desc: { en: 'Utilizing instrumental pairings as character personifications; whether through the dialogue of cello and violin or the interplay of diverse Chinese string timbres, the instruments act as the distinct "voices" of Shanbo and Yingtai.', zh: '将乐器组合视为人物人格的化身；无论是大提琴与小提琴的交响对话，还是不同民族弦乐音色的交互，乐器都作为梁山伯与祝英台独特的“声音叙述者”存在。' } },
           ].map((item, idx) => (
             <div key={idx} className="p-6 border border-ink/5 bg-paper flex flex-col gap-4">
               <div className="w-full aspect-square bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden">
@@ -157,6 +345,15 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
           ))}
         </div>
       </section>
+
+      {/* CONCLUDING COMPARISON PARAGRAPH */}
+      <div className="pt-12 border-t border-ink/5 text-center">
+        <p className="text-ink-soft font-serif text-base italic opacity-60 max-w-2xl mx-auto leading-relaxed">
+          {language === 'en'
+            ? 'Ultimately, the musical legacy of Liang-Zhu flourishes through the parallel resonance of diverse acoustic philosophies. Whether articulated through the expansive architecture of the Western symphonic tradition or the intimate, nuanced linearities of Chinese instrumental aesthetics, the legend finds equivalent validity in both sonic languages. This enduring vitality allows the narrative to be continuously reimagined across cultural boundaries, succeeding as a universal musical dialogue that honors the rigor of global forms while celebrating the profound lyrical essence of Jiangnan.'
+            : '最终，梁祝的音乐遗产在多元声音哲学的平行共鸣中焕发生机。无论是通过西方交响乐宏大的叙事架构，还是中国器乐细致、灵动的线性审美，这段传说都在这两种音律语言中获得了对等的艺术真实性。这种持久的生命力使叙事得以在不同文化边界间不断重构，成为一场成功的跨文化音乐对话——它既致敬了全球音乐形式的严谨，也由衷地呈现了江南文化的抒情底色。'}
+        </p>
+      </div>
 
       <SubViewNavigation current="musical-works" />
     </div>
@@ -177,27 +374,73 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
             ? 'In the hands of folk artists, the story transcends narrative and becomes a silent visual symbol of fidelity and spiritual rebirth.'
             : '在民间艺人的指尖下，梁祝的故事超越了叙事，转化为一种关于忠贞与重生的无声视觉符号。'}
         </p>
+        <div className="mt-8 text-ink-soft font-serif text-base leading-relaxed opacity-80 max-w-3xl">
+          {language === 'en' 
+            ? 'Within the framework of Intangible Cultural Heritage, folk crafts function not as mere narrative retellings, but as vital symbolic carriers. The legend of Liang-Zhu operates as a cultural love totem, representing motifs of fidelity, transformation, and rebirth. Traditionally, crafts like paper-cutting and embroidery in the Jiangnan region have absorbed these motifs—paired butterflies, scholars, and academy scenes—weaving them into the fabric of daily life through symbolic visual language.'
+            : '在非物质文化遗产的框架下，民间工艺并非单纯的叙事复述，而是至关重要的视觉符号载体。梁祝传说作为一个文化图腾，承载着忠贞、蜕变与重生的核心意蕴。在江南地区，剪纸与刺绣等工艺历史性地吸收了蝴蝶、双人形象及书院场景等梁祝元素，通过象征性的视觉语言将其转化为日常生活中触手可及的文化记忆。'}
+        </div>
       </header>
 
       <section>
         <h4 className="font-calligraphy text-2xl text-gold mb-8">{language === 'en' ? 'Material & Technique' : '材料与表现技法'}</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Paper-cutting Subsection */}
           <div className="space-y-6">
-            <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="Paper-cutting Placeholder" className="w-full h-full object-cover opacity-20" />
+            <div className="relative group w-full aspect-video border border-ink/10 bg-ink/5 overflow-hidden">
+              <div className="w-full h-full flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+                {paperCuttingImages.map((src, idx) => (
+                  <div key={idx} className="flex-shrink-0 w-full h-full snap-start flex items-center justify-center">
+                    <img 
+                      src={src} 
+                      alt={`Paper-cutting placeholder ${idx + 1}`} 
+                      className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity" 
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {paperCuttingImages.map((_, idx) => (
+                  <div key={idx} className="w-1 h-1 rounded-full bg-ink/20"></div>
+                ))}
+              </div>
             </div>
             <div className="space-y-4">
               <h5 className="font-bold text-xs uppercase tracking-widest text-gold">{language === 'en' ? 'Paper-cutting' : '民间剪纸'}</h5>
-              <p className="text-ink-soft font-serif text-base">{language === 'en' ? 'Using negative space to depict the intricate scenes of "Meeting in the Academy" and the final metamorphosis.' : '利用虚实结合的剪影技巧，勾勒出“书院相会”与“化蝶”的宏大意境。'}</p>
+              <p className="text-ink-soft font-serif text-base leading-loose">
+                {language === 'en' 
+                  ? 'In the art of paper-cutting, the Liang-Zhu narrative is distilled into high-contrast spatial metaphors. Compositional balance in scenes like "Meeting in the Academy" symbolizes spiritual harmony, while the final metamorphosis is rendered through an intricate interweaving of negative and positive space. Every incision serves as a visual testament to transformation and the endurance of loyalty.' 
+                  : '在民间剪纸艺术中，梁祝叙事被浓缩为高对比度的空间隐喻。如“书院相会”等场景的构图平衡象征着精神上的和谐，而最终的化蝶则通过虚实空间的错综交织来呈现。每一次剪刻都成为了对蜕变与忠贞守望的视觉见证。'}
+              </p>
             </div>
           </div>
+
+          {/* Embroidery Subsection */}
           <div className="space-y-6">
-            <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="Embroidery Placeholder" className="w-full h-full object-cover opacity-20" />
+            <div className="relative group w-full aspect-video border border-ink/10 bg-ink/5 overflow-hidden">
+              <div className="w-full h-full flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+                {embroideryImages.map((src, idx) => (
+                  <div key={idx} className="flex-shrink-0 w-full h-full snap-start flex items-center justify-center">
+                    <img 
+                      src={src} 
+                      alt={`Embroidery placeholder ${idx + 1}`} 
+                      className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity" 
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {embroideryImages.map((_, idx) => (
+                  <div key={idx} className="w-1 h-1 rounded-full bg-ink/20"></div>
+                ))}
+              </div>
             </div>
             <div className="space-y-4">
               <h5 className="font-bold text-xs uppercase tracking-widest text-gold">{language === 'en' ? 'Embroidery' : '江南刺绣'}</h5>
-              <p className="text-ink-soft font-serif text-base">{language === 'en' ? 'Silk threads capture the delicate butterfly wings, symbolizing the fragility and resilience of love.' : '以蚕丝线捕捉蝶翼的颤动，象征情感的纤细与生命的坚韧。'}</p>
+              <p className="text-ink-soft font-serif text-base leading-loose">
+                {language === 'en' 
+                  ? 'Jiangnan embroidery captures the ephemeral qualities of the legend through vibrant silk threads. The delicate rendering of butterfly wings serves as a profound symbol of the soul\'s liberation and rebirth. Paired motifs—from birds to figures—are deeply rooted in the concept of duality and eternal companionship, translating the story\'s emotional resonance into a heritage-oriented material form.' 
+                  : '江南刺绣以灵动的丝线捕捉传说的瞬时美感。对蝶翼的细腻刻画成为了灵魂解放与重生的深刻象征。从飞鸟到人物的成双纹样，深深植根于双元并蓄与永恒相随的文化观念，将故事的情感共鸣转译为富有底蕴的物质形态。'}
+              </p>
             </div>
           </div>
         </div>
@@ -222,31 +465,86 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
             ? 'Long before it was written in ink, the legend lived in the breath of storytellers, carrying the warmth of regional dialects and local landscapes.'
             : '在墨迹未干之前，梁祝的传说早已在说书人的呼吸中传颂，承载着地域方言的温度与乡土景观的记忆。'}
         </p>
+        <div className="mt-8 text-ink-soft font-serif text-base leading-relaxed opacity-80 max-w-3xl">
+          {language === 'en' 
+            ? 'Oral tradition represents the living genesis of the Liang-Zhu legend. Long before its theatrical or symphonic codification, the story was transmitted through the breath of regional storytellers and local ballads. This mode of transmission allowed for a high degree of regional adaptability, where local dialects and specific geographic landmarks were woven into the narrative fabric, creating a diverse constellation of "living memories" across the Jiangnan landscape.'
+            : '口传文学构成了梁祝传说的活态起源。在进入戏曲与交响乐的定型阐释之前，这段故事早已在地方说书人与民间歌谣的呼吸中流传千年。这种传播模式赋予了故事极高的地域适应性，使地方方言与特定的地理标识得以织入叙事肌理，在整个江南版图中形成了如星簇般多元的“活态记忆”。'}
+        </div>
       </header>
 
       <section>
         <h4 className="font-calligraphy text-2xl text-ink mb-8">{language === 'en' ? 'Narrative Variations' : '叙事特征与地域差异'}</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Ningbo Branch */}
           <div className="space-y-6">
-            <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="Ningbo Branch Placeholder" className="w-full h-full object-cover opacity-20" />
+            <div className="relative group w-full aspect-video border border-ink/10 bg-ink/5 overflow-hidden">
+              <div className="w-full h-full flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+                {ningboBranchImages.map((src, idx) => (
+                  <div key={idx} className="flex-shrink-0 w-full h-full snap-start flex items-center justify-center">
+                    <img 
+                      src={src} 
+                      alt={`Ningbo branch visual placeholder ${idx + 1}`} 
+                      className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity" 
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {ningboBranchImages.map((_, idx) => (
+                  <div key={idx} className="w-1 h-1 rounded-full bg-ink/20"></div>
+                ))}
+              </div>
             </div>
             <div className="space-y-4">
               <h5 className="font-bold text-xs uppercase tracking-widest text-ink/40">{language === 'en' ? 'Ningbo Branch' : '宁波系叙事'}</h5>
-              <p className="text-ink-soft font-serif text-base">{language === 'en' ? 'Focuses on the burial site and historical evidence, rooted in local geography.' : '侧重于墓葬实证与历史文献，强调故事与地方地理的真实联系。'}</p>
+              <p className="text-ink-soft font-serif text-base leading-loose">
+                {language === 'en' 
+                  ? 'The Ningbo-centered oral tradition is characterized by a strong emphasis on historicism and local topography. Narratives in this region often anchor the legend to specific archaeological sites and family lineages, framing the story as a localized historical event. The oral accounts frequently highlight the "Liang Shanbo Temple" and archival evidence, blending the boundaries between folklore and historical documentation.' 
+                  : '宁波地区的口传传统以强烈的历史化倾向与地理实证为特征。该区域的叙事往往将传说锚定在具体的考古遗迹与家族谱系上，将故事塑造为具有地方色彩的历史事件。民间讲述中频繁提及“梁山伯庙”与文献考据，模糊了民间传说与历史档案之间的界限。'}
+              </p>
             </div>
           </div>
+
+          {/* Hangzhou Branch */}
           <div className="space-y-6">
-            <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="Hangzhou Branch Placeholder" className="w-full h-full object-cover opacity-20" />
+            <div className="relative group w-full aspect-video border border-ink/10 bg-ink/5 overflow-hidden">
+              <div className="w-full h-full flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+                {hangzhouBranchImages.map((src, idx) => (
+                  <div key={idx} className="flex-shrink-0 w-full h-full snap-start flex items-center justify-center">
+                    <img 
+                      src={src} 
+                      alt={`Hangzhou branch visual placeholder ${idx + 1}`} 
+                      className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity" 
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {hangzhouBranchImages.map((_, idx) => (
+                  <div key={idx} className="w-1 h-1 rounded-full bg-ink/20"></div>
+                ))}
+              </div>
             </div>
             <div className="space-y-4">
               <h5 className="font-bold text-xs uppercase tracking-widest text-ink/40">{language === 'en' ? 'Hangzhou Branch' : '杭州系叙事'}</h5>
-              <p className="text-ink-soft font-serif text-base">{language === 'en' ? 'Emphasizes the academy life and the "Eighteen-Mile Send-off" landscape.' : '侧重于书院生活与“十八相送”途中的景物寄情。'}</p>
+              <p className="text-ink-soft font-serif text-base leading-loose">
+                {language === 'en' 
+                  ? 'In the Hangzhou tradition, the narrative focus shifts toward the poetic scenery of the West Lake and the idyllic life of the Wansong Academy. This branch prioritizes the emotional development of the protagonists during their three years of study. The storytelling is rich in metaphors of the natural landscape, particularly during the "Eighteen-Mile Send-off," where the physical journey serves as a canvas for the subtext of their bond.' 
+                  : '在杭州的叙事传统中，重心转向了西湖的诗意景观与万松书院的求学生活。这一分支优先呈现两位主角在三载同窗期间的情感演进。讲述中充斥着对自然景观的隐喻式描写，尤其是在“十八相送”的情节中，空间上的跋涉成为了表现两人情感潜台词的画布。'}
+              </p>
             </div>
           </div>
         </div>
       </section>
+
+      {/* CONCLUDING PARAGRAPH */}
+      <div className="pt-12 border-t border-ink/5 text-center">
+        <p className="text-ink-soft font-serif text-base italic opacity-60 max-w-2xl mx-auto leading-relaxed">
+          {language === 'en'
+            ? 'In essence, the oral tradition serves as the primal substrate of the Liang-Zhu legacy. It is the flexible foundation upon which all subsequent artistic formalizations—from Yue Opera to modern cinema—were built. By preserving the nuances of regional voice and local identity, these oral narratives ensure that the legend remains a dynamic, living heritage rather than a static relic of the past.'
+            : '从本质上讲，口传文学是梁祝文化遗产的原始基石。它作为一种灵活的基础，支撑起后续所有的艺术化身——从越剧表演到现代电影。通过保留地域声息与地方认知的细微差别，这些口头叙事确保了这段传说始终是一份动态的、活态的遗产，而非一段静止的历史遗迹。'}
+        </p>
+      </div>
 
       <SubViewNavigation current="oral-tradition" />
     </div>
@@ -346,7 +644,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
                   <p className="text-ink-soft font-serif text-base leading-relaxed">
                     {language === 'en'
                       ? 'As a National ICH of China (listed 2006), it represents the crystallization of regional wisdom and emotional resilience, adapting to every era while maintaining its moral core.'
-                      : '作为 2006 年列入的首批国家级非遗，它代表了地域智慧与情感韧性的结晶。它随时代变迁而不断演化，却始终保持着最核心的伦理与情感底色。'}
+                      : '作为 2006 年列入的首批国家级非遗，它代表了地域智慧与情感韧性的结晶。它随时代变迁格不断演化，却始终保持着最核心的伦理与情感底色。'}
                   </p>
                 </div>
               </section>
