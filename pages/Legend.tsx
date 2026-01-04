@@ -1,19 +1,22 @@
 import React from 'react';
 import { Language } from '../types';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 interface LegendProps {
   language: Language;
 }
 
 const Legend: React.FC<LegendProps> = ({ language }) => {
+  const { scrollY } = useScroll();
+  const watermarkY = useTransform(scrollY, [0, 5000], [0, -200]);
+
   const narrative = [
     {
       title: { en: "The Origin · Sworn Brotherhood", zh: "缘起 · 草桥结拜" },
       tag: { en: "The Encounter", zh: "缘起" },
       desc: { 
         en: "During the Eastern Jin Dynasty, Zhu Yingtai, a gifted young woman from Shangyu, convinced her parents to let her disguise herself as a man to pursue an education in Hangzhou. On her journey, she encountered a scholar named Liang Shanbo at the Caoqiao Pavilion. Finding themselves in perfect accord, they became sworn brothers under a willow tree and pledged to travel together.",
-        zh: "东晋时期，浙江上虞祝家庄的才女祝英台自幼聪慧，心向求学。她说服父母，女扮男装，踏上前往会稽求学的旅程。途中，祝英台在草桥亭邂逅同样前往书院求学的书生梁山伯。二人言谈投契，一见如故，遂在柳荫之下义结金兰，结为兄弟，相约同行。"
+        zh: "东晋时期，浙江上虞祝家庄的才女祝英台自幼聪慧，心向求学。她说服父母，女扮男装，踏上前往会稽求学的旅程。途中，祝英台在草桥亭邂逅同样前往书院求学的书生梁山伯。二人言谈投契，一见故，遂在柳荫之下义结金兰，结为兄弟，相约同行。"
       },
       char: "缘"
     },
@@ -50,11 +53,14 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
     <div className="w-full bg-paper min-h-screen relative selection:bg-cinnabar selection:text-white pb-32 overflow-x-hidden">
       
       {/* Editorial Watermark Background */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.03] flex items-center justify-center z-0 overflow-hidden">
+      <motion.div 
+        style={{ y: watermarkY }}
+        className="fixed inset-0 pointer-events-none opacity-[0.03] flex items-center justify-center z-0 overflow-hidden"
+      >
         <span className="font-calligraphy text-[60vh] leading-none whitespace-nowrap -rotate-12 translate-x-1/4">
           梁山伯与祝英台
         </span>
-      </div>
+      </motion.div>
 
       {/* Hero Section - Editorial Style */}
       <header className="relative pt-40 pb-20 px-8 max-w-7xl mx-auto z-10">
@@ -62,7 +68,7 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
           <motion.h2 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className={`text-ink ${language === 'zh' ? 'font-calligraphy text-7xl md:text-9xl' : 'font-serif text-6xl md:text-8xl italic'}`}
           >
             {language === 'en' ? 'The Legend' : '梁祝传说'}
@@ -70,7 +76,7 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
           <motion.span 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
+            transition={{ delay: 0.5, duration: 1.2 }}
             className="font-script text-4xl text-cinnabar/60 tracking-widest"
           >
             {language === 'en' ? 'A Tale of Two Souls' : '山伯与英台'}
@@ -80,29 +86,35 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-7">
             <motion.p 
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 1 }}
+              transition={{ delay: 0.8, duration: 1.2 }}
               className="text-ink-soft font-serif text-lg md:text-xl italic leading-relaxed opacity-90 max-w-2xl whitespace-pre-wrap border-l border-cinnabar/30 pl-8"
             >
               {language === 'en' 
                 ? 'This legend, originating in the Eastern Jin and recorded in the Tang Dynasty, has endured for a millennium. It encompasses both the immediate affinity of soulmates and the fiery passion of love that transcends death. Through folk arts and literature, it has been refined into the most poignant butterfly symbol in cultural memory.' 
-                : '这是一个起源于东晋、记载于唐代，流传千年的爱情传说。它既包含一见如故的知己之情，也承载着生死相随的炽烈爱恋。其故事的核心骨架早见于古籍文献，后在戏曲、民间艺术与文学书写中不断被丰富与升华，最终化身为中华文化记忆中最为动人的“蝴蝶”象征。'}
+                : '这是一个起源于东晋、记载于唐代，流传千年的爱情传说。它既包含一见故的知己之情，也承载着生死相随的炽烈爱恋。其故事的核心骨架早见于古籍文献，后在戏曲、民间艺术与文学书写中不断被丰富与升华，最终化身为中华文化记忆中最为动人的“蝴蝶”象征。'}
             </motion.p>
           </div>
 
           {/* Large Hero Illustration Container - Floating/Overlap */}
           <div className="md:col-span-5 relative">
-            <div className="w-full aspect-square md:absolute md:-top-32 md:-right-12 z-0">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full aspect-square md:absolute md:-top-32 md:-right-12 z-0"
+            >
                <div className="w-full h-full bg-gradient-to-br from-zinc-200/40 via-transparent to-transparent flex items-center justify-center p-8">
                   <div className="w-full h-full border border-ink/5 relative group">
-                    <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover mix-blend-multiply opacity-20" />
+                    <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-80" />
                     <div className="absolute inset-0 flex items-center justify-center">
                        <span className="text-[10px] font-bold tracking-[1em] uppercase text-ink/20 transform -rotate-90">Main Motif</span>
                     </div>
                   </div>
                </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </header>
@@ -112,10 +124,10 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
         {narrative.map((item, index) => (
           <motion.section 
             key={index}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.5 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2, margin: "0px 0px -100px 0px" }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className={`relative flex flex-col md:flex-row items-start gap-12 ${
               index % 2 === 1 ? 'md:flex-row-reverse' : ''
             }`}
@@ -165,25 +177,31 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
                <div className={`relative aspect-[3/4] md:aspect-auto md:min-h-[500px] w-full flex items-center justify-center p-4 ${index % 2 === 1 ? 'md:-translate-x-12' : 'md:translate-x-12'}`}>
                   
                   {/* The Primary Illustration Slot (Transparent PNG target) */}
-                  <div className="w-full h-full relative group">
-                    <div className="absolute inset-0 border border-ink/[0.03] group-hover:border-ink/[0.08] transition-colors duration-1000"></div>
+                  <motion.div 
+                    initial={{ opacity: 0, y: 40, scale: 0.98 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+                    className="w-full h-full relative group"
+                  >
+                    <div className="absolute inset-0 border border-ink/[0.08] group-hover:border-ink/[0.15] transition-colors duration-1000"></div>
                     
                     {/* Background Ink-Wash Placeholder */}
-                    <div className="absolute inset-4 bg-gradient-to-br from-zinc-100/50 via-paper to-zinc-200/30 opacity-40 mix-blend-multiply"></div>
+                    <div className="absolute inset-2 bg-gradient-to-br from-zinc-100 via-paper to-zinc-200 opacity-20"></div>
                     
-                    {/* The Centerpiece Placeholder img tag */}
-                    <div className="absolute inset-0 flex items-center justify-center p-12">
+                    {/* The Centerpiece Placeholder img tag - Made clearly visible */}
+                    <div className="absolute inset-0 flex items-center justify-center p-6">
                       <img 
                         src="/images/placeholder.jpg" 
                         alt="Chapter illustration placeholder" 
-                        className="w-full h-full object-contain mix-blend-multiply opacity-20 filter grayscale hover:opacity-40 transition-all duration-1000 scale-105" 
+                        className="w-full h-full object-cover opacity-80 transition-all duration-1000 scale-100 group-hover:scale-105" 
                       />
                     </div>
 
                     {/* Extended Decorative elements */}
                     <div className={`absolute -bottom-8 ${index % 2 === 1 ? '-right-8' : '-left-8'} w-32 h-32 border border-cinnabar/10 rotate-12 opacity-50`}></div>
                     <div className={`absolute -top-12 ${index % 2 === 1 ? '-left-6' : '-right-6'} w-24 h-24 bg-ink/5 rounded-full blur-3xl`}></div>
-                  </div>
+                  </motion.div>
 
                   {/* Caption for the Artwork */}
                   <div className={`absolute bottom-0 translate-y-full pt-4 ${index % 2 === 1 ? 'left-0' : 'right-0'} max-w-[120px]`}>
@@ -204,22 +222,39 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
       <footer className="mt-60 relative max-w-5xl mx-auto px-8 text-center z-10">
         
         {/* Large Decorative Transformation Illustration Slot */}
-        <div className="w-full max-w-3xl mx-auto aspect-[21/9] mb-32 relative overflow-visible">
-           <div className="absolute inset-0 bg-ink/[0.02] flex items-center justify-center">
-             <img src="/images/placeholder.jpg" alt="Final transformation visual" className="w-full h-full object-cover mix-blend-multiply opacity-10" />
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.1 }}
+          transition={{ duration: 1.8, ease: "easeOut" }}
+          className="w-full max-w-3xl mx-auto aspect-[21/9] mb-32 relative overflow-visible"
+        >
+           <div className="absolute inset-0 bg-ink/[0.05] flex items-center justify-center">
+             <img src="/images/placeholder.jpg" alt="Final transformation visual" className="w-full h-full object-cover opacity-30" />
            </div>
            {/* Overlapping Artwork Slot */}
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-80 md:h-80 border border-cinnabar/5 flex items-center justify-center">
+           <motion.div 
+              initial={{ scale: 0.9 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 2, ease: "easeOut" }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-80 md:h-80 border border-cinnabar/5 flex items-center justify-center bg-paper/20 backdrop-blur-sm"
+           >
               <span className="text-[10px] font-bold tracking-[0.5em] uppercase text-cinnabar/20">Metamorphosis</span>
-           </div>
-        </div>
+           </motion.div>
+        </motion.div>
 
         <div className="max-w-2xl mx-auto space-y-10">
-          <p className="text-ink-soft font-serif text-xl md:text-2xl italic leading-relaxed opacity-70 px-6">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 0.7 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1.5 }}
+            className="text-ink-soft font-serif text-xl md:text-2xl italic leading-relaxed opacity-70 px-6"
+          >
             {language === 'en' 
               ? 'In what historical context is this moving legend rooted? How has it been retold through opera, music, and film? And what new understandings does it hold in a contemporary world?' 
               : '这个动人的传说，根植于怎样的历史语境之中？又是如何通过戏曲、音乐、影视等艺术形式不断被重述与演绎？在当代语境下，它又被赋予了怎样的新理解？'}
-          </p>
+          </motion.p>
 
           <div className="space-y-4">
             <div className="w-8 h-px bg-ink/20 mx-auto"></div>
@@ -240,9 +275,15 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
           </div>
           
           <div className="pt-20">
-            <span className="font-calligraphy text-4xl text-ink/20">
+            <motion.span 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 0.2 }}
+              viewport={{ once: false }}
+              transition={{ duration: 2 }}
+              className="font-calligraphy text-4xl text-ink/20"
+            >
               {language === 'en' ? 'Tears turn into wings...' : '生不同襟，死必同穴'}
-            </span>
+            </motion.span>
           </div>
         </div>
       </footer>
