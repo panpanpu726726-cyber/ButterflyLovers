@@ -10,19 +10,33 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
   const { scrollY } = useScroll();
   const watermarkY = useTransform(scrollY, [0, 5000], [0, -200]);
 
+  // Surgical UI Component: ImagePlaceholder with size scaling
+  const ImagePlaceholder = ({ size = 'md', label = "IMAGE SLOT" }: { size?: 'sm' | 'md' | 'lg', label?: string }) => {
+    const heightClass = size === 'sm' ? 'md:h-[320px]' : size === 'md' ? 'md:h-[480px]' : 'md:h-[650px]';
+    return (
+      <div className={`w-full h-full border-2 border-dashed border-ink/40 bg-zinc-200 flex items-center justify-center ${heightClass}`}>
+        <span className="text-xl font-bold tracking-[0.5em] text-ink/70 uppercase text-center px-4">
+          {label}
+        </span>
+      </div>
+    );
+  };
+
   const narrative = [
     {
       title: { en: "The Origin · Sworn Brotherhood", zh: "缘起 · 草桥结拜" },
       tag: { en: "The Encounter", zh: "缘起" },
+      time: "317 AD · EASTERN JIN",
       desc: { 
         en: "During the Eastern Jin Dynasty, Zhu Yingtai, a gifted young woman from Shangyu, convinced her parents to let her disguise herself as a man to pursue an education in Hangzhou. On her journey, she encountered a scholar named Liang Shanbo at the Caoqiao Pavilion. Finding themselves in perfect accord, they became sworn brothers under a willow tree and pledged to travel together.",
-        zh: "东晋时期，浙江上虞祝家庄的才女祝英台自幼聪慧，心向求学。她说服父母，女扮男装，踏上前往会稽求学的旅程。途中，祝英台在草桥亭邂逅同样前往书院求学的书生梁山伯。二人言谈投契，一见故，遂在柳荫之下义结金兰，结为兄弟，相约同行。"
+        zh: "东晋时期，浙江上虞祝家庄的才女祝英台自幼聪慧，心向求学。她说服父母，女扮男装，踏上前往会稽求学的旅程。途中，祝英台在草桥亭邂逅同样前往书院求学的书生梁山伯。二人言谈投契，一见如故，遂在柳荫之下义结金兰，结为兄弟，相约同行。"
       },
       char: "缘"
     },
     {
       title: { en: "Fellowship · Three Years Together", zh: "同窗 · 三载朝夕" },
       tag: { en: "The Bond", zh: "同窗" },
+      time: "FELLOWSHIP ERA",
       desc: { 
         en: "At the academy, Liang Shanbo and Zhu Yingtai studied and lived together for three years. Liang, a man of honest character, showed great care for his 'younger brother,' while Yingtai carefully hid her identity as her feelings for him deepened. Throughout their time together, she offered many subtle hints about her true self, but Liang remained oblivious to the deeper meaning of her words.",
         zh: "在书院中，梁山伯与祝英台同窗共读、同室而居。梁山伯性情淳厚，勤勉治学，对这位“贤弟”关怀备至；祝英台则小心掩饰身份，内心情感逐渐生根。三年时光里，两人建立了深厚而真挚的情谊。其间，祝英台多次以隐喻方式暗示自身真实身份，但梁山伯始终未能参透其中深意。"
@@ -32,6 +46,7 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
     {
       title: { en: "Departure · Eighteen-Mile Send-off", zh: "离别 · 十八相送" },
       tag: { en: "The Farewell", zh: "离别" },
+      time: "THE PARTING ARC",
       desc: { 
         en: "Called home by her family, Yingtai had to cut her studies short. Liang Shanbo accompanied her for eighteen miles, a journey known as the 'Eighteen-Mile Send-off.' Along the way, she used images of mandarin ducks, reflections in a well, and temples to hint at her womanhood, even proposing a marriage with her 'ninth sister' in hopes he would propose. Alas, her intentions were not fully understood.",
         zh: "因家书催促，祝英台不得不中断学业，返乡省亲。梁山伯一路相送，自书院行至长亭，这段送别被后世称为“十八相送”。沿途，祝英台借景寄情，以鸳鸯、井中倒影、观音堂等意象反复暗示自身女儿之身，并托付“家中九妹”的婚约之意，盼梁山伯早日登门提亲。然而，这一切终究未被完全领悟。"
@@ -41,6 +56,7 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
     {
       title: { en: "Metamorphosis · Eternal Souls", zh: "惊变 · 殉情 · 化蝶" },
       tag: { en: "The Transformation", zh: "归宿" },
+      time: "7TH CENTURY · TANG RECORDS",
       desc: { 
         en: "A year later, Liang discovered Yingtai's true identity and sought her hand, only to find she was betrothed to another. After Liang died of a broken heart, Yingtai's wedding procession passed his tomb. A storm broke, the grave opened, and she leapt inside to join him. From the tomb, two butterflies emerged, dancing together in eternal union. This legend, rooted in Tang Dynasty records like 'Xuan Shi Zhi,' has evolved through centuries of art into a romantic symbol of love transcending life and death.",
         zh: "一年后，梁山伯前往探访祝英台，方知昔日“贤弟”竟是女子。然而，英台已被许配给太守之子马文才。不久梁山伯抑郁而终。次年英台出嫁途中祭拜其坟，墓裂而入，二人合葬化作彩蝶，自此相随不离。其最早文献可追溯至唐代《宣室志》，经由宋元明清时期的戏曲与歌谣不断定型，使这一悲剧获得了超越生死的浪漫象征意义。"
@@ -93,12 +109,12 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
             >
               {language === 'en' 
                 ? 'This legend, originating in the Eastern Jin and recorded in the Tang Dynasty, has endured for a millennium. It encompasses both the immediate affinity of soulmates and the fiery passion of love that transcends death. Through folk arts and literature, it has been refined into the most poignant butterfly symbol in cultural memory.' 
-                : '这是一个起源于东晋、记载于唐代，流传千年的爱情传说。它既包含一见故的知己之情，也承载着生死相随的炽烈爱恋。其故事的核心骨架早见于古籍文献，后在戏曲、民间艺术与文学书写中不断被丰富与升华，最终化身为中华文化记忆中最为动人的“蝴蝶”象征。'}
+                : '这是一个起源于东晋、记载于唐代，流传千年的爱情传说。它既包含一见如故的知己之情，也承载着生死相随的炽烈爱恋。其故事的核心骨架早见于古籍文献，后在戏曲、民间艺术与文学书写中不断被丰富与升华，最终化身为中华文化记忆中最为动人的“蝴蝶”象征。'}
             </motion.p>
           </div>
 
-          {/* Large Hero Illustration Container - Floating/Overlap */}
-          <div className="md:col-span-5 relative">
+          {/* Large Hero Illustration Container - Standard size */}
+          <div className="md:col-span-5 relative md:h-[450px]">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -106,14 +122,7 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
               transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
               className="w-full aspect-square md:absolute md:-top-32 md:-right-12 z-0"
             >
-               <div className="w-full h-full bg-gradient-to-br from-zinc-200/40 via-transparent to-transparent flex items-center justify-center p-8">
-                  <div className="w-full h-full border border-ink/5 relative group">
-                    <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-80" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                       <span className="text-[10px] font-bold tracking-[1em] uppercase text-ink/20 transform -rotate-90">Main Motif</span>
-                    </div>
-                  </div>
-               </div>
+               <ImagePlaceholder size="md" />
             </motion.div>
           </div>
         </div>
@@ -128,7 +137,7 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2, margin: "0px 0px -100px 0px" }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className={`relative flex flex-col md:flex-row items-start gap-12 ${
+            className={`relative flex flex-col md:flex-row items-center gap-12 lg:gap-24 border-l border-ink/5 pl-8 md:pl-16 ${
               index % 2 === 1 ? 'md:flex-row-reverse' : ''
             }`}
           >
@@ -142,6 +151,11 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
             {/* Narrative Content Column */}
             <div className="flex-1 w-full max-w-xl relative z-10">
               <div className="mb-10">
+                {/* Option A: Temporal Label Indicator */}
+                <span className="text-[10px] font-bold tracking-[0.25em] text-cinnabar/60 uppercase block mb-3 font-serif">
+                  {item.time}
+                </span>
+                
                 <div className="flex items-center gap-4 mb-4">
                   <span className="text-cinnabar font-script text-4xl opacity-70">
                     {language === 'en' ? `Chapter ${index + 1}` : `第${['一', '二', '三', '四'][index]}章`}
@@ -171,45 +185,32 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
               </div>
             </div>
 
-            {/* Floating Illustration Container Column */}
-            <div className="flex-none w-full md:w-[45%] lg:w-[40%] relative">
-               {/* This container allows transparent artwork to float, overlap, and extend */}
-               <div className={`relative aspect-[3/4] md:aspect-auto md:min-h-[500px] w-full flex items-center justify-center p-4 ${index % 2 === 1 ? 'md:-translate-x-12' : 'md:translate-x-12'}`}>
+            {/* Content-level images using size="sm" to prevent overpowering text */}
+            <div className="flex-none w-full md:w-[50%] lg:w-[45%] relative">
+               <div className={`relative aspect-[4/5] w-full flex items-center justify-center p-0 ${index % 2 === 1 ? 'md:-translate-x-6' : 'md:translate-x-6'}`}>
                   
-                  {/* The Primary Illustration Slot (Transparent PNG target) */}
                   <motion.div 
                     initial={{ opacity: 0, y: 40, scale: 0.98 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     viewport={{ once: false, amount: 0.2 }}
                     transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-                    className="w-full h-full relative group"
+                    className="w-full h-full relative group overflow-visible"
                   >
-                    <div className="absolute inset-0 border border-ink/[0.08] group-hover:border-ink/[0.15] transition-colors duration-1000"></div>
-                    
-                    {/* Background Ink-Wash Placeholder */}
-                    <div className="absolute inset-2 bg-gradient-to-br from-zinc-100 via-paper to-zinc-200 opacity-20"></div>
-                    
-                    {/* The Centerpiece Placeholder img tag - Made clearly visible */}
-                    <div className="absolute inset-0 flex items-center justify-center p-6">
-                      <img 
-                        src="/images/placeholder.jpg" 
-                        alt="Chapter illustration placeholder" 
-                        className="w-full h-full object-cover opacity-80 transition-all duration-1000 scale-100 group-hover:scale-105" 
-                      />
-                    </div>
+                    {/* Task 1: Applied size="sm" for better textual balance */}
+                    <ImagePlaceholder size="sm" />
 
                     {/* Extended Decorative elements */}
-                    <div className={`absolute -bottom-8 ${index % 2 === 1 ? '-right-8' : '-left-8'} w-32 h-32 border border-cinnabar/10 rotate-12 opacity-50`}></div>
-                    <div className={`absolute -top-12 ${index % 2 === 1 ? '-left-6' : '-right-6'} w-24 h-24 bg-ink/5 rounded-full blur-3xl`}></div>
+                    <div className={`absolute -bottom-8 ${index % 2 === 1 ? '-right-8' : '-left-8'} w-32 h-32 border border-cinnabar/15 rotate-12 opacity-60 z-0`}></div>
+                    <div className={`absolute -top-12 ${index % 2 === 1 ? '-left-6' : '-right-6'} w-24 h-24 bg-ink/5 rounded-full blur-3xl z-0`}></div>
                   </motion.div>
 
                   {/* Caption for the Artwork */}
-                  <div className={`absolute bottom-0 translate-y-full pt-4 ${index % 2 === 1 ? 'left-0' : 'right-0'} max-w-[120px]`}>
-                    <span className="text-[8px] font-bold tracking-[0.2em] text-ink/30 uppercase leading-tight block">
+                  <div className={`absolute bottom-0 translate-y-full pt-6 ${index % 2 === 1 ? 'left-0' : 'right-0'} max-w-[150px] z-30`}>
+                    <span className="text-[9px] font-bold tracking-[0.2em] text-ink/40 uppercase leading-tight block">
                       Exhibition Plate No. 0{index + 1}
                     </span>
-                    <span className="text-[7px] text-ink/20 font-serif italic block mt-1">
-                      Concept illustration for {item.tag.en}
+                    <span className="text-[8px] text-ink/30 font-serif italic block mt-1">
+                      Historical interpretation: {item.tag.en}
                     </span>
                   </div>
                </div>
@@ -219,28 +220,16 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
       </div>
 
       {/* Narrative Footer - Exhibition Style */}
-      <footer className="mt-60 relative max-w-5xl mx-auto px-8 text-center z-10">
+      <footer className="mt-60 relative max-w-7xl mx-auto px-8 text-center z-10">
         
-        {/* Large Decorative Transformation Illustration Slot */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.1 }}
           transition={{ duration: 1.8, ease: "easeOut" }}
-          className="w-full max-w-3xl mx-auto aspect-[21/9] mb-32 relative overflow-visible"
+          className="w-full aspect-[21/9] mb-32 relative overflow-hidden group"
         >
-           <div className="absolute inset-0 bg-ink/[0.05] flex items-center justify-center">
-             <img src="/images/placeholder.jpg" alt="Final transformation visual" className="w-full h-full object-cover opacity-30" />
-           </div>
-           {/* Overlapping Artwork Slot */}
-           <motion.div 
-              initial={{ scale: 0.9 }}
-              whileInView={{ scale: 1 }}
-              transition={{ duration: 2, ease: "easeOut" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-80 md:h-80 border border-cinnabar/5 flex items-center justify-center bg-paper/20 backdrop-blur-sm"
-           >
-              <span className="text-[10px] font-bold tracking-[0.5em] uppercase text-cinnabar/20">Metamorphosis</span>
-           </motion.div>
+           <ImagePlaceholder size="lg" label="FINAL IMAGE SLOT" />
         </motion.div>
 
         <div className="max-w-2xl mx-auto space-y-10">
