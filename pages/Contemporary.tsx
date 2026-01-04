@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Language, SectionId } from '../types';
+import { Language } from '../types';
 import { Film, Monitor, Zap, ChevronRight, ArrowUpRight, ArrowLeft, Users, ChevronLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -88,7 +88,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
             <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Cinematic Deconstruction' : '影像对叙事的解构'}</h3>
             <p className="text-ink-soft font-serif text-base leading-loose">
               {language === 'en'
-                ? 'Modern film adaptations move away from linear storytelling, focusing on the psychological tension between the protagonists. Visual symbolism—especially the use of color and shadow—replaces literal explanations.'
+                ? 'Modern film adaptations move away from linear storytelling, focusing on the protagonists. Visual symbolism—especially the use of color and shadow—replaces literal explanations.'
                 : '现代影视改编逐渐脱离线性叙事，转向对主角内心张力的挖掘。色彩与光影的符号化运用取代了直白的台词，使经典悲剧具备了现代电影的深邃感。'}
             </p>
           </div>
