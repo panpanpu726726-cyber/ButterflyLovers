@@ -78,8 +78,8 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
         </h2>
         <p className="text-ink-soft font-serif text-lg md:text-xl italic opacity-70 max-w-3xl">
           {language === 'en' 
-            ? 'Exploring how traditional narratives are reconstructed through modern choreography and cinematic language.' 
-            : '探索传统叙事如何通过现代舞台语言与影像技术完成时空重构。'}
+            ? 'Modern stage and cinema serve as vital continuations of the Liang–Zhu legacy, re-anchoring the ancient narrative within the aesthetics of the present. This module explores how contemporary choreography, avant-garde opera reform, and arthouse cinematic language reconstruct traditional storytelling, transforming the legend from a regional folk tale into a universal exploration of human desire and existential transcendence.' 
+            : '现代舞台与影像不仅是梁祝遗产的延伸，更是将其古老叙事重新锚定于当代审美视野的关键。本单元探索当代编舞、先锋戏曲改革及艺术电影语言如何重构传统叙事，将这段传说从地域性的民间故事转化为关于人类欲望与存在超越性的普世探索。'}
         </p>
       </header>
       <section className="space-y-32">
@@ -88,8 +88,8 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
             <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Cinematic Deconstruction' : '影像对叙事的解构'}</h3>
             <p className="text-ink-soft font-serif text-base leading-loose">
               {language === 'en'
-                ? 'Modern film adaptations move away from linear storytelling, focusing on the protagonists. Visual symbolism—especially the use of color and shadow—replaces literal explanations.'
-                : '现代影视改编逐渐脱离线性叙事，转向对主角内心张力的挖掘。色彩与光影的符号化运用取代了直白的台词，使经典悲剧具备了现代电影的深邃感。'}
+                ? 'Modern cinematic reinterpretations frequently diverge from conventional linear structures, choosing instead to deconstruct the "Three Years at the Academy" as a site of psychological awakening. By leveraging art-house aesthetics—where atmospheric shadows, deliberate pacing, and saturated color palettes replace literal dialogue—filmmakers emphasize the internal friction between individual identity and societal expectation. This cinematic language elevates the tragedy, allowing the metamorphosis to be perceived not as a supernatural event, but as a profound visual metaphor for the protagonist\'s internal liberation and the breaking of temporal boundaries.'
+                : '现代影视改编常选择脱离传统的线性叙事结构，将“书院三载”解构为心理觉醒的场域。通过借鉴艺术电影美学——以氛围化的光影、考究的节奏与饱和的色彩替代直白的台词——创作者强调了个人身份与社会期待之间的内在摩擦。这种影像语言提升了悲剧的维度，使“化蝶”不再被仅仅视作超自然事件，而是成为了主角内心解放与时空界限突破的深邃视觉隐喻。'}
             </p>
           </div>
           <ImagePlaceholder aspect="aspect-square" />
@@ -101,8 +101,8 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
             <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Experimental Performance' : '实验剧场与舞剧'}</h3>
             <p className="text-ink-soft font-serif text-base leading-loose">
               {language === 'en'
-                ? 'Contemporary dance companies interpret "Metamorphosis" as a spiritual awakening. Body language transcends spoken word, turning the ancient legend into a universal expression of liberation.'
-                : '当代舞团将“化蝶”视为一种精神觉醒。肢体语言超越了言语的界限，将古老传说转化为一种关于解放与重生的普世表达。'}
+                ? 'In the realm of experimental theatre and modern dance, the legend undergoes a radical physical translation where body language transcends the limitations of the spoken word. Contemporary dance companies often reinterpret the "Butterfly Metamorphosis" as a rigorous spiritual trial, utilizing abstract movement to map the transition from earthly constraint to ethereal freedom. This performative reform maintains the core emotional pulse of the original legend while inviting a global audience to experience the story through an embodied, wordless dialogue that honors the continuity of the Liang-Zhu spirit in the modern era. Ultimately, these modern adaptations do not replace the traditional canon but serve as a vital dialogue between generations, ensuring that the legacy remains a living, breathing part of global cultural discourse.'
+                : '在实验剧场与现代舞领域，梁祝传说经历了一场彻底的肢体转译，肢体语言超越了言语的局限。当代舞团通常将“化蝶”重新解读为一场严峻的精神磨砺，利用抽象的动作轨迹刻画从尘世禁锢到灵性自由的演进。这种表演艺术的改革在保留原始传说情感脉动的同时，邀请全球观众通过具身化的无声对话，体验梁祝精神在现代语境下的永恒延续。归根结底，这些现代改编并非对传统的取代，而是一场跨越世代的深度对话，确保了这份遗产在全求文化语境中始终保持鲜活。'}
             </p>
           </div>
         </div>
@@ -324,8 +324,8 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
             <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Visual Iconography' : '视觉符号的大众化'}</h3>
             <p className="text-ink-soft font-serif text-base leading-loose">
               {language === 'en'
-                ? 'From modern animation character designs to commercial brand collaborations.'
-                : '从现代动漫角色设计到商业跨界合作。'}
+                ? 'The Liang–Zhu legend serves as a foundational cultural archetype in modern mass media, transcending its origins to become a versatile symbol of romantic resistance and identity. In the contemporary visual landscape, the metamorphosis into butterflies has evolved into a global iconographic shorthand for spiritual liberation and eternal devotion, frequently appearing across animation character designs, stylized illustrations, and sophisticated advertising campaigns. This transformation focuses less on the linear repetition of the plot and more on the potent symbolism of the butterfly motif and the nuanced complexities of gender disguise. By distilling the narrative into these distinct visual markers, popular culture ensures the legend’s continued vitality, allowing it to function as a bridge between historical heritage and the modern collective imagination, thereby sustaining cultural memory through constant re-envisioning.'
+                : '梁祝传说在现代大众传媒中已演化为一个基础性的文化原型，超越了其叙事起源，成为浪漫抗争与身份认知的多维象征。在当代的视觉语境下，“化蝶”意象已蜕变为一种全球性的视觉符号，代表着精神的解放与永恒的忠贞，广泛出现于动漫角色设计、风格化插画以及高端商业传播媒介中。这种转化不再局限于对情节的线性复述，而是转而聚焦于“蝶”之意象的隐喻张力，以及“女扮男装”所蕴含的身份复杂性。通过将叙事萃取为这些鲜明的视觉标识，流行文化确保了这一古老传说的持久活力，使其成为连接历史遗产与现代集体想象的桥梁，在不断的视觉重构中维系着深层的文化记忆。'}
             </p>
           </div>
           <ImagePlaceholder aspect="aspect-video" />
@@ -353,6 +353,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
             <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Gender & Identity' : '性别意识与身份认同'}</h3>
+            <p className="text-ink-soft font-serif text-base leading-loose">
+              {language === 'en'
+                ? 'Modern interpretations of the Liang–Zhu narrative increasingly utilize contemporary thematic lenses to explore concepts of gender fluidity, personal autonomy, and the resistance against systemic socio-cultural constraints. Rather than viewing Zhu Yingtai’s cross-dressing as a mere modern projection, contemporary scholarship contextualizes it within a long-standing cultural dialogue concerning the boundaries of identity and the performance of gender. This thematic translation connects the ancient legend to modern academic discourse on agency, highlighting Yingtai’s pursuit of education as a profound act of self-determination. By re-examining the tragedy through the prism of intersectional identity, the legend is transformed from a static relic into a living site of negotiation, where the struggle for individual agency resonates with the ongoing global pursuit of social and personal liberation.'
+                : '梁祝叙事的现代诠释日益运用当代视角来探讨性别流动性、个人自主权以及对社会文化体制性禁锢的抗争。当代学术界并未将祝英台的“女扮男装”视为某种现代思想的强加，而是将其置于关于身份界限与性别表演的深远文化对话中进行考察。这种主题上的转译将古老传说与现代关于“能动性”（Agency）的学术论述相连接，突显了祝英台对受教育权的追求本质上是一种深刻的自我决断行为。通过交叉性身份的棱镜重新审视这一悲剧，梁祝传说从一段静止的文化遗存转化为一个活态的意义协商场所，其中对个体能动性的追求与当代全球语境下对社会与个人解放的探索产生了深远共鸣。'}
+            </p>
           </div>
           <ImagePlaceholder aspect="aspect-square" />
         </div>
