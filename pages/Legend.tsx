@@ -1,15 +1,12 @@
 import React from 'react';
 import { Language } from '../types';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface LegendProps {
   language: Language;
 }
 
 const Legend: React.FC<LegendProps> = ({ language }) => {
-  const { scrollY } = useScroll();
-  const watermarkY = useTransform(scrollY, [0, 5000], [0, -200]);
-
   // Surgical UI Component: ImagePlaceholder with size scaling
   const ImagePlaceholder = ({ size = 'md', label = "IMAGE SLOT" }: { size?: 'sm' | 'md' | 'lg', label?: string }) => {
     const heightClass = size === 'sm' ? 'md:h-[320px]' : size === 'md' ? 'md:h-[480px]' : 'md:h-[650px]';
@@ -68,16 +65,6 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
   return (
     <div className="w-full bg-paper min-h-screen relative selection:bg-cinnabar selection:text-white pb-32 overflow-x-hidden">
       
-      {/* Editorial Watermark Background */}
-      <motion.div 
-        style={{ y: watermarkY }}
-        className="fixed inset-0 pointer-events-none opacity-[0.03] flex items-center justify-center z-0 overflow-hidden"
-      >
-        <span className="font-calligraphy text-[60vh] leading-none whitespace-nowrap -rotate-12 translate-x-1/4">
-          梁山伯与祝英台
-        </span>
-      </motion.div>
-
       {/* Hero Section - Editorial Style */}
       <header className="relative pt-40 pb-20 px-8 max-w-7xl mx-auto z-10">
         <div className="flex flex-col md:flex-row items-baseline gap-6 mb-12">
@@ -109,7 +96,7 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
             >
               {language === 'en' 
                 ? 'This legend, originating in the Eastern Jin and recorded in the Tang Dynasty, has endured for a millennium. It encompasses both the immediate affinity of soulmates and the fiery passion of love that transcends death. Through folk arts and literature, it has been refined into the most poignant butterfly symbol in cultural memory.' 
-                : '这是一个起源于东晋、记载于唐代，流传千年的爱情传说。它既包含一见如故的知己之情，也承载着生死相随的炽烈爱恋。其故事的核心骨架早见于古籍文献，后在戏曲、民间艺术与文学书写中不断被丰富与升华，最终化身为中华文化记忆中最为动人的“蝴蝶”象征。'}
+                : '这是一个起源于东晋、记载于唐代，流传千年的爱情传说。它既包含一见故的知己之情，也承载着生死相随的炽烈爱恋。其故事的核心骨架早见于古籍文献，后在戏曲、民间艺术与文学书写中不断被丰富与升华，最终化身为中华文化记忆中最为动人的“蝴蝶”象征。'}
             </motion.p>
           </div>
 
@@ -198,21 +185,7 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
                   >
                     {/* Task 1: Applied size="sm" for better textual balance */}
                     <ImagePlaceholder size="sm" />
-
-                    {/* Extended Decorative elements */}
-                    <div className={`absolute -bottom-8 ${index % 2 === 1 ? '-right-8' : '-left-8'} w-32 h-32 border border-cinnabar/15 rotate-12 opacity-60 z-0`}></div>
-                    <div className={`absolute -top-12 ${index % 2 === 1 ? '-left-6' : '-right-6'} w-24 h-24 bg-ink/5 rounded-full blur-3xl z-0`}></div>
                   </motion.div>
-
-                  {/* Caption for the Artwork */}
-                  <div className={`absolute bottom-0 translate-y-full pt-6 ${index % 2 === 1 ? 'left-0' : 'right-0'} max-w-[150px] z-30`}>
-                    <span className="text-[9px] font-bold tracking-[0.2em] text-ink/40 uppercase leading-tight block">
-                      Exhibition Plate No. 0{index + 1}
-                    </span>
-                    <span className="text-[8px] text-ink/30 font-serif italic block mt-1">
-                      Historical interpretation: {item.tag.en}
-                    </span>
-                  </div>
                </div>
             </div>
           </motion.section>

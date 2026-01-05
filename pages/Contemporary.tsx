@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Language } from '../types';
-import { Film, Monitor, Zap, ChevronRight, ArrowUpRight, ArrowLeft, Users, ChevronLeft } from 'lucide-react';
+import { Film, Monitor, Zap, ChevronRight, ArrowUpRight, ArrowLeft, Users, ChevronLeft, Database, Layers, Cpu, Compass } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ContemporaryProps {
@@ -119,6 +119,8 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
       >
         <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> {language === 'en' ? 'Back to Overview' : '返回总览'}
       </button>
+
+      {/* 1. Introduction Section */}
       <header className="mb-20">
         <ImagePlaceholder aspect="aspect-[21/9]" />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
@@ -130,7 +132,41 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
             : '通过沉浸式技术重新定义观众与传说之间的交互关系。'}
         </p>
       </header>
+
       <section className="space-y-32">
+        {/* 2. Site Background Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Site Background: Wansong Academy' : '遗址背景：万松书院'}</h3>
+            <p className="text-ink-soft font-serif text-base leading-loose">
+              {language === 'en'
+                ? 'The project centers on the historical architecture and landscape of the Wansong Academy in Hangzhou, serving as the physical anchor for the digital narrative.'
+                : '项目以杭州万松书院的历史建筑与园林景观为原型，作为数字叙事的物理锚点。'}
+            </p>
+          </div>
+          <ImagePlaceholder aspect="aspect-video" />
+        </div>
+
+        {/* 3. Scanned Heritage Elements Section */}
+        <div>
+          <h3 className="font-calligraphy text-3xl mb-12 text-center">{language === 'en' ? 'Scanned Heritage Elements' : '文化遗产数字化扫描'}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex flex-col gap-4">
+              <ImagePlaceholder aspect="aspect-square" />
+              <span className="text-xs font-bold tracking-widest text-ink/40 uppercase">{language === 'en' ? 'Architectural Structures' : '古建筑结构'}</span>
+            </div>
+            <div className="flex flex-col gap-4">
+              <ImagePlaceholder aspect="aspect-square" />
+              <span className="text-xs font-bold tracking-widest text-ink/40 uppercase">{language === 'en' ? 'Relic Artifacts' : '出土文物'}</span>
+            </div>
+            <div className="flex flex-col gap-4">
+              <ImagePlaceholder aspect="aspect-square" />
+              <span className="text-xs font-bold tracking-widest text-ink/40 uppercase">{language === 'en' ? 'Landscape Topography' : '园林地形'}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* 4. Project Overview Section */}
         <div className="p-12 bg-ink text-paper border border-white/10">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="flex-1">
@@ -146,6 +182,60 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
               <ImagePlaceholder aspect="aspect-square" />
             </div>
           </div>
+        </div>
+
+        {/* 5. Gameplay & Interaction Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
+          <ImagePlaceholder aspect="aspect-video" />
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <Compass className="text-cinnabar" size={24} />
+              <h3 className="font-calligraphy text-3xl">{language === 'en' ? 'Gameplay & Interaction' : '玩法与交互设计'}</h3>
+            </div>
+            <p className="text-ink-soft font-serif text-base leading-loose">
+              {language === 'en'
+                ? 'Users experience the legend through interactive storytelling, where environmental triggers react to the viewer\'s presence and choices.'
+                : '用户通过交互式叙事体验传说，环境触发器会根据观众的出现和选择做出反应。'}
+            </p>
+          </div>
+        </div>
+
+        {/* 6. Workflow & Technology Section */}
+        <div className="border-l border-ink/10 pl-12 py-8">
+          <h3 className="font-calligraphy text-3xl mb-12">{language === 'en' ? 'Workflow & Technology' : '制作流程与技术规格'}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="flex gap-6 items-start">
+              <Database className="text-gold flex-shrink-0" size={32} strokeWidth={1} />
+              <div>
+                <h4 className="font-bold text-xs tracking-widest uppercase mb-2">Photogrammetry</h4>
+                <p className="text-ink-soft text-sm font-serif">High-fidelity 3D scanning of physical sites.</p>
+              </div>
+            </div>
+            <div className="flex gap-6 items-start">
+              <Cpu className="text-gold flex-shrink-0" size={32} strokeWidth={1} />
+              <div>
+                <h4 className="font-bold text-xs tracking-widest uppercase mb-2">Unreal Engine 5</h4>
+                <p className="text-ink-soft text-sm font-serif">Lumen & Nanite technology for real-time fidelity.</p>
+              </div>
+            </div>
+            <div className="flex gap-6 items-start">
+              <Layers className="text-gold flex-shrink-0" size={32} strokeWidth={1} />
+              <div>
+                <h4 className="font-bold text-xs tracking-widest uppercase mb-2">Shader Development</h4>
+                <p className="text-ink-soft text-sm font-serif">Ink-wash inspired post-processing effects.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 7. Summary & Experience Outcome Section */}
+        <div className="text-center py-20 bg-paper/50">
+          <h3 className="font-calligraphy text-3xl mb-8">{language === 'en' ? 'Summary & Experience Outcome' : '总结与体验成效'}</h3>
+          <p className="text-ink-soft font-serif text-lg leading-loose max-w-3xl mx-auto italic">
+            {language === 'en'
+              ? 'By bridging the gap between historical accuracy and imaginative digital space, the project creates a new paradigm for cultural heritage preservation.'
+              : '通过架起历史真实性与虚构数字空间之间的桥梁，该项目为文化遗产保护创造了新的范式。'}
+          </p>
         </div>
       </section>
       <SubPageNav current="digital" />
