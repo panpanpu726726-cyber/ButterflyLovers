@@ -14,14 +14,13 @@ const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>('en');
   const [currentSection, setCurrentSection] = useState<SectionId>(SectionId.HOME);
 
-  // Scroll to top on section change
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentSection]);
-
   const toggleLanguage = () => {
     setLanguage(prev => prev === 'en' ? 'zh' : 'en');
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentSection]);
 
   const renderSection = () => {
     switch (currentSection) {
@@ -51,7 +50,6 @@ const App: React.FC = () => {
         onToggleLanguage={toggleLanguage}
       />
       
-      {/* Reduced padding-top to 16 (64px) to match the slimmed-down Navigation bar */}
       <main className="flex-grow pt-16">
         <Section key={currentSection}>
           {renderSection()}

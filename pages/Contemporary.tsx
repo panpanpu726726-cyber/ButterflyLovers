@@ -300,7 +300,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
           </p>
         </div>
       </section>
-      <SubPageNav current="stage" />
+      <SubPageNav current="digital" />
     </div>
   );
 
