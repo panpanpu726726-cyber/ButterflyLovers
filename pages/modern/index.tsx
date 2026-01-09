@@ -72,7 +72,7 @@ const Overview: React.FC<OverviewProps> = ({ language }) => {
             className="group cursor-pointer bg-white border border-ink/5 p-8 shadow-sm hover:border-ink/20 transition-all flex flex-col"
           >
             <div className="mb-6">
-              <ImagePlaceholder aspect="aspect-[16/9]" />
+              <ImagePlaceholder aspect="aspect-[3/2]" />
             </div>
             <div className="mb-8">{module.icon}</div>
             <h3 className="font-calligraphy text-4xl mb-6 text-ink">{language === 'en' ? module.title.en : module.title.zh}</h3>

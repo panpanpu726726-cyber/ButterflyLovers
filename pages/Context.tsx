@@ -14,7 +14,7 @@ const Context: React.FC<ContextProps> = ({ language }) => {
       <section className="relative w-full py-32 px-6 flex flex-col items-center justify-center border-b border-ink/5 bg-paper/50 overflow-hidden">
         {/* Visual Background Placeholder Structure */}
         <figure className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute inset-0 opacity-[0.03] grayscale brightness-110">
+          <div className="absolute inset-0 opacity-[0.4] grayscale brightness-110">
             <img src="/images/placeholder.jpg" alt="Historical atmosphere placeholder" className="w-full h-full object-cover" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-paper/80 via-transparent to-paper"></div>
@@ -94,7 +94,7 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
             <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
+               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -117,7 +117,7 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
             <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
+               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -140,7 +140,7 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
             <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
+               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -163,7 +163,7 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
             <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
+               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -186,7 +186,7 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
             <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
+               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -209,7 +209,7 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
             <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
+               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">

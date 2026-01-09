@@ -89,21 +89,21 @@ const Digital: React.FC<DigitalProps> = ({ language }) => {
                 : '万松书院始建于1498年（明弘治十一年），杭州市政府于2001年7月启动复建工程，现规划总面积约50,000平方米。作为梁祝“三载同窗”叙事的重要物理场域，它连接了文学传统与真实地理空间。'}
             </p>
           </div>
-          <ImagePlaceholder aspect="aspect-video" />
+          <ImagePlaceholder aspect="aspect-[3/2]" />
         </div>
 
         <div>
           <h3 className="font-calligraphy text-3xl mb-12 text-center">{language === 'en' ? 'Digital Heritage Preservation' : '文化遗产数字化保护'}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             <div className="flex flex-col gap-6">
-              <ImagePlaceholder aspect="aspect-video" />
+              <ImagePlaceholder aspect="aspect-[3/2]" />
               <div>
                 <h4 className="font-bold text-xs tracking-widest uppercase mb-2 text-gold">{language === 'en' ? 'Three Memorial Archways' : '“品字”牌坊'}</h4>
                 <p className="text-ink-soft text-sm font-serif">{language === 'en' ? 'Digital reconstruction of the ceremonial entrance, emphasizing architectural symmetry and historical transition.' : '入口仪式空间的数字重建，强调建筑对称性与历史时空的转场感。'}</p>
               </div>
             </div>
             <div className="flex flex-col gap-6">
-              <ImagePlaceholder aspect="aspect-video" />
+              <ImagePlaceholder aspect="aspect-[3/2]" />
               <div>
                 <h4 className="font-bold text-xs tracking-widest uppercase mb-2 text-gold">{language === 'en' ? '“Eternal Model Teacher” Stele' : '“万世师表”石碑'}</h4>
                 <p className="text-ink-soft text-sm font-serif">{language === 'en' ? 'High-fidelity scan of the core artifact, preserving the texture and calligraphic weight of the Confucian legacy.' : '核心文物的精细扫描，完整保留了儒家遗产的材质肌理与书法力道。'}</p>
@@ -181,7 +181,7 @@ const Digital: React.FC<DigitalProps> = ({ language }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
-          <ImagePlaceholder aspect="aspect-video" />
+          <ImagePlaceholder aspect="aspect-[3/2]" />
           <div>
             <div className="flex items-center gap-3 mb-6">
               <Compass className="text-cinnabar" size={24} />
