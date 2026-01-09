@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Language } from '../types';
-import { Film, Monitor, Zap, ChevronRight, ArrowUpRight, ArrowLeft, Users, ChevronLeft, Database, Layers, Cpu, Compass } from 'lucide-react';
+import { Film, Monitor, Zap, ChevronRight, ArrowUpRight, ArrowLeft, Users, ChevronLeft, Database, Compass } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ContemporaryProps {
