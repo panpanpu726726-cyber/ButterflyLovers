@@ -114,7 +114,11 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
               transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
               className="w-full aspect-square md:absolute md:-top-32 md:-right-12 z-0"
             >
-               <ImagePlaceholder size="md" />
+               <img
+                 src="/assets/images/legend/characters.png"
+                 alt="Legend of Liang Zhu - Characters"
+                 className="w-full h-full object-cover"
+              />
             </motion.div>
           </div>
         </div>
