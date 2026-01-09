@@ -200,7 +200,7 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                    <ImagePlaceholder size="sm" />
+                      <ImagePlaceholder size="sm" />
                     )}
                   </motion.div>
                </div>
