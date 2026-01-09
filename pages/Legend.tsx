@@ -63,7 +63,10 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
   ];
 
   return (
-    <div className="w-full bg-paper min-h-screen relative selection:bg-cinnabar selection:text-white pb-32 overflow-x-hidden">
+    <div 
+      className="w-full min-h-screen relative selection:bg-cinnabar selection:text-white pb-32 overflow-x-hidden"
+      style={{ background: 'linear-gradient(to bottom, rgba(238,232,222,0.3) 0%, rgba(255,229,131,0.3) 19%, rgba(184,206,134,0.8) 38%, rgba(111,167,122,0.9) 49%, rgba(84,153,118,0.95) 64%, rgba(123,148,102,1) 75%, rgba(119,130,87,1) 81%, rgba(104,112,80,1) 88%, rgba(56,60,44,1) 97%)' }}
+    >
       
       {/* Hero Section - Editorial Style */}
       <header className="relative pt-40 pb-20 px-8 max-w-7xl mx-auto z-10">
@@ -96,7 +99,7 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
             >
               {language === 'en' 
                 ? 'This legend, originating in the Eastern Jin and recorded in the Tang Dynasty, has endured for a millennium. It encompasses both the immediate affinity of soulmates and the fiery passion of love that transcends death. Through folk arts and literature, it has been refined into the most poignant butterfly symbol in cultural memory.' 
-                : '这是一个起源于东晋、记载于唐代，流传千年的爱情传说。它既包含一见故的知己之情，也承载着生死相随的炽烈爱恋。其故事的核心骨架早见于古籍文献，后在戏曲、民间艺术与文学书写中不断被丰富与升华，最终化身为中华文化记忆中最为动人的“蝴蝶”象征。'}
+                : '这是一个起源于东晋、记载于唐代，流传千年的爱情传说。它既包含一见如故的知己之情，也承载着生死相随的炽烈爱恋。其故事的核心骨架早见于古籍文献，后在戏曲、民间艺术与文学书写中不断被丰富与升华，最终化身为中华文化记忆中最为动人的“蝴蝶”象征。'}
             </motion.p>
           </div>
 
@@ -200,7 +203,7 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.1 }}
           transition={{ duration: 1.8, ease: "easeOut" }}
-          className="w-full aspect-[21/9] mb-32 relative overflow-hidden group"
+          className="w-full aspect-[21/9] mb-32 relative overflow-hidden group ml-0 mr-auto text-left"
         >
            <ImagePlaceholder size="lg" label="FINAL IMAGE SLOT" />
         </motion.div>
@@ -211,7 +214,7 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
             whileInView={{ opacity: 0.7 }}
             viewport={{ once: false }}
             transition={{ duration: 1.5 }}
-            className="text-ink-soft font-serif text-xl md:text-2xl italic leading-relaxed opacity-70 px-6"
+            className="text-white font-serif text-xl md:text-2xl italic leading-relaxed opacity-70 px-6"
           >
             {language === 'en' 
               ? 'In what historical context is this moving legend rooted? How has it been retold through opera, music, and film? And what new understandings does it hold in a contemporary world?' 

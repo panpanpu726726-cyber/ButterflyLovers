@@ -9,7 +9,10 @@ interface ContextProps {
 
 const Context: React.FC<ContextProps> = ({ language }) => {
   return (
-    <div className="w-full bg-paper min-h-screen relative overflow-hidden">
+    <div 
+      className="w-full min-h-screen relative overflow-hidden"
+      style={{ background: 'linear-gradient(to bottom, rgba(108, 129, 195, 0.1) 0%, rgba(108, 194, 195, 0.22) 50%, rgba(108, 194, 195, 0.4) 100%), #F4F1E6' }}
+    >
       {/* 1. Cinematic Opening Module */}
       <section className="relative w-full py-32 px-6 flex flex-col items-center justify-center border-b border-ink/5 bg-paper/50 overflow-hidden">
         {/* Visual Background Placeholder Structure */}
