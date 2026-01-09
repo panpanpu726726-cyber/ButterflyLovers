@@ -193,7 +193,15 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
                     className="w-full h-full relative group overflow-visible"
                   >
                     {/* Task 1: Applied size="sm" for better textual balance */}
+                    {index === 0 ? (
+                      <img
+                        src="/assets/images/legend/legend-ch1.png"
+                        alt="Legend of Liang Zhu – Chapter 1"
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
                     <ImagePlaceholder size="sm" />
+                    )}
                   </motion.div>
                </div>
             </div>
