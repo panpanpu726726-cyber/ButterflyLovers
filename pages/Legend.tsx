@@ -183,7 +183,7 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
 
             {/* Content-level images using size="sm" to prevent overpowering text */}
             <div className="flex-none w-full md:w-[50%] lg:w-[45%] relative">
-               <div className={`relative aspect-[4/5] w-full flex items-center justify-center p-0 ${index % 2 === 1 ? 'md:-translate-x-6' : 'md:translate-x-6'}`}>
+               <div className={`relative aspect-video w-full flex items-center justify-center p-0 ${index % 2 === 1 ? 'md:-translate-x-6' : 'md:translate-x-6'}`}>
                   
                   <motion.div 
                     initial={{ opacity: 0, y: 40, scale: 0.98 }}
