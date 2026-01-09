@@ -561,7 +561,10 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
   };
 
   return (
-    <div className="w-full bg-paper min-h-screen relative overflow-hidden">
+    <div 
+      className="w-full min-h-screen relative overflow-hidden"
+      style={{ background: activeView === 'overview' ? 'linear-gradient(to bottom, #ECE3D9, #DCCAB8)' : '#E9DCC7' }}
+    >
       {/* Background Subtle Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-jade/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-cinnabar/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none" />
