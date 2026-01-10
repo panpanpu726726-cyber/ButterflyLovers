@@ -237,7 +237,11 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
           transition={{ duration: 1.8, ease: "easeOut" }}
           className="w-full max-w-6xl mr-auto aspect-[21/9] mb-32 relative overflow-hidden group"
         >
-           <ImagePlaceholder size="lg" label="FINAL IMAGE SLOT" />
+           <img
+             src="/assets/images/legend/legend-final.png"
+             alt="Legend of Liang Zhu – Epilogue"
+             className="w-full h-full object-cover"
+          />
         </motion.div>
 
         <div className="max-w-2xl mx-auto space-y-10">
