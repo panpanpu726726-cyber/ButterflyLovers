@@ -88,7 +88,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
     <div className="space-y-24 py-10">
       <header className="border-b border-ink/10 pb-12">
         <div className="w-full aspect-[21/9] bg-ink/5 border border-ink/10 mb-12 flex items-center justify-center overflow-hidden">
-          <img src="/images/placeholder.jpg" alt="Yue Opera Visual Placeholder" className="w-full h-full object-cover opacity-30" />
+          <img src="/assets/images/heritage/heritage-card-yue-opera" alt="Yue Opera Visual Placeholder" className="w-full h-full object-cover" />
         </div>
         <p className="text-[10px] text-ink/40 font-serif italic mt-[-2rem] mb-12">
           {language === 'en' 
