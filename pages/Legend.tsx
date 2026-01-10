@@ -205,6 +205,13 @@ const Legend: React.FC<LegendProps> = ({ language }) => {
                         alt="Legend of Liang Zhu – Chapter 2"
                         className="w-full h-full object-cover"
                       />
+                    ) : index === 2 ? (
+                      <img
+                        src="/assets/images/legend/legend-ch3.png"
+                        alt="Legend of Liang Zhu – Chapter 3"
+                        className="w-full h-full object-cover"
+                      />
+                        
                     ) : (
                       <ImagePlaceholder size="sm" />
                     )}
