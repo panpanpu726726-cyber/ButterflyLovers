@@ -364,7 +364,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
       <SubViewNavigation current="musical-works" />
     </div>
   );
-
+  }；
   // Sub-View 3: Crafts
   const CraftsDetail = () => (
     <div className="space-y-24 py-10">
