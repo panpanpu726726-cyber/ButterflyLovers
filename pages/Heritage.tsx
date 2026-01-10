@@ -247,7 +247,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
     <div className="space-y-24 py-10">
       <header className="border-b border-ink/10 pb-12">
         <div className="w-full aspect-[21/9] bg-ink/5 border border-ink/10 mb-12 flex items-center justify-center overflow-hidden">
-          <img src="/images/placeholder.jpg" alt="Musical Performance Placeholder" className="w-full h-full object-cover opacity-30" />
+          <img src="/assets/images/heritage/musical-works-overview" alt="Musical Performance" className="w-full h-full object-cover" />
         </div>
         <h2 className={`text-ink mb-6 ${language === 'zh' ? 'font-calligraphy text-6xl' : 'font-serif text-5xl italic font-medium'}`}>
           {language === 'en' ? 'Music: From Folk to Symphony' : '梁祝音乐：从民间旋律到世界乐章'}
@@ -337,7 +337,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
           ].map((item, idx) => (
             <div key={idx} className="p-6 border border-ink/5 bg-paper flex flex-col gap-4">
               <div className="w-full aspect-square bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden">
-                <img src="/images/placeholder.jpg" alt="Music Logic Placeholder" className="w-full h-full object-cover opacity-10" />
+                <img src="/assets/images/heritages/music-works01" alt="Music Logic Placeholder" className="w-full h-full object-cover" />
               </div>
               <h5 className="font-bold text-[10px] uppercase tracking-widest text-gold">{item.tag}</h5>
               <p className="text-sm text-ink-soft leading-relaxed">{language === 'en' ? item.desc.en : item.desc.zh}</p>
