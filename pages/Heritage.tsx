@@ -587,7 +587,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
                 </h2>
                 <div className="w-24 h-[0.5px] bg-ink/20 mx-auto mb-10"></div>
                 <div className="w-full aspect-[21/9] bg-ink/5 border border-ink/10 mb-12 flex items-center justify-center overflow-hidden">
-                  <img src="/assets/images/heritage/heritage-overview.png" alt="Heritage Overview Placeholder" className="w-full h-full object-cover opacity-20" />
+                  <img src="/assets/images/heritage/heritage-overview.png" alt="Heritage Overview Placeholder" className="w-full h-full object-cover" />
                 </div>
                 <p className="text-ink-soft font-serif text-lg md:text-xl max-w-3xl mx-auto leading-loose italic opacity-80">
                   {language === 'en'
