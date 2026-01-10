@@ -611,8 +611,8 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
                       onClick={() => setActiveView(carrier.id as SubView)}
                       className="group cursor-pointer bg-paper border border-ink/5 p-10 flex flex-col items-center text-center shadow-sm relative overflow-hidden transition-all hover:border-ink/20"
                     >
-                      <div className="w-full aspect-video mb-8 bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden">
-                        <img src={carrier.image} alt={carrier.title} className="w-full h-full object-cover" />
+                      <div className="w-full aspect-video mb-8 bg-ink/5 border border-ink/10 overflow-hidden">
+                        <img src={carrier.image} alt={language === 'en' ? carrier.title.en : carrier.title.zh} className="w-full h-full object-cover" />
                       </div>
                       <div className={`text-${carrier.color}/60 mb-4 group-hover:scale-110 transition-transform`}>
                         {React.cloneElement(carrier.icon as any, { size: 32, strokeWidth: 1 })}
