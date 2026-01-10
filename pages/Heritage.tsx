@@ -600,10 +600,10 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
               <section className="mb-40">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                   {[
-                    { id: 'yue-opera', icon: <Mic2 />, title: { en: 'Yue Opera', zh: '越剧艺术' }, color: 'cinnabar', academic: 'Stage & Performance', desc: { en: 'The definitive stage medium with soft melodies and poetic lyrics.', zh: '以婉转唱腔和全女班表演著称，是梁祝传说最具代表性的舞台艺术形态。' } },
-                    { id: 'musical-works', icon: <Music />, title: { en: 'Musical Works', zh: '音乐传承' }, color: 'jade', academic: 'Symphonic Adaptation', desc: { en: 'From folk pentatonic scales to the world-renowned violin concerto.', zh: '民间旋律与现代交响乐的融合，使梁祝跨越国界，成为全球共鸣的艺术乐章。' } },
-                    { id: 'folk-crafts', icon: <Sparkles />, title: { en: 'Folk Crafts', zh: '民间工艺' }, color: 'gold', academic: 'Visual Symbolism', desc: { en: 'Visual totems in embroidery, paper-cutting, and regional crafts.', zh: '梁祝形象作为视觉符号，在剪纸、刺绣等工艺中完成了跨越百年的民俗审美传承。' } },
-                    { id: 'oral-tradition', icon: <Scroll />, title: { en: 'Oral Tradition', zh: '口传文学' }, color: 'ink', academic: 'Living Orality', desc: { en: 'The bedrock of stories preserved through regional ballads and storytellers.', zh: '散落于民间的说唱与歌谣，是传说最深厚的根基，承载了最鲜活的地方记忆。' } },
+                    { id: 'yue-opera', icon: <Mic2 />, image: '/assets/images/heritage/heritage-card-yue-opera.png', title: { en: 'Yue Opera', zh: '越剧艺术' }, color: 'cinnabar', academic: 'Stage & Performance', desc: { en: 'The definitive stage medium with soft melodies and poetic lyrics.', zh: '以婉转唱腔和全女班表演著称，是梁祝传说最具代表性的舞台艺术形态。' } },
+                    { id: 'musical-works', icon: <Music />, image: '/assets/images/heritage/heritage-card-musical-works.png',title: { en: 'Musical Works', zh: '音乐传承' }, color: 'jade', academic: 'Symphonic Adaptation', desc: { en: 'From folk pentatonic scales to the world-renowned violin concerto.', zh: '民间旋律与现代交响乐的融合，使梁祝跨越国界，成为全球共鸣的艺术乐章。' } },
+                    { id: 'folk-crafts', icon: <Sparkles />, image: '/assets/images/heritage/heritage-card-folk-crafts.png',title: { en: 'Folk Crafts', zh: '民间工艺' }, color: 'gold', academic: 'Visual Symbolism', desc: { en: 'Visual totems in embroidery, paper-cutting, and regional crafts.', zh: '梁祝形象作为视觉符号，在剪纸、刺绣等工艺中完成了跨越百年的民俗审美传承。' } },
+                    { id: 'oral-tradition', icon: <Scroll />, image: '/assets/images/heritage/heritage-card-oral-tradition.png',title: { en: 'Oral Tradition', zh: '口传文学' }, color: 'ink', academic: 'Living Orality', desc: { en: 'The bedrock of stories preserved through regional ballads and storytellers.', zh: '散落于民间的说唱与歌谣，是传说最深厚的根基，承载了最鲜活的地方记忆。' } },
                   ].map((carrier) => (
                     <motion.div 
                       key={carrier.id}
@@ -612,7 +612,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
                       className="group cursor-pointer bg-paper border border-ink/5 p-10 flex flex-col items-center text-center shadow-sm relative overflow-hidden transition-all hover:border-ink/20"
                     >
                       <div className="w-full aspect-video mb-8 bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden">
-                        <img src="/images/placeholder.jpg" alt="Carrier visual placeholder" className="w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity" />
+                        <img src="/assets/images/heritage/heritage-card-yue-opera.png" alt="Carrier visual placeholder" className="w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity" />
                       </div>
                       <div className={`text-${carrier.color}/60 mb-4 group-hover:scale-110 transition-transform`}>
                         {React.cloneElement(carrier.icon as any, { size: 32, strokeWidth: 1 })}
