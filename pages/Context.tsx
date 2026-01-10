@@ -103,7 +103,11 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
             <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700" />
+               <img 
+                 src="/assets/images/history/history-card-01.png"
+                 alt="Eastern Jin social hierarchy"
+                 className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700"
+               />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -126,7 +130,11 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
             <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700" />
+               <img
+                 src="/assets/images/history/history-card-02.png"
+                 alt="Wei–Jin intellectual culture"
+                 className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700"
+               />   
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -149,7 +157,11 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
             <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700" />
+               <img
+                 src="/assets/images/history/history-card-03.png"
+                 alt="Women traveling for education"
+                 className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700"
+               />  
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -172,7 +184,11 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
             <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700" />
+               <img
+                 src="/assets/images/history/history-card-04.png"
+                 alt="Academy life in Eastern Jin"
+                 className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700"
+               />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -195,7 +211,11 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
             <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700" />
+               <img
+                 src="/assets/images/history/history-card-05.png"
+                 alt="Arranged marriage ethics"
+                 className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700"
+               />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
@@ -218,7 +238,11 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             className="context-card group bg-white/30 border border-ink/5 relative overflow-hidden transition-all duration-500 hover:border-cinnabar/20 hover:bg-white/60"
           >
             <div className="w-full aspect-[21/9] bg-ink/[0.03] border-b border-ink/5 relative overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700" />
+               <img
+                 src="/assets/images/history/history-card-06.png"
+                 alt="Soul belief and spirit marriage"
+                 className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700"
+               />
             </div>
             <div className="p-8 pt-6">
               <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:scale-110 transition-transform">
