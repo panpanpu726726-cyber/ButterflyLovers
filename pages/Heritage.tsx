@@ -19,9 +19,9 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
 
   // Dynamic image list for the sliders
   const interpretationImages = [
-    "/assets/images/heritage/yue-opera/yue-opera-traditions01.png",
-    "/assets/images/heritage/yue-opera/yue-opera-traditions02.png",
-    "/assets/images/heritage/yue-opera/yue-opera-traditions03.png"
+    "/assets/images/heritage/yue-opera-traditions01.png",
+    "/assets/images/heritage/yue-opera-traditions02.png",
+    "/assets/images/heritage/yue-opera-traditions03.png"
   ];
 
   const paperCuttingImages = [
