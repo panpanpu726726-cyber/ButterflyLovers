@@ -20,7 +20,11 @@ const Context: React.FC<ContextProps> = ({ language }) => {
         {/* Visual Background Placeholder Structure */}
         <figure className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute inset-0 opacity-[0.4] grayscale brightness-110">
-            <img src="/images/placeholder.jpg" alt="Historical atmosphere placeholder" className="w-full h-full object-cover" />
+            <img 
+              src="/assets/images/history/history-background.png"
+              alt="Eastern Jin historical atmosphere"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-paper/80 via-transparent to-paper"></div>
           {/* Abstract geometric structure acting as an architectural placeholder */}
