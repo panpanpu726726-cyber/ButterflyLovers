@@ -88,7 +88,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
     <div className="space-y-24 py-10">
       <header className="border-b border-ink/10 pb-12">
         <div className="w-full aspect-[21/9] bg-ink/5 border border-ink/10 mb-12 flex items-center justify-center overflow-hidden">
-          <img src="/assets/images/heritage/heritage-card-yue-opera" alt="Yue Opera Visual Placeholder" className="w-full h-full object-cover" />
+          <img src="/assets/images/heritage/heritage-card-yue-opera.png" alt="Yue Opera Visual Placeholder" className="w-full h-full object-cover" />
         </div>
         <p className="text-[10px] text-ink/40 font-serif italic mt-[-2rem] mb-12">
           {language === 'en' 
@@ -612,7 +612,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
                       className="group cursor-pointer bg-paper border border-ink/5 p-10 flex flex-col items-center text-center shadow-sm relative overflow-hidden transition-all hover:border-ink/20"
                     >
                       <div className="w-full aspect-video mb-8 bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden">
-                        <img src="/assets/images/heritage/heritage-card-yue-opera.png" alt="Carrier visual placeholder" className="w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity" />
+                        <img src={carrier.image} alt={Carrier.title} className="w-full h-full object-cover" />
                       </div>
                       <div className={`text-${carrier.color}/60 mb-4 group-hover:scale-110 transition-transform`}>
                         {React.cloneElement(carrier.icon as any, { size: 32, strokeWidth: 1 })}
