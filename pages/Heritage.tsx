@@ -19,9 +19,9 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
 
   // Dynamic image list for the sliders
   const interpretationImages = [
-    "/images/placeholder.jpg",
-    "/images/placeholder.jpg",
-    "/images/placeholder.jpg"
+    "/assets/images/heritage/yue-opera/yue-opera-traditions01.png",
+    "/assets/images/heritage/yue-opera/yue-opera-traditions02.png",
+    "/assets/images/heritage/yue-opera/yue-opera-traditions03.png"
   ];
 
   const paperCuttingImages = [
@@ -140,15 +140,15 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            <div className="relative group w-full aspect-video border border-ink/10 bg-ink/5 overflow-hidden">
+            <div className="relative w-full aspect-video border border-ink/10 overflow-hidden">
               {/* CSS Scroll Snap Slider */}
               <div className="w-full h-full flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
                 {interpretationImages.map((src, idx) => (
-                  <div key={idx} className="flex-shrink-0 w-full h-full snap-start flex items-center justify-center">
+                  <div key={idx} className="flex-shrink-0 w-full h-full snap-start">
                     <img 
                       src={src} 
                       alt={`Interpretive Variation ${idx + 1}`} 
-                      className="w-full h-full object-cover opacity-20" 
+                      className="w-full h-full object-cover" 
                     />
                   </div>
                 ))}
