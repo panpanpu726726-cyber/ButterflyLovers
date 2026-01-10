@@ -265,7 +265,11 @@ const Context: React.FC<ContextProps> = ({ language }) => {
             className="md:col-span-2 lg:col-span-3 context-card group flex flex-col lg:flex-row gap-8 bg-paper border border-ink/10 p-8 shadow-sm transition-all duration-700 hover:border-gold/30"
           >
             <figure className="lg:w-1/2 aspect-video overflow-hidden grayscale opacity-80 group-hover:grayscale-0 transition-all duration-1000">
-               <img src="/images/placeholder.jpg" alt="Metamorphosis visualization placeholder" className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform" />
+               <img 
+                 src="/assets/images/history/history-featured.png"
+                 alt="Butterfly metamorphosis symbolism"
+                 className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform"
+               />
             </figure>
             <div className="lg:w-1/2 flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-4">
