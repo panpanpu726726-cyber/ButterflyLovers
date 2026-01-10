@@ -199,8 +199,8 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
         <h4 className="font-calligraphy text-2xl text-cinnabar mb-8">{language === 'en' ? 'Artistic Features' : '核心艺术特征'}</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-6">
-            <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="Stage Feature Placeholder" className="w-full h-full object-cover opacity-20" />
+            <div className="relative w-full aspect-video border border-ink/10 overflow-hidden">
+               <img src="/assets/images/heritage/yue-opera-stage.png" alt="Yue Opera Performance Scene" className="w-full h-full object-cover" />
             </div>
             <p className="text-[10px] text-ink/40 font-serif italic mt-1">
               {language === 'en' 
@@ -213,8 +213,8 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
             </div>
           </div>
           <div className="space-y-6">
-            <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden">
-               <img src="/images/placeholder.jpg" alt="Lyric Feature Placeholder" className="w-full h-full object-cover opacity-20" />
+            <div className="relative w-full aspect-[21/9] border border-ink/10 overflow-hidden">
+               <img src="/assets/images/heritage/yue-opera-lyric.png" alt="Yue Opera Culture Context" className="w-full h-full object-cover" />
             </div>
             <p className="text-[10px] text-ink/40 font-serif italic mt-1">
               {language === 'en' 
