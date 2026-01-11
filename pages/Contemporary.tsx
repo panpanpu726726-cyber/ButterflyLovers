@@ -14,7 +14,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
 
   // Ensure scroll to top when changing internal views
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, [activeSubPage]);
 
   // Sub-page Bottom Navigation
@@ -96,7 +96,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
           />
        </div>
 
-       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center md:flex-row-reverse">
           <img
             src="/assets/images/modern/stage/stage-overview.png"
             alt="Stage & Cinema"
@@ -180,13 +180,10 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                 alt="Archway Scan"
                 className="w-full h-full object-cover"
               />
-              </div>
-                <h4 className="font-bold text-xs tracking-widest uppercase mb-2 text-gold">
-                  {language === 'en' ? 'Three Memorial Archways' : '“品字”牌坊'}
-                </h4>
-                <p className="text-ink-soft text-sm font-serif">{language === 'en' ? 'Digital reconstruction of the ceremonial entrance, emphasizing architectural symmetry and historical transition.' : '入口仪式空间的数字重建，强调建筑对称性与历史时空的转场感。'}</p>
-              </div>
+              <h4 className="font-bold text-xs tracking-widest uppercase mb-2 text-gold">{language === 'en' ? 'Three Memorial Archways' : '“品字”牌坊'}</h4>
+              <p className="text-ink-soft text-sm font-serif">{language === 'en' ? 'Digital reconstruction of the ceremonial entrance, emphasizing architectural symmetry and historical transition.' : '入口仪式空间的数字重建，强调建筑对称性与历史时空的转场感。'}</p>
             </div>
+          </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <img
                 src="/assets/images/modern/digital/digital-0202.png"
@@ -269,7 +266,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                 {/* Visual Indicators */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10 pointer-events-none">
                   {[1, 2, 3].map((num) => (
-                    <div key={num} className="w-1.5 h-1.5 rounded-full bg-paper/20"></div>
+                    <div key={num} className={`w-1.5 h-1.5 rounded-full ${activeSlide === num ? 'bg-gold' : 'bg-paper/20'}`}></div>
                   ))}
                 </div>
                 <div className="absolute top-4 right-4 z-10">
