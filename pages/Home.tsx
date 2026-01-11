@@ -10,11 +10,11 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
   // Navigation mapping for hotspots
   const navigationMap = [
-    { id: SectionId.LEGEND, label: { en: 'The Legend', zh: '传说' }, x: '4.7%', y: '52%',},
-    { id: SectionId.HISTORY, label: { en: 'History', zh: '背景' }, x: '20.3%', y: '70.6%',},
-    { id: SectionId.HERITAGE, label: { en: 'Heritage', zh: '非遗' }, x: '50.6%', y: '67.7%',},
-    { id: SectionId.MODERN, label: { en: 'Modern', zh: '演绎' }, x: '80.4%', y: '27.9%',},
-    { id: SectionId.RESOURCES, label: { en: 'Resources', zh: '资料' }, x: '93.9%', y: '61.9%'},
+    { id: SectionId.LEGEND, label: { en: 'The Legend', zh: '传说' }, x: '20.3%', y: '70.6%',},
+    { id: SectionId.HISTORY, label: { en: 'History', zh: '背景' }, x: '35.9%', y: '67.7%',},
+    { id: SectionId.HERITAGE, label: { en: 'Heritage', zh: '非遗' }, x: '65.3%', y: '61.3%',},
+    { id: SectionId.MODERN, label: { en: 'Modern', zh: '演绎' }, x: '79.5%', y: '27.5%',},
+    { id: SectionId.RESOURCES, label: { en: 'Resources', zh: '资料' }, x: '92%', y: '63%'},
   ];
 
   return (
