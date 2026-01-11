@@ -466,8 +466,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                   desc: { en: 'Sociological lenses.', zh: '社会学视角。' } 
                 }
               ].map((module) => (
-                <div 
-                  key={module.id}
+                <div key={module.id}
                   onClick={() => setActiveSubPage(module.id as SubPageId)}
                   className="group cursor-pointer bg-white border border-ink/5 p-8 shadow-sm hover:border-ink/20 transition-all flex flex-col"
                 >
@@ -502,7 +501,9 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                     )} 
                   </div>
                   <div className="mb-8">{module.icon}</div>
-                  <h3 className="font-calligraphy text-4xl mb-6 text-ink">{language === 'en' ? module.title.en : module.title.zh}</h3>
+                  <h3 className="font-calligraphy text-4xl mb-6 text-ink">
+                    {language === 'en' ? module.title.en : module.title.zh}
+                  </h3>
                   <p className="text-ink-soft font-serif text-base leading-loose mb-8 flex-grow">
                     {language === 'en' ? module.desc.en : module.desc.zh}
                   </p>
