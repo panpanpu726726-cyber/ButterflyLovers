@@ -115,7 +115,6 @@ const Resources: React.FC<ResourcesProps> = ({ language }) => {
         }}
         links={[
           { label: language === 'en' ? 'China Intangible Heritage Net' : '中国非物质文化遗产网', url: 'https://www.ihchina.cn/' },
-          { label: language === 'en' ? 'Zhejiang Provincial Museum' : '浙江省博物馆官方平台', url: 'http://www.zjmuseum.com.cn/' },
           { label: language === 'en' ? 'Ningbo Museum' : '宁波博物馆', url: 'https://www.nbmuseum.cn/' }
         ]}
       />
