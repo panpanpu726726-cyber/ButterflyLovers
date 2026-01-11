@@ -134,7 +134,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
 
       {/* 1. Introduction Section */}
       <header className="mb-20">
-        <ImagePlaceholder aspect="aspect-[21/9]" />
+        <img
+          src="/assets/images/modern/digital/digital-overview.png"
+          alt={language === 'en' ? 'Digital Arts & Spatial Interaction' : '数字艺术与空间交互'}
+          className="w-full aspect-[21/9] object-cover border border-ink/5"
+        />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Digital Arts & Spatial Interaction' : '数字艺术与空间交互'}
         </h2>
@@ -156,7 +160,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                 : '万松书院始建于1498年（明弘治十一年），杭州市政府于2001年7月启动复建工程，现规划总面积约50,000平方米。作为梁祝“三载同窗”叙事的重要物理场域，它连接了文学传统与真实地理空间。'}
             </p>
           </div>
-          <ImagePlaceholder aspect="aspect-video" />
+          <img
+            src="/assets/images/modern/digital/digital-01.jpg"
+            alt={language === 'en' ? 'Wansong Academy Site Context' : '万松书院场域背景'}
+            className="w-full aspect-video object-cover border border-ink/5"
+          />
         </div>
 
         {/* 3. Scanned Heritage Elements Section */}
@@ -164,14 +172,22 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
           <h3 className="font-calligraphy text-3xl mb-12 text-center">{language === 'en' ? 'Digital Heritage Preservation' : '文化遗产数字化保护'}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             <div className="flex flex-col gap-6">
-              <ImagePlaceholder aspect="aspect-video" />
+              <img
+                src="/assets/images/modern/digital/digital-0201.png"
+                alt={language === 'en' ? 'Three Memorial Archways Scan' : '品字牌坊数字扫描'}
+                className="w-full aspect-video object-cover border border-ink/5"
+              />
               <div>
                 <h4 className="font-bold text-xs tracking-widest uppercase mb-2 text-gold">{language === 'en' ? 'Three Memorial Archways' : '“品字”牌坊'}</h4>
                 <p className="text-ink-soft text-sm font-serif">{language === 'en' ? 'Digital reconstruction of the ceremonial entrance, emphasizing architectural symmetry and historical transition.' : '入口仪式空间的数字重建，强调建筑对称性与历史时空的转场感。'}</p>
               </div>
             </div>
             <div className="flex flex-col gap-6">
-              <ImagePlaceholder aspect="aspect-video" />
+              <img
+                src="/assets/images/modern/digital/digital-0202.png"
+                alt={language === 'en' ? 'Eternal Model Teacher Stele Scan' : '万世师表石碑扫描'}
+                className="w-full aspect-video object-cover border border-ink/5"
+              />
               <div>
                 <h4 className="font-bold text-xs tracking-widest uppercase mb-2 text-gold">{language === 'en' ? '“Eternal Model Teacher” Stele' : '“万世师表”石碑'}</h4>
                 <p className="text-ink-soft text-sm font-serif">{language === 'en' ? 'High-fidelity scan of the core artifact, preserving the texture and calligraphic weight of the Confucian legacy.' : '核心文物的精细扫描，完整保留了儒家遗产的材质肌理与书法力道。'}</p>
@@ -235,9 +251,20 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
             <div className="w-full">
               <div className="relative group w-full aspect-video border border-paper/10 bg-white/5 overflow-hidden">
                 <div className="w-full h-full flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-                  {[1, 2, 3].map((num) => (
-                    <div key={num} className="flex-shrink-0 w-full h-full snap-start flex items-center justify-center">
-                      <ImagePlaceholder aspect="aspect-video" label={`GAME SCREENSHOT ${num}`} />
+                  {[
+                   '/assets/images/modern/digital/digital-0301.png',
+                   '/assets/images/modern/digital/digital-0302.png',
+                   '/assets/images/modern/digital/digital-0303.png',
+                  ].map((src, index) => (
+                    <div
+                      key={src}
+                      className="flex-shrink-0 w-full h-full snap-start flex items-center justify-center"
+                    >
+                      <img
+                        src={src}
+                        alt={`Digital Gameplay Screenshot ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   ))}
                 </div>
@@ -260,7 +287,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
 
         {/* 5. Gameplay & Interaction Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
-          <ImagePlaceholder aspect="aspect-video" />
+          <img
+            src="/assets/images/modern/digital/digital-04.png"
+            alt={language === 'en' ? 'Calligraphy Interaction System' : '书法交互系统'}
+            className="w-full aspect-video object-cover border border-ink/5"
+          />
           <div>
             <div className="flex items-center gap-3 mb-6">
               <Compass className="text-cinnabar" size={24} />
