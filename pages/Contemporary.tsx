@@ -17,15 +17,6 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [activeSubPage]);
 
-  // Image Placeholder Component for structural consistency with debug label
-  const ImagePlaceholder = ({ aspect = "aspect-video", label = "IMAGE SLOT" }) => (
-    <div className={`w-full ${aspect} md:min-h-[350px] bg-paper border border-ink/5 flex items-center justify-center relative overflow-hidden group`}>
-      <div className="absolute inset-0 border-2 border-dashed border-ink/40 bg-zinc-200 flex items-center justify-center z-10">
-        <span className="text-xl font-bold tracking-[0.4em] text-ink/50 uppercase">{label}</span>
-      </div>
-    </div>
-  );
-
   // Sub-page Bottom Navigation
   const SubPageNav = ({ current }: { current: SubPageId }) => {
     const pages = [
@@ -72,7 +63,12 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
         <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> {language === 'en' ? 'Back to Overview' : '返回总览'}
       </button>
       <header className="mb-20">
-        <ImagePlaceholder aspect="aspect-[21/9]" />
+        <img
+          src="/assets/images/modern/stage/stage-overview.png"
+          alt="Stage & Cinema"
+          className="w-full h-full object-cover"
+        />
+        
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Modern Stage & Cinema' : '现代舞台与影像表达'}
         </h2>
@@ -92,11 +88,20 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                 : '现代影视改编常选择脱离传统的线性叙事结构，将“书院三载”解构为心理觉醒的场域。通过借鉴艺术电影美学——以氛围化的光影、考究的节奏与饱和的色彩替代直白的台词——创作者强调了个人身份与社会期待之间的内在摩擦。这种影像语言提升了悲剧的维度，使“化蝶”不再被仅仅视作超自然事件，而是成为了主角内心解放与时空界限突破的深邃视觉隐喻。'}
             </p>
           </div>
-          <ImagePlaceholder aspect="aspect-square" />
-        </div>
+          <div className="w-full aspect-video overflow-hidden">
+          <img
+            src="/assets/images/modern/stage/stage01.png"
+            alt="Stage & Cinema"
+            className="w-full h-full object-cover"
+          />
+       </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
-          <ImagePlaceholder aspect="aspect-square" />
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
+          <img
+            src="/assets/images/modern/stage/stage-overview.png"
+            alt="Stage & Cinema"
+            className="w-full h-full object-cover"
+          />
           <div>
             <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Experimental Performance' : '实验剧场与舞剧'}</h3>
             <p className="text-ink-soft font-serif text-base leading-loose">
@@ -111,7 +116,14 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
     </div>
   );
 
-  const DigitalInteractionPage = () => (
+  const DigitalInteractionPage = () => {
+    const digitalImages = [ 
+      "/assets/images/modern/digital/digital-0301.png",
+      "/assets/images/modern/digital/digital-0302.png",
+      "/assets/images/modern/digital/digital-0303.png"
+    ];
+      
+    return (
     <div className="max-w-5xl mx-auto py-24 px-8">
       <button 
         onClick={() => setActiveSubPage('overview')}
@@ -122,7 +134,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
 
       {/* 1. Introduction Section */}
       <header className="mb-20">
-        <ImagePlaceholder aspect="aspect-[21/9]" />
+        <img
+          src="/assets/images/modern/digital/digital-overview.jpg"
+          alt="Stage & Cinema"
+          className="w-full h-full object-cover"
+        />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Digital Arts & Spatial Interaction' : '数字艺术与空间交互'}
         </h2>
@@ -144,29 +160,46 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                 : '万松书院始建于1498年（明弘治十一年），杭州市政府于2001年7月启动复建工程，现规划总面积约50,000平方米。作为梁祝“三载同窗”叙事的重要物理场域，它连接了文学传统与真实地理空间。'}
             </p>
           </div>
-          <ImagePlaceholder aspect="aspect-video" />
-        </div>
+            <img
+              src="/assets/images/modern/digital/digital-01.jpg"
+              alt="Digital Arts"
+              className="w-full h-full object-cover"
+            />
+          </div>
 
         {/* 3. Scanned Heritage Elements Section */}
         <div>
-          <h3 className="font-calligraphy text-3xl mb-12 text-center">{language === 'en' ? 'Digital Heritage Preservation' : '文化遗产数字化保护'}</h3>
+          <h3 className="font-calligraphy text-3xl mb-12 text-center">
+            {language === 'en' ? 'Digital Heritage Preservation' : '文化遗产数字化保护'}
+          </h3>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             <div className="flex flex-col gap-6">
-              <ImagePlaceholder aspect="aspect-video" />
-              <div>
-                <h4 className="font-bold text-xs tracking-widest uppercase mb-2 text-gold">{language === 'en' ? 'Three Memorial Archways' : '“品字”牌坊'}</h4>
+              <img
+                src="/assets/images/modern/digital/digital-0201.png"
+                alt="Archway Scan"
+                className="w-full h-full object-cover"
+              />
+              </div>
+                <h4 className="font-bold text-xs tracking-widest uppercase mb-2 text-gold">
+                  {language === 'en' ? 'Three Memorial Archways' : '“品字”牌坊'}
+                </h4>
                 <p className="text-ink-soft text-sm font-serif">{language === 'en' ? 'Digital reconstruction of the ceremonial entrance, emphasizing architectural symmetry and historical transition.' : '入口仪式空间的数字重建，强调建筑对称性与历史时空的转场感。'}</p>
               </div>
             </div>
-            <div className="flex flex-col gap-6">
-              <ImagePlaceholder aspect="aspect-video" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <img
+                src="/assets/images/modern/digital/digital-0202.png"
+                alt="Stele Scan"
+                className="w-full h-full object-cover"
+              />
               <div>
                 <h4 className="font-bold text-xs tracking-widest uppercase mb-2 text-gold">{language === 'en' ? '“Eternal Model Teacher” Stele' : '“万世师表”石碑'}</h4>
                 <p className="text-ink-soft text-sm font-serif">{language === 'en' ? 'High-fidelity scan of the core artifact, preserving the texture and calligraphic weight of the Confucian legacy.' : '核心文物的精细扫描，完整保留了儒家遗产的材质肌理与书法力道。'}</p>
               </div>
             </div>
           </div>
-        </div>
+       
 
         {/* 4. Project Overview Section */}
         <div className="p-12 bg-ink text-paper border border-white/10">
@@ -223,9 +256,13 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
             <div className="w-full">
               <div className="relative group w-full aspect-video border border-paper/10 bg-white/5 overflow-hidden">
                 <div className="w-full h-full flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-                  {[1, 2, 3].map((num) => (
-                    <div key={num} className="flex-shrink-0 w-full h-full snap-start flex items-center justify-center">
-                      <ImagePlaceholder aspect="aspect-video" label={`GAME SCREENSHOT ${num}`} />
+                  {digitalImages.map((src, index) => (
+                    <div key={index} className="flex-shrink-0 w-full h-full snap-start overflow-hidden">
+                      <img
+                        src={src}
+                        alt={`Digital Interaction Screenshot ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   ))}
                 </div>
@@ -248,7 +285,12 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
 
         {/* 5. Gameplay & Interaction Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
-          <ImagePlaceholder aspect="aspect-video" />
+          <img
+            src="/assets/images/modern/digital/digital-04.jpg"
+            alt="Stage & Cinema"
+            className="w-full h-full object-cover"
+         />
+       </div>
           <div>
             <div className="flex items-center gap-3 mb-6">
               <Compass className="text-cinnabar" size={24} />
@@ -313,7 +355,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
         <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> {language === 'en' ? 'Back to Overview' : '返回总览'}
       </button>
       <header className="mb-20">
-        <ImagePlaceholder aspect="aspect-[21/9]" />
+        <img
+          src="/assets/images/modern/pop/pop-overview.jpg"
+          alt="Pop Culture"
+          className="w-full h-full object-cover"
+        />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Pop Culture' : '流行文化与社会传播'}
         </h2>
@@ -328,8 +374,12 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                 : '梁祝传说在现代大众传媒中已演化为一个基础性的文化原型，超越了其叙事起源，成为浪漫抗争与身份认知的多维象征。在当代的视觉语境下，“化蝶”意象已蜕变为一种全球性的视觉符号，代表着精神的解放与永恒的忠贞，广泛出现于动漫角色设计、风格化插画以及高端商业传播媒介中。这种转化不再局限于对情节的线性复述，而是转而聚焦于“蝶”之意象的隐喻张力，以及“女扮男装”所蕴含的身份复杂性。通过将叙事萃取为这些鲜明的视觉标识，流行文化确保了这一古老传说的持久活力，使其成为连接历史遗产与现代集体想象的桥梁，在不断的视觉重构中维系着深层的文化记忆。'}
             </p>
           </div>
-          <ImagePlaceholder aspect="aspect-video" />
-        </div>
+          <img
+            src="/assets/images/modern/pop/pop-01.png"
+            alt="Pop Culture"
+            className="w-full h-full object-cover"
+         />
+      </div>
       </section>
       <SubPageNav current="pop" />
     </div>
@@ -344,7 +394,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
         <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> {language === 'en' ? 'Back to Overview' : '返回总览'}
       </button>
       <header className="mb-20">
-        <ImagePlaceholder aspect="aspect-[21/9]" />
+        <img
+          src="/assets/images/modern/thematic/thematic-overview.jpg"
+          alt="Thematic Translation"
+          className="w-full aspect-[21/9] object-cover"
+        />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Thematic Translation' : '当代主题转化'}
         </h2>
@@ -359,7 +413,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                 : '梁祝叙事的现代诠释日益运用当代视角来探讨性别流动性、个人自主权以及对社会文化体制性禁锢的抗争。当代学术界并未将祝英台的“女扮男装”视为某种现代思想的强加，而是将其置于关于身份界限与性别表演的深远文化对话中进行考察。这种主题上的转译将古老传说与现代关于“能动性”（Agency）的学术论述相连接，突显了祝英台对受教育权的追求本质上是一种深刻的自我决断行为。通过交叉性身份的棱镜重新审视这一悲剧，梁祝传说从一段静止的文化遗存转化为一个活态的意义协商场所，其中对个体能动性的追求与当代全球语境下对社会与个人解放的探索产生了深远共鸣。'}
             </p>
           </div>
-          <ImagePlaceholder aspect="aspect-square" />
+          <img
+            src="/assets/images/modern/thematic/thematic-01.png"
+            alt="Gender & Identity"
+            className="w-full aspect-square object-cover"
+          />
         </div>
       </section>
       <SubPageNav current="thematic" />
