@@ -85,30 +85,29 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
             <p className="text-ink-soft font-serif text-base leading-loose">
               {language === 'en'
                 ? 'Modern cinematic reinterpretations frequently diverge from conventional linear structures, choosing instead to deconstruct the "Three Years at the Academy" as a site of psychological awakening. By leveraging art-house aesthetics—where atmospheric shadows, deliberate pacing, and saturated color palettes replace literal dialogue—filmmakers emphasize the internal friction between individual identity and societal expectation. This cinematic language elevates the tragedy, allowing the metamorphosis to be perceived not as a supernatural event, but as a profound visual metaphor for the protagonist\'s internal liberation and the breaking of temporal boundaries.'
-                : '现代影视改编常选择脱离传统的线性叙事结构，将“书院三载”解构为心理觉醒的场域。通过借鉴艺术电影美学——以氛围化的光影、考究的节奏与饱和的色彩替代直白的台词——创作者强调了个人身份与社会期待之间的内在摩擦。这种影像语言提升了悲剧的维度，使“化蝶”不再被仅仅视作超自然事件，而是成为了主角内心解放与时空界限突破的深邃视觉隐喻。'}
-            </p>
+                : '现代影视改编常选择脱离传统的线性叙事结构，将“书院三载”解构为心理觉醒的场域。通过借鉴艺术电影美学——以氛围化的光影、考究的节奏与饱和的色彩替代直白的台词——创作者强调了个人身份与社会期待之间的内在摩擦。这种影像语言提升了悲剧的维度，使“化蝶”不再被仅仅视作超自然事件，而是成为了主角内心解放与时空界限突破的深邃视觉隐喻。'}</p>
           </div>
+          
           <div className="w-full aspect-video overflow-hidden">
-          <img
-            src="/assets/images/modern/stage/stage01.png"
-            alt="Stage & Cinema"
-            className="w-full h-full object-cover"
-          />
-       </div>
+            <img
+              src="/assets/images/modern/stage/stage01.png"
+              alt="Stage & Cinema"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
 
-       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center md:flex-row-reverse">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <img
             src="/assets/images/modern/stage/stage-overview.png"
             alt="Stage & Cinema"
             className="w-full h-full object-cover"
           />
+          
           <div>
             <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Experimental Performance' : '实验剧场与舞剧'}</h3>
             <p className="text-ink-soft font-serif text-base leading-loose">
-              {language === 'en'
-                ? 'In the realm of experimental theatre and modern dance, the legend undergoes a radical physical translation where body language transcends the limitations of the spoken word. Contemporary dance companies often reinterpret the "Butterfly Metamorphosis" as a rigorous spiritual trial, utilizing abstract movement to map the transition from earthly constraint to ethereal freedom. This performative reform maintains the core emotional pulse of the original legend while inviting a global audience to experience the story through an embodied, wordless dialogue that honors the continuity of the Liang-Zhu spirit in the modern era. Ultimately, these modern adaptations do not replace the traditional canon but serve as a vital dialogue between generations, ensuring that the legacy remains a living, breathing part of global cultural discourse.'
-                : '在实验剧场与现代舞领域，梁祝传说经历了一场彻底的肢体转译，肢体语言超越了言语的局限。当代舞团通常将“化蝶”重新解读为一场严峻的精神磨砺，利用抽象的动作轨迹刻画从尘世禁锢到灵性自由的演进。这种表演艺术的改革在保留原始传说情感脉动的同时，邀请全球观众通过具身化的无声对话，体验梁祝精神在现代语境下的永恒延续。归根底，这些现代改编并非对传统的取代，而是一场跨越世代的深度对话，确保了这份遗产在全求文化语境中始终保持鲜活。'}
-            </p>
+              {language === 'en'? 'In the realm of experimental theatre and modern dance, the legend undergoes a radical physical translation where body language transcends the limitations of the spoken word. Contemporary dance companies often reinterpret the "Butterfly Metamorphosis" as a rigorous spiritual trial, utilizing abstract movement to map the transition from earthly constraint to ethereal freedom. This performative reform maintains the core emotional pulse of the original legend while inviting a global audience to experience the story through an embodied, wordless dialogue that honors the continuity of the Liang-Zhu spirit in the modern era. Ultimately, these modern adaptations do not replace the traditional canon but serve as a vital dialogue between generations, ensuring that the legacy remains a living, breathing part of global cultural discourse.': '在实验剧场与现代舞领域，梁祝传说经历了一场彻底的肢体转译，肢体语言超越了言语的局限。当代舞团通常将“化蝶”重新解读为一场严峻的精神磨砺，利用抽象的动作轨迹刻画从尘世禁锢到灵性自由的演进。这种表演艺术的改革在保留原始传说情感脉动的同时，邀请全球观众通过具身化的无声对话，体验梁祝精神在现代语境下的永恒延续。归根底，这些现代改编并非对传统的取代，而是一场跨越世代的深度对话，确保了这份遗产在全球文化语境中始终保持鲜活。'}</p>
           </div>
         </div>
       </section>
@@ -257,16 +256,10 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                     <div key={index} className="flex-shrink-0 w-full h-full snap-start overflow-hidden">
                       <img
                         src={src}
-                        alt={Digital Interaction Screenshot ${index + 1}}
+                        alt={`Digital Interaction Screenshot ${index + 1}`}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                  ))}
-                </div>
-                {/* Visual Indicators */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10 pointer-events-none">
-                  {[1, 2, 3].map((num) => (
-                    <div key={num} className={w-1.5 h-1.5 rounded-full ${activeSlide === num ? 'bg-gold' : 'bg-paper/20'}}></div>
                   ))}
                 </div>
                 <div className="absolute top-4 right-4 z-10">
@@ -286,12 +279,14 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
             src="/assets/images/modern/digital/digital-04.jpg"
             alt="Stage & Cinema"
             className="w-full h-full object-cover"
-         />
-       </div>
+          />
+        
           <div>
             <div className="flex items-center gap-3 mb-6">
               <Compass className="text-cinnabar" size={24} />
-              <h3 className="font-calligraphy text-3xl">{language === 'en' ? 'Calligraphy Interaction' : '书法交互设计'}</h3>
+              <h3 className="font-calligraphy text-3xl">
+                {language === 'en' ? 'Calligraphy Interaction' : '书法交互设计'}
+              </h3>
             </div>
             <p className="text-ink-soft font-serif text-base leading-loose">
               {language === 'en'
@@ -432,7 +427,13 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
           <div className="max-w-7xl mx-auto px-8 py-24">
             <header className="mb-24 text-center">
               <span className="text-xs font-bold tracking-[0.4em] text-cinnabar/60 uppercase mb-4 block">Reimagining the Eternal</span>
-              <h2 className={text-ink mb-8 ${language === 'zh' ? 'font-calligraphy text-7xl' : 'font-serif text-5xl md:text-7xl italic font-medium'}}>
+              <h2 
+                className={`text-ink mb-8 ${
+                  language === 'zh' 
+                  ? 'font-calligraphy text-7xl' 
+                  : 'font-serif text-5xl md:text-7xl italic font-medium'
+                }`}
+              >
                 {language === 'en' ? 'Modern Interpretation' : '当代演绎 · 演绎视界'}
               </h2>
               <div className="w-24 h-[0.5px] bg-ink/20 mx-auto mb-10"></div>
