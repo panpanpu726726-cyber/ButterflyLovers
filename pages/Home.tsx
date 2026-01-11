@@ -20,7 +20,7 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
   return (
     <div className="w-full relative min-h-[calc(100vh-64px)] bg-paper flex flex-col items-center pt-24 pb-12 overflow-hidden">
       {/* Background - Kept original logic */}
-      <div className="absolute inset-0 z-0 opacity-100 grayscale brightness-110 contrast-125">
+      <div className="absolute inset-0 z-0 opacity-50 grayscale brightness-110 contrast-125">
         <div className="w-full h-full bg-ink/10 flex items-center justify-center">
           <img src="/assets/images/home/home-map.png" alt="Interactive Navigation Map" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.01]" />
         </div>
@@ -60,12 +60,9 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
           <img 
             src="/assets/images/home/home-map.png" 
             alt="Interactive Navigation Cover" 
-            className="w-full h-full object-contain opacity-100 transition-opacity duration-700 group-hover:opacity-60" 
+            className="w-full h-full object-contain opacity-100 " 
           />
-          
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-             <span className="text-[10px] font-bold tracking-[0.5em] uppercase text-ink">Navigation Map Image Cover</span>
-          </div>
+        
 
           {/* STEP 3 & 4 & 5: Interactive Hotspots */}
           <div className="absolute inset-0">
