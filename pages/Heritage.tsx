@@ -175,7 +175,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
               src="/assets/videos/heritage/yue-opera-video.mp4"
               controls
               playsInline
-            >
+            ></video>
           </div>
       </section>
 
