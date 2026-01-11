@@ -54,7 +54,7 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="relative w-full aspect-[21/9] bg-zinc-200 border border-ink/5 shadow-2xl mb-16 overflow-hidden group"
+          className="relative w-full aspect-[21/9]"
         >
           {/* Main Visual Image - No cropping/stretching */}
           <img 
