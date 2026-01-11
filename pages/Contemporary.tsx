@@ -356,7 +356,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
         <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> {language === 'en' ? 'Back to Overview' : '返回总览'}
       </button>
       <header className="mb-20">
-        <ImagePlaceholder aspect="aspect-[21/9]" />
+        <img
+          src="/assets/images/modern/pop/pop-overview.jpg"
+          alt={language === 'en' ? 'Pop Culture Overview' : '流行文化传播总览'}
+          className="w-full aspect-[21/9] object-cover border border-ink/5"
+        />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Pop Culture' : '流行文化与社会传播'}
         </h2>
@@ -371,7 +375,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                 : '梁祝传说在现代大众传媒中已演化为一个基础性的文化原型，超越了其叙事起源，成为浪漫抗争与身份认知的多维象征。在当代的视觉语境下，“化蝶”意象已蜕变为一种全球性的视觉符号，代表着精神的解放与永恒的忠贞，广泛出现于动漫角色设计、风格化插画以及高端商业传播媒介中。这种转化不再局限于对情节的线性复述，而是转而聚焦于“蝶”之意象的隐喻张力，以及“女扮男装”所蕴含的身份复杂性。通过将叙事萃取为这些鲜明的视觉标识，流行文化确保了这一古老传说的持久活力，使其成为连接历史遗产与现代集体想象的桥梁，在不断的视觉重构中维系着深层的文化记忆。'}
             </p>
           </div>
-          <ImagePlaceholder aspect="aspect-video" />
+          <img
+            src="/assets/images/modern/pop/pop-01.png"
+            alt={language === 'en' ? 'Butterfly Iconography in Pop Culture' : '流行文化中的化蝶意象'}
+            className="w-full aspect-video object-cover border border-ink/5"
+          />
         </div>
       </section>
       <SubPageNav current="pop" />
