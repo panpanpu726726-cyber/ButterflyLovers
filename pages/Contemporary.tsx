@@ -105,7 +105,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
           <img
-            scr="/assets/images/modern/stage/stage92.jpg"
+            src="/assets/images/modern/stage/stage92.jpg"
             alt={language === 'en' ? 'Experimental Performance' : '实验剧场与舞剧'}
             className="w-full aspect-square object-cover border border-ink/5"
           />
