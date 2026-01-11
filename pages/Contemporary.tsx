@@ -14,8 +14,17 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
 
   // Ensure scroll to top when changing internal views
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, [activeSubPage]);
+
+  // Image Placeholder Component for structural consistency with debug label
+  const ImagePlaceholder = ({ aspect = "aspect-video", label = "IMAGE SLOT" }) => (
+    <div className={`w-full ${aspect} md:min-h-[350px] bg-paper border border-ink/5 flex items-center justify-center relative overflow-hidden group`}>
+      <div className="absolute inset-0 border-2 border-dashed border-ink/40 bg-zinc-200 flex items-center justify-center z-10">
+        <span className="text-xl font-bold tracking-[0.4em] text-ink/50 uppercase">{label}</span>
+      </div>
+    </div>
+  );
 
   // Sub-page Bottom Navigation
   const SubPageNav = ({ current }: { current: SubPageId }) => {
@@ -26,7 +35,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
       { id: 'thematic', label: { en: 'Thematic Translation', zh: '主题与现代视角' } },
     ] as const;
 
-    const renderNavigation = () => (
+    return (
       <div className="mt-32 pt-12 border-t border-ink/10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <button 
@@ -63,12 +72,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
         <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> {language === 'en' ? 'Back to Overview' : '返回总览'}
       </button>
       <header className="mb-20">
-        <img
-          src="/assets/images/modern/stage/stage-overview.png"
-          alt="Stage & Cinema"
-          className="w-full h-full object-cover"
-        />
-        
+        <ImagePlaceholder aspect="aspect-[21/9]" />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Modern Stage & Cinema' : '现代舞台与影像表达'}
         </h2>
@@ -85,29 +89,21 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
             <p className="text-ink-soft font-serif text-base leading-loose">
               {language === 'en'
                 ? 'Modern cinematic reinterpretations frequently diverge from conventional linear structures, choosing instead to deconstruct the "Three Years at the Academy" as a site of psychological awakening. By leveraging art-house aesthetics—where atmospheric shadows, deliberate pacing, and saturated color palettes replace literal dialogue—filmmakers emphasize the internal friction between individual identity and societal expectation. This cinematic language elevates the tragedy, allowing the metamorphosis to be perceived not as a supernatural event, but as a profound visual metaphor for the protagonist\'s internal liberation and the breaking of temporal boundaries.'
-                : '现代影视改编常选择脱离传统的线性叙事结构，将“书院三载”解构为心理觉醒的场域。通过借鉴艺术电影美学——以氛围化的光影、考究的节奏与饱和的色彩替代直白的台词——创作者强调了个人身份与社会期待之间的内在摩擦。这种影像语言提升了悲剧的维度，使“化蝶”不再被仅仅视作超自然事件，而是成为了主角内心解放与时空界限突破的深邃视觉隐喻。'}</p>
+                : '现代影视改编常选择脱离传统的线性叙事结构，将“书院三载”解构为心理觉醒的场域。通过借鉴艺术电影美学——以氛围化的光影、考究的节奏与饱和的色彩替代直白的台词——创作者强调了个人身份与社会期待之间的内在摩擦。这种影像语言提升了悲剧的维度，使“化蝶”不再被仅仅视作超自然事件，而是成为了主角内心解放与时空界限突破的深邃视觉隐喻。'}
+            </p>
           </div>
-          
-          <div className="w-full aspect-video overflow-hidden">
-            <img
-              src="/assets/images/modern/stage/stage01.png"
-              alt="Stage & Cinema"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <ImagePlaceholder aspect="aspect-square" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <img
-            src="/assets/images/modern/stage/stage-overview.png"
-            alt="Stage & Cinema"
-            className="w-full h-full object-cover"
-          />
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
+          <ImagePlaceholder aspect="aspect-square" />
           <div>
             <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Experimental Performance' : '实验剧场与舞剧'}</h3>
             <p className="text-ink-soft font-serif text-base leading-loose">
-              {language === 'en'? 'In the realm of experimental theatre and modern dance, the legend undergoes a radical physical translation where body language transcends the limitations of the spoken word. Contemporary dance companies often reinterpret the "Butterfly Metamorphosis" as a rigorous spiritual trial, utilizing abstract movement to map the transition from earthly constraint to ethereal freedom. This performative reform maintains the core emotional pulse of the original legend while inviting a global audience to experience the story through an embodied, wordless dialogue that honors the continuity of the Liang-Zhu spirit in the modern era. Ultimately, these modern adaptations do not replace the traditional canon but serve as a vital dialogue between generations, ensuring that the legacy remains a living, breathing part of global cultural discourse.': '在实验剧场与现代舞领域，梁祝传说经历了一场彻底的肢体转译，肢体语言超越了言语的局限。当代舞团通常将“化蝶”重新解读为一场严峻的精神磨砺，利用抽象的动作轨迹刻画从尘世禁锢到灵性自由的演进。这种表演艺术的改革在保留原始传说情感脉动的同时，邀请全球观众通过具身化的无声对话，体验梁祝精神在现代语境下的永恒延续。归根底，这些现代改编并非对传统的取代，而是一场跨越世代的深度对话，确保了这份遗产在全球文化语境中始终保持鲜活。'}</p>
+              {language === 'en'
+                ? 'In the realm of experimental theatre and modern dance, the legend undergoes a radical physical translation where body language transcends the limitations of the spoken word. Contemporary dance companies often reinterpret the "Butterfly Metamorphosis" as a rigorous spiritual trial, utilizing abstract movement to map the transition from earthly constraint to ethereal freedom. This performative reform maintains the core emotional pulse of the original legend while inviting a global audience to experience the story through an embodied, wordless dialogue that honors the continuity of the Liang-Zhu spirit in the modern era. Ultimately, these modern adaptations do not replace the traditional canon but serve as a vital dialogue between generations, ensuring that the legacy remains a living, breathing part of global cultural discourse.'
+                : '在实验剧场与现代舞领域，梁祝传说经历了一场彻底的肢体转译，肢体语言超越了言语的局限。当代舞团通常将“化蝶”重新解读为一场严峻的精神磨砺，利用抽象的动作轨迹刻画从尘世禁锢到灵性自由的演进。这种表演艺术的改革在保留原始传说情感脉动的同时，邀请全球观众通过具身化的无声对话，体验梁祝精神在现代语境下的永恒延续。归根底，这些现代改编并非对传统的取代，而是一场跨越世代的深度对话，确保了这份遗产在全求文化语境中始终保持鲜活。'}
+            </p>
           </div>
         </div>
       </section>
@@ -115,14 +111,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
     </div>
   );
 
-  const DigitalInteractionPage = () => {
-    const digitalImages = [ 
-      "/assets/images/modern/digital/digital-0301.png",
-      "/assets/images/modern/digital/digital-0302.png",
-      "/assets/images/modern/digital/digital-0303.png"
-    ];
-      
-    return (
+  const DigitalInteractionPage = () => (
     <div className="max-w-5xl mx-auto py-24 px-8">
       <button 
         onClick={() => setActiveSubPage('overview')}
@@ -133,11 +122,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
 
       {/* 1. Introduction Section */}
       <header className="mb-20">
-        <img
-          src="/assets/images/modern/digital/digital-overview.jpg"
-          alt="Stage & Cinema"
-          className="w-full h-full object-cover"
-        />
+        <ImagePlaceholder aspect="aspect-[21/9]" />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Digital Arts & Spatial Interaction' : '数字艺术与空间交互'}
         </h2>
@@ -159,44 +144,30 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                 : '万松书院始建于1498年（明弘治十一年），杭州市政府于2001年7月启动复建工程，现规划总面积约50,000平方米。作为梁祝“三载同窗”叙事的重要物理场域，它连接了文学传统与真实地理空间。'}
             </p>
           </div>
-            <img
-              src="/assets/images/modern/digital/digital-01.jpg"
-              alt="Digital Arts"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <ImagePlaceholder aspect="aspect-video" />
+        </div>
 
         {/* 3. Scanned Heritage Elements Section */}
         <div>
-          <h3 className="font-calligraphy text-3xl mb-12 text-center">
-            {language === 'en' ? 'Digital Heritage Preservation' : '文化遗产数字化保护'}
-          </h3>
-          
+          <h3 className="font-calligraphy text-3xl mb-12 text-center">{language === 'en' ? 'Digital Heritage Preservation' : '文化遗产数字化保护'}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             <div className="flex flex-col gap-6">
-              <img
-                src="/assets/images/modern/digital/digital-0201.png"
-                alt="Archway Scan"
-                className="w-full h-full object-cover"
-              />
-              <h4 className="font-bold text-xs tracking-widest uppercase mb-2 text-gold">{language === 'en' ? 'Three Memorial Archways' : '“品字”牌坊'}</h4>
-              <p className="text-ink-soft text-sm font-serif">{language === 'en' ? 'Digital reconstruction of the ceremonial entrance, emphasizing architectural symmetry and historical transition.' : '入口仪式空间的数字重建，强调建筑对称性与历史时空的转场感。'}</p>
+              <ImagePlaceholder aspect="aspect-video" />
+              <div>
+                <h4 className="font-bold text-xs tracking-widest uppercase mb-2 text-gold">{language === 'en' ? 'Three Memorial Archways' : '“品字”牌坊'}</h4>
+                <p className="text-ink-soft text-sm font-serif">{language === 'en' ? 'Digital reconstruction of the ceremonial entrance, emphasizing architectural symmetry and historical transition.' : '入口仪式空间的数字重建，强调建筑对称性与历史时空的转场感。'}</p>
+              </div>
             </div>
-          </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <img
-                src="/assets/images/modern/digital/digital-0202.png"
-                alt="Stele Scan"
-                className="w-full h-full object-cover"
-              />
+            <div className="flex flex-col gap-6">
+              <ImagePlaceholder aspect="aspect-video" />
               <div>
                 <h4 className="font-bold text-xs tracking-widest uppercase mb-2 text-gold">{language === 'en' ? '“Eternal Model Teacher” Stele' : '“万世师表”石碑'}</h4>
                 <p className="text-ink-soft text-sm font-serif">{language === 'en' ? 'High-fidelity scan of the core artifact, preserving the texture and calligraphic weight of the Confucian legacy.' : '核心文物的精细扫描，完整保留了儒家遗产的材质肌理与书法力道。'}</p>
               </div>
             </div>
           </div>
-  
-       
+        </div>
+
         {/* 4. Project Overview Section */}
         <div className="p-12 bg-ink text-paper border border-white/10">
           <div className="flex flex-col gap-12">
@@ -252,14 +223,16 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
             <div className="w-full">
               <div className="relative group w-full aspect-video border border-paper/10 bg-white/5 overflow-hidden">
                 <div className="w-full h-full flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-                  {digitalImages.map((src, index) => (
-                    <div key={index} className="flex-shrink-0 w-full h-full snap-start overflow-hidden">
-                      <img
-                        src={src}
-                        alt={`Digital Interaction Screenshot ${index + 1}`}
-                        className="w-full h-full object-cover"
-                      />
+                  {[1, 2, 3].map((num) => (
+                    <div key={num} className="flex-shrink-0 w-full h-full snap-start flex items-center justify-center">
+                      <ImagePlaceholder aspect="aspect-video" label={`GAME SCREENSHOT ${num}`} />
                     </div>
+                  ))}
+                </div>
+                {/* Visual Indicators */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10 pointer-events-none">
+                  {[1, 2, 3].map((num) => (
+                    <div key={num} className="w-1.5 h-1.5 rounded-full bg-paper/20"></div>
                   ))}
                 </div>
                 <div className="absolute top-4 right-4 z-10">
@@ -275,18 +248,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
 
         {/* 5. Gameplay & Interaction Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
-          <img
-            src="/assets/images/modern/digital/digital-04.jpg"
-            alt="Stage & Cinema"
-            className="w-full h-full object-cover"
-          />
-        
+          <ImagePlaceholder aspect="aspect-video" />
           <div>
             <div className="flex items-center gap-3 mb-6">
               <Compass className="text-cinnabar" size={24} />
-              <h3 className="font-calligraphy text-3xl">
-                {language === 'en' ? 'Calligraphy Interaction' : '书法交互设计'}
-              </h3>
+              <h3 className="font-calligraphy text-3xl">{language === 'en' ? 'Calligraphy Interaction' : '书法交互设计'}</h3>
             </div>
             <p className="text-ink-soft font-serif text-base leading-loose">
               {language === 'en'
@@ -347,11 +313,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
         <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> {language === 'en' ? 'Back to Overview' : '返回总览'}
       </button>
       <header className="mb-20">
-        <img
-          src="/assets/images/modern/pop/pop-overview.jpg"
-          alt="Pop Culture"
-          className="w-full h-full object-cover"
-        />
+        <ImagePlaceholder aspect="aspect-[21/9]" />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Pop Culture' : '流行文化与社会传播'}
         </h2>
@@ -366,12 +328,8 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                 : '梁祝传说在现代大众传媒中已演化为一个基础性的文化原型，超越了其叙事起源，成为浪漫抗争与身份认知的多维象征。在当代的视觉语境下，“化蝶”意象已蜕变为一种全球性的视觉符号，代表着精神的解放与永恒的忠贞，广泛出现于动漫角色设计、风格化插画以及高端商业传播媒介中。这种转化不再局限于对情节的线性复述，而是转而聚焦于“蝶”之意象的隐喻张力，以及“女扮男装”所蕴含的身份复杂性。通过将叙事萃取为这些鲜明的视觉标识，流行文化确保了这一古老传说的持久活力，使其成为连接历史遗产与现代集体想象的桥梁，在不断的视觉重构中维系着深层的文化记忆。'}
             </p>
           </div>
-          <img
-            src="/assets/images/modern/pop/pop-01.png"
-            alt="Pop Culture"
-            className="w-full h-full object-cover"
-         />
-      </div>
+          <ImagePlaceholder aspect="aspect-video" />
+        </div>
       </section>
       <SubPageNav current="pop" />
     </div>
@@ -386,11 +344,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
         <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> {language === 'en' ? 'Back to Overview' : '返回总览'}
       </button>
       <header className="mb-20">
-        <img
-          src="/assets/images/modern/thematic/thematic-overview.jpg"
-          alt="Thematic Translation"
-          className="w-full aspect-[21/9] object-cover"
-        />
+        <ImagePlaceholder aspect="aspect-[21/9]" />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Thematic Translation' : '当代主题转化'}
         </h2>
@@ -405,11 +359,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                 : '梁祝叙事的现代诠释日益运用当代视角来探讨性别流动性、个人自主权以及对社会文化体制性禁锢的抗争。当代学术界并未将祝英台的“女扮男装”视为某种现代思想的强加，而是将其置于关于身份界限与性别表演的深远文化对话中进行考察。这种主题上的转译将古老传说与现代关于“能动性”（Agency）的学术论述相连接，突显了祝英台对受教育权的追求本质上是一种深刻的自我决断行为。通过交叉性身份的棱镜重新审视这一悲剧，梁祝传说从一段静止的文化遗存转化为一个活态的意义协商场所，其中对个体能动性的追求与当代全球语境下对社会与个人解放的探索产生了深远共鸣。'}
             </p>
           </div>
-          <img
-            src="/assets/images/modern/thematic/thematic-01.png"
-            alt="Gender & Identity"
-            className="w-full aspect-square object-cover"
-          />
+          <ImagePlaceholder aspect="aspect-square" />
         </div>
       </section>
       <SubPageNav current="thematic" />
@@ -427,13 +377,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
           <div className="max-w-7xl mx-auto px-8 py-24">
             <header className="mb-24 text-center">
               <span className="text-xs font-bold tracking-[0.4em] text-cinnabar/60 uppercase mb-4 block">Reimagining the Eternal</span>
-              <h2 
-                className={`text-ink mb-8 ${
-                  language === 'zh' 
-                  ? 'font-calligraphy text-7xl' 
-                  : 'font-serif text-5xl md:text-7xl italic font-medium'
-                }`}
-              >
+              <h2 className={`text-ink mb-8 ${language === 'zh' ? 'font-calligraphy text-7xl' : 'font-serif text-5xl md:text-7xl italic font-medium'}`}>
                 {language === 'en' ? 'Modern Interpretation' : '当代演绎 · 演绎视界'}
               </h2>
               <div className="w-24 h-[0.5px] bg-ink/20 mx-auto mb-10"></div>
@@ -466,7 +410,8 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                   desc: { en: 'Sociological lenses.', zh: '社会学视角。' } 
                 }
               ].map((module) => (
-                <div key={module.id}
+                <div 
+                  key={module.id}
                   onClick={() => setActiveSubPage(module.id as SubPageId)}
                   className="group cursor-pointer bg-white border border-ink/5 p-8 shadow-sm hover:border-ink/20 transition-all flex flex-col"
                 >
@@ -501,9 +446,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                     )} 
                   </div>
                   <div className="mb-8">{module.icon}</div>
-                  <h3 className="font-calligraphy text-4xl mb-6 text-ink">
-                    {language === 'en' ? module.title.en : module.title.zh}
-                  </h3>
+                  <h3 className="font-calligraphy text-4xl mb-6 text-ink">{language === 'en' ? module.title.en : module.title.zh}</h3>
                   <p className="text-ink-soft font-serif text-base leading-loose mb-8 flex-grow">
                     {language === 'en' ? module.desc.en : module.desc.zh}
                   </p>
@@ -539,4 +482,3 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
 };
 
 export default Contemporary;
-}
