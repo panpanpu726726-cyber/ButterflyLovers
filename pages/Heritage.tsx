@@ -25,27 +25,27 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
   ];
 
   const paperCuttingImages = [
-    "/images/placeholder.jpg",
-    "/images/placeholder.jpg",
-    "/images/placeholder.jpg"
+    "/assets/images/heritage/folk-paper-cut01.png",
+    "/assets/images/heritage/folk-paper-cut02.png",
+    "/assets/images/heritage/folk-paper-cut03.png"
   ];
 
   const embroideryImages = [
-    "/images/placeholder.jpg",
-    "/images/placeholder.jpg",
-    "/images/placeholder.jpg"
+    "/assets/images/heritage/folk-embroidery01.png",
+    "/assets/images/heritage/folk-embroidery02.png",
+    "/assets/images/heritage/folk-embroidery03.png"
   ];
 
   const ningboBranchImages = [
-    "/images/placeholder.jpg",
-    "/images/placeholder.jpg",
-    "/images/placeholder.jpg"
+    "/assets/images/heritage/oral-ningbo01.png",
+    "/assets/images/heritage/oral-ningbo02.png",
+    "/assets/images/heritage/oral-ningbo03.png"
   ];
 
   const hangzhouBranchImages = [
-    "/images/placeholder.jpg",
-    "/images/placeholder.jpg",
-    "/images/placeholder.jpg"
+    "/assets/images/heritage/oral-hangzhou01.png",
+    "/assets/images/heritage/oral-hangzhou02.png",
+    "/assets/images/heritage/oral-hangzhou03.png"
   ];
 
   // Helper component for Sub-view Navigation
@@ -369,7 +369,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
                     <img 
                       src={src} 
                       alt={`Paper-cutting placeholder ${idx + 1}`} 
-                      className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity" 
+                      className="w-full h-full object-cover opacity-100 transition-opacity" 
                     />
                   </div>
                 ))}
@@ -399,7 +399,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
                     <img 
                       src={src} 
                       alt={`Embroidery placeholder ${idx + 1}`} 
-                      className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity" 
+                      className="w-full h-full object-cover opacity-100 transition-opacity" 
                     />
                   </div>
                 ))}
@@ -431,7 +431,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
     <div className="space-y-24 py-10">
       <header className="border-b border-ink/10 pb-12">
         <div className="w-full aspect-[21/9] bg-ink/5 border border-ink/10 mb-12 flex items-center justify-center overflow-hidden">
-          <img src="/images/placeholder.jpg" alt="Oral History Placeholder" className="w-full h-full object-cover opacity-30" />
+          <img src="/assets/images/heritage/oral-overview.png" alt="Oral History Placeholder" className="w-full h-full object-cover" />
         </div>
         <h2 className={`text-ink mb-6 ${language === 'zh' ? 'font-calligraphy text-6xl' : 'font-serif text-5xl italic font-medium'}`}>
           {language === 'en' ? 'Oral Tradition: Living Memory' : '口传文学：地方记忆与活态叙事'}
@@ -460,7 +460,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
                     <img 
                       src={src} 
                       alt={`Ningbo branch visual placeholder ${idx + 1}`} 
-                      className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity" 
+                      className="w-full h-full object-cover opacity-100 transition-opacity" 
                     />
                   </div>
                 ))}
@@ -490,7 +490,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
                     <img 
                       src={src} 
                       alt={`Hangzhou branch visual placeholder ${idx + 1}`} 
-                      className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity" 
+                      className="w-full h-full object-cover opacity-100 transition-opacity" 
                     />
                   </div>
                 ))}
