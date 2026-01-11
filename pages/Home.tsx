@@ -54,7 +54,7 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="relative w-full aspect-[21/9]"
+          className="relative w-full aspect-[21/9] -mt-13"
         >
           {/* Main Visual Image - No cropping/stretching */}
           <img 
@@ -108,6 +108,7 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
+            className="flex justify-center mt-8"
           >
             <button 
               onClick={() => onNavigate(SectionId.LEGEND)}
