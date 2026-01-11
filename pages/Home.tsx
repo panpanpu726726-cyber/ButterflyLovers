@@ -10,7 +10,7 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
   // Navigation mapping for hotspots
   const navigationMap = [
-    { id: SectionId.LEGEND, label: { en: 'Legend', zh: '传说' }, x: '19.8%', y: '72.6%',},
+    { id: SectionId.LEGEND, label: { en: 'Legend', zh: '传说' }, x: '20.4%', y: '72.6%',},
     { id: SectionId.HISTORY, label: { en: 'History', zh: '背景' }, x: '39.4%', y: '67.7%',},
     { id: SectionId.HERITAGE, label: { en: 'Heritage', zh: '非遗' }, x: '58.2%', y: '58.3%',},
     { id: SectionId.MODERN, label: { en: 'Modern', zh: '演绎' }, x: '80.1%', y: '27.3%',},
