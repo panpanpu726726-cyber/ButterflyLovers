@@ -395,7 +395,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
         <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> {language === 'en' ? 'Back to Overview' : '返回总览'}
       </button>
       <header className="mb-20">
-        <ImagePlaceholder aspect="aspect-[21/9]" />
+        <img
+          src="/assets/images/modern/thematic/thematic-overview.jpg"
+          alt={language === 'en' ? 'Thematic Translation Overview' : '当代主题转化总览'}
+          className="w-full aspect-[21/9] object-cover border border-ink/5"
+        />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Thematic Translation' : '当代主题转化'}
         </h2>
@@ -410,7 +414,11 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                 : '梁祝叙事的现代诠释日益运用当代视角来探讨性别流动性、个人自主权以及对社会文化体制性禁锢的抗争。当代学术界并未将祝英台的“女扮男装”视为某种现代思想的强加，而是将其置于关于身份界限与性别表演的深远文化对话中进行考察。这种主题上的转译将古老传说与现代关于“能动性”（Agency）的学术论述相连接，突显了祝英台对受教育权的追求本质上是一种深刻的自我决断行为。通过交叉性身份的棱镜重新审视这一悲剧，梁祝传说从一段静止的文化遗存转化为一个活态的意义协商场所，其中对个体能动性的追求与当代全球语境下对社会与个人解放的探索产生了深远共鸣。'}
             </p>
           </div>
-          <ImagePlaceholder aspect="aspect-square" />
+          <img
+            src="/assets/images/modern/thematic/thematic-01.png"
+            alt={language === 'en' ? 'Gender & Identity Theme' : '性别意识与身份认同主题'}
+            className="w-full aspect-square object-cover border border-ink/5"
+          />
         </div>
       </section>
       <SubPageNav current="thematic" />
