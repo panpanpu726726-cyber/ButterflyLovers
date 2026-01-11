@@ -120,6 +120,10 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
               <span className="ml-4 group-hover:translate-x-1 transition-transform opacity-60">→</span>
             </button>
           </motion.div>
+          
+        </motion.div>
+
+      </div>
 
       {/* Discrete Decoration - Preserved original elements */}
       <div className="absolute bottom-8 right-8 opacity-10 pointer-events-none flex flex-col space-y-1">
