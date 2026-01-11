@@ -90,11 +90,6 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
         <div className="w-full aspect-[21/9] bg-ink/5 border border-ink/10 mb-12 flex items-center justify-center overflow-hidden">
           <img src="/assets/images/heritage/yue-opera-background.png" alt="Yue Opera Visual Placeholder" className="w-full h-full object-cover" />
         </div>
-        <p className="text-[10px] text-ink/40 font-serif italic mt-[-2rem] mb-12">
-          {language === 'en' 
-            ? 'What kind of visual content should be placed here (stage photography, costume detail, archival performance stills).' 
-            : '此处可放置舞台摄影、服饰细节或历史演出影像资料。'}
-        </p>
         <h2 className={`text-ink mb-6 ${language === 'zh' ? 'font-calligraphy text-6xl' : 'font-serif text-5xl italic font-medium'}`}>
           {language === 'en' ? 'Yue Opera: The Stage Classic' : '越剧《梁祝》：舞台经典与艺术定型'}
         </h2>
@@ -161,11 +156,6 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
                 ))}
               </div>
             </div>
-            <p className="text-[10px] text-ink/40 font-serif italic mt-3">
-              {language === 'en' 
-                ? 'What kind of visual content should be placed here (stage photography, costume detail, archival performance stills).' 
-                : '此处可放置舞台摄影、服饰细节或历史演出影像资料。'}
-            </p>
           </motion.div>
         </div>
       </section>
@@ -178,21 +168,15 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
             ? 'This video represents a modern, canonical Yue Opera interpretation of Liang-Zhu.' 
             : '该影像呈现近现代舞台语境下具有代表性的越剧《梁祝》经典演绎。'}
         </p>
-        <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden relative">
-          <div className="w-full h-full bg-ink/5 flex items-center justify-center relative">
-            <iframe 
-              className="w-full h-full"
+          <div className="w-full aspect-video bg-ink/5 border border-ink/10 overflow-hidden relative">
+            <video 
+              className="w-full h-full object-cover"
               title="Canonical Yue Opera Performance"
-              src="about:blank"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-            <div className="absolute inset-0 pointer-events-none flex items-center justify-center bg-ink/[0.02]">
-               <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-ink/20">Stage Video Fragment Placeholder</span>
-            </div>
+              src="/assets/videos/heritage/yue-opera-video.mp4"
+              controls
+              playsInline
+            >
           </div>
-        </div>
       </section>
 
       <section>
@@ -202,25 +186,15 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
             <div className="relative w-full aspect-video border border-ink/10 overflow-hidden">
                <img src="/assets/images/heritage/yue-opera-stage.png" alt="Yue Opera Performance Scene" className="w-full h-full object-cover" />
             </div>
-            <p className="text-[10px] text-ink/40 font-serif italic mt-1">
-              {language === 'en' 
-                ? 'What kind of visual content should be placed here (stage photography, costume detail, archival performance stills).' 
-                : '此处可放置舞台摄影、服饰细节或历史演出影像资料。'}
-            </p>
             <div className="space-y-4">
               <h5 className="font-bold text-xs uppercase tracking-widest text-gold">{language === 'en' ? 'All-Female Cast' : '女子越剧特色'}</h5>
               <p className="text-ink-soft font-serif text-base">{language === 'en' ? 'The tradition of female actors playing male roles (Sheng) creates a unique lyrical softness that perfectly matches the scholar imagery.' : '女子演小生的传统赋予了角色独特的阴柔美与抒情性，与梁山伯的书生形象天然契合。'}</p>
             </div>
           </div>
           <div className="space-y-6">
-            <div className="relative w-full aspect-[21/9] border border-ink/10 overflow-hidden">
+            <div className="relative w-full aspect-video border border-ink/10 overflow-hidden">
                <img src="/assets/images/heritage/yue-opera-lyric.png" alt="Yue Opera Culture Context" className="w-full h-full object-cover" />
             </div>
-            <p className="text-[10px] text-ink/40 font-serif italic mt-1">
-              {language === 'en' 
-                ? 'What kind of visual content should be placed here (stage photography, costume detail, archival performance stills).' 
-                : '此处可放置舞台摄影、服饰细节或历史演出影像资料。'}
-            </p>
             <div className="space-y-4">
               <h5 className="font-bold text-xs uppercase tracking-widest text-gold">{language === 'en' ? 'Poetic Lyrics' : '诗化唱词'}</h5>
               <p className="text-ink-soft font-serif text-base">{language === 'en' ? 'The libretto uses high-register metaphoric language, blending local dialects with literary elegance.' : '唱词高度诗化，将江南民间方言与文人文学传统完美结合。'}</p>
@@ -290,17 +264,15 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
                 : '1959年由何占豪、陈钢于上海音乐学院创作，这部杰作将地域性的传说转化为交响乐里程碑。通过将西方管弦乐形式与越剧旋律基因融合，它在世界范围内引起了前所未有的共鸣，成为历史上演出最广泛的中国管弦乐作品。'}
             </p>
           </div>
-          <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden relative">
-            <iframe 
-              className="w-full h-full"
+          <div className="w-full aspect-video bg-ink/5 border border-ink/10 overflow-hidden relative">
+            <video 
+              className="w-full h-full object-cover"
               title="Violin Concerto Performance"
-              src="about:blank"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-            <div className="absolute inset-0 pointer-events-none flex items-center justify-center bg-ink/[0.02]">
-               <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-ink/20">Violin Concerto Placeholder</span>
-            </div>
+              src="/assets/videos/heritage/musical-works-violin-video.mp4"
+              controls
+              playsInline
+              preload="metadata"
+            ></video>
           </div>
         </div>
       </section>
@@ -311,17 +283,15 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
           {language === 'en' ? 'Chinese Instrumental Interpretations' : '民族器乐演绎：东方语境的回归'}
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="w-full aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center overflow-hidden relative md:order-last">
-            <iframe 
-              className="w-full h-full"
+          <div className="w-full aspect-video bg-ink/5 border border-ink/10 overflow-hidden relative md:order-last">
+            <video 
+              className="w-full h-full object-cover"
               title="Traditional Instrumental Performance"
-              src="about:blank"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-            <div className="absolute inset-0 pointer-events-none flex items-center justify-center bg-ink/[0.02]">
-               <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-ink/20">Erhu Performance Placeholder</span>
-            </div>
+              src="/assets/videos/heritage/musical-works-erhu-video.mp4"
+              controls
+              playsInline
+              preload="metadata"
+            ></video>
           </div>
           <div className="text-ink-soft font-serif text-base leading-loose">
             <p>
@@ -370,7 +340,7 @@ const Heritage: React.FC<HeritageProps> = ({ language }) => {
     <div className="space-y-24 py-10">
       <header className="border-b border-ink/10 pb-12">
         <div className="w-full aspect-[21/9] bg-ink/5 border border-ink/10 mb-12 flex items-center justify-center overflow-hidden">
-          <img src="/images/placeholder.jpg" alt="Crafts Visual Placeholder" className="w-full h-full object-cover opacity-30" />
+          <img src="/assets/images/heritage/folk-overview.png" alt="Crafts Visual" className="w-full h-full object-cover" />
         </div>
         <h2 className={`text-ink mb-6 ${language === 'zh' ? 'font-calligraphy text-6xl' : 'font-serif text-5xl italic font-medium'}`}>
           {language === 'en' ? 'Folk Crafts: The Visual Totem' : '民间工艺：梁祝形象的视觉传承'}
