@@ -67,7 +67,11 @@ const Stage: React.FC<StageProps> = ({ language }) => {
         <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> {language === 'en' ? 'Back to Overview' : '返回总览'}
       </button>
       <header className="mb-20">
-        <ImagePlaceholder aspect="aspect-[21/9]" />
+        <img
+          src="/assets/images/modern/stage/stage-overview.png"
+          alt={language === 'en' ? 'Modern Stage and Cinema' : '现代舞台与影像'}
+          className="w-full aspect-[21/9] object-cover"
+        />
         <h2 className="font-serif text-4xl md:text-5xl italic mt-12 mb-6 text-ink">
           {language === 'en' ? 'Modern Stage & Cinema' : '现代舞台与影像表达'}
         </h2>
@@ -87,11 +91,19 @@ const Stage: React.FC<StageProps> = ({ language }) => {
                 : '现代影视改编常选择脱离传统的线性叙事结构，将“书院三载”解构为心理觉醒的场域。通过借鉴艺术电影美学——以氛围化的光影、考究的节奏与饱和的色彩替代直白的台词——创作者强调了个人身份与社会期待之间的内在摩擦。这种影像语言提升了悲剧的维度，使“化蝶”不再被仅仅视作超自然事件，而是成为了主角内心解放与时空界限突破的深邃视觉隐喻。'}
             </p>
           </div>
-          <ImagePlaceholder aspect="aspect-square" />
+          <img
+            src="/assets/images/modern/stage/stage01.png"
+            alt={language === 'en' ? 'Cinematic Interpretation' : '影像化改编'}
+            className="w-full aspect-square object-cover"
+          />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center flex-row-reverse">
-          <ImagePlaceholder aspect="aspect-square" />
+          <img
+            src="/assets/images/modern/stage/stage02.jpg"
+            alt={language === 'en' ? 'Experimental Performance' : '实验舞台演绎'}
+            className="w-full aspect-square object-cover"
+          />
           <div>
             <h3 className="font-calligraphy text-3xl mb-6">{language === 'en' ? 'Experimental Performance' : '实验剧场与舞剧'}</h3>
             <p className="text-ink-soft font-serif text-base leading-loose">
