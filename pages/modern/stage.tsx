@@ -13,14 +13,6 @@ const useRouter = () => ({
   }
 });
 
-const ImagePlaceholder = ({ aspect = "aspect-video", label = "IMAGE SLOT" }) => (
-  <div className={`w-full ${aspect} md:min-h-[350px] bg-paper border border-ink/5 flex items-center justify-center relative overflow-hidden group`}>
-    <div className="absolute inset-0 border-2 border-dashed border-ink/40 bg-zinc-200 flex items-center justify-center z-10">
-      <span className="text-xl font-bold tracking-[0.4em] text-ink/50 uppercase">{label}</span>
-    </div>
-  </div>
-);
-
 const SubPageNav = ({ language }: { language: Language }) => {
   const router = useRouter();
   const pages = [
