@@ -416,7 +416,34 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                   className="group cursor-pointer bg-white border border-ink/5 p-8 shadow-sm hover:border-ink/20 transition-all flex flex-col"
                 >
                   <div className="mb-6">
-                    <ImagePlaceholder aspect="aspect-[16/9]" />
+                    {module.id === 'stage' && (
+                      <img
+                        src="/assets/images/modern/modern-stage-overview.png" 
+                        alt={language === 'en' ? module.title.en : module.title.zh} 
+                        className="w-full aspect-[16/9] object-cover"
+                      />
+                    )}
+                    {module.id === 'digital' && (
+                      <img
+                        src="/assets/images/modern/modern-digital-overview.png" 
+                        alt={language === 'en' ? module.title.en : module.title.zh} 
+                        className="w-full aspect-[16/9] object-cover"
+                      />
+                    )} 
+                    {module.id === 'pop' && (
+                      <img
+                        src="/assets/images/modern/modern-pop-overview.png" 
+                        alt={language === 'en' ? module.title.en : module.title.zh} 
+                        className="w-full aspect-[16/9] object-cover"
+                      />
+                    )} 
+                    {module.id === 'thematic' && (
+                      <img
+                        src="/assets/images/modern/modern-thematic-overview.png" 
+                        alt={language === 'en' ? module.title.en : module.title.zh} 
+                        className="w-full aspect-[16/9] object-cover"
+                      />
+                    )} 
                   </div>
                   <div className="mb-8">{module.icon}</div>
                   <h3 className="font-calligraphy text-4xl mb-6 text-ink">{language === 'en' ? module.title.en : module.title.zh}</h3>
