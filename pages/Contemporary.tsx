@@ -432,14 +432,14 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                     )} 
                     {module.id === 'pop' && (
                       <img
-                        src="/assets/images/modern/modern-pop-overview.png" 
+                        src="/assets/images/modern/modern-pop-overview.jpg" 
                         alt={language === 'en' ? module.title.en : module.title.zh} 
                         className="w-full aspect-[16/9] object-cover"
                       />
                     )} 
                     {module.id === 'thematic' && (
                       <img
-                        src="/assets/images/modern/modern-thematic-overview.png" 
+                        src="/assets/images/modern/modern-thematic-overview.jpg" 
                         alt={language === 'en' ? module.title.en : module.title.zh} 
                         className="w-full aspect-[16/9] object-cover"
                       />
