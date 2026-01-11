@@ -11,10 +11,10 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
   // Navigation mapping for hotspots
   const navigationMap = [
     { id: SectionId.LEGEND, label: { en: 'The Legend', zh: '传说' }, x: '20.3%', y: '70.6%',},
-    { id: SectionId.HISTORY, label: { en: 'History', zh: '背景' }, x: '38%', y: '67.7%',},
-    { id: SectionId.HERITAGE, label: { en: 'Heritage', zh: '非遗' }, x: '55.3%', y: '63.3%',},
-    { id: SectionId.MODERN, label: { en: 'Modern', zh: '演绎' }, x: '79%', y: '26.5%',},
-    { id: SectionId.RESOURCES, label: { en: 'Resources', zh: '资料' }, x: '93%', y: '65%'},
+    { id: SectionId.HISTORY, label: { en: 'History', zh: '背景' }, x: '38.8%', y: '59.5%',},
+    { id: SectionId.HERITAGE, label: { en: 'Heritage', zh: '非遗' }, x: '55.3%', y: '58.3%',},
+    { id: SectionId.MODERN, label: { en: 'Modern', zh: '演绎' }, x: '80.1%', y: '28.3%',},
+    { id: SectionId.RESOURCES, label: { en: 'Resources', zh: '资料' }, x: '93%', y: '58%'},
   ];
 
   return (
