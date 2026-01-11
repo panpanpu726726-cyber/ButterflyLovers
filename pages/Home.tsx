@@ -80,8 +80,7 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
                 }}
               >
                 {/* White Square */}
-                <div
-                  className="
+                <div className="
                     w-4 h-4
                     bg-paper
                     border-2 border-amber-800
@@ -104,25 +103,23 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
                   </span>
                 </div>
               </div>
-          ))}
+            ))}
+          </div>
                     
-              
-
-        {/* Original Action Button - Preserved structure */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-        >
-          <button 
-            onClick={() => onNavigate(SectionId.LEGEND)}
-            className="px-12 py-4 border border-ink/40 text-ink hover:bg-ink hover:text-paper transition-all duration-700 font-serif text-lg tracking-[0.2em] flex items-center group bg-paper/20 backdrop-blur-sm"
+          {/* Original Action Button - Preserved structure */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
           >
-            {language === 'en' ? 'ENTER EXHIBITION' : '进入展厅'}
-            <span className="ml-4 group-hover:translate-x-1 transition-transform opacity-60">→</span>
-          </button>
-        </motion.div>
-      </div>
+            <button 
+              onClick={() => onNavigate(SectionId.LEGEND)}
+              className="px-12 py-4 border border-ink/40 text-ink hover:bg-ink hover:text-paper transition-all duration-700 font-serif text-lg tracking-[0.2em] flex items-center group bg-paper/20 backdrop-blur-sm"
+            >
+              {language === 'en' ? 'ENTER EXHIBITION' : '进入展厅'}
+              <span className="ml-4 group-hover:translate-x-1 transition-transform opacity-60">→</span>
+            </button>
+          </motion.div>
 
       {/* Discrete Decoration - Preserved original elements */}
       <div className="absolute bottom-8 right-8 opacity-10 pointer-events-none flex flex-col space-y-1">
