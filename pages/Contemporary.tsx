@@ -17,15 +17,6 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [activeSubPage]);
 
-  // Image Placeholder Component for structural consistency with debug label
-  const ImagePlaceholder = ({ aspect = "aspect-video", label = "IMAGE SLOT" }) => (
-    <div className={`w-full ${aspect} md:min-h-[350px] bg-paper border border-ink/5 flex items-center justify-center relative overflow-hidden group`}>
-      <div className="absolute inset-0 border-2 border-dashed border-ink/40 bg-zinc-200 flex items-center justify-center z-10">
-        <span className="text-xl font-bold tracking-[0.4em] text-ink/50 uppercase">{label}</span>
-      </div>
-    </div>
-  );
-
   // Sub-page Bottom Navigation
   const SubPageNav = ({ current }: { current: SubPageId }) => {
     const pages = [
