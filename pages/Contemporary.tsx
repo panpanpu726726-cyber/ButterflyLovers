@@ -26,7 +26,7 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
       { id: 'thematic', label: { en: 'Thematic Translation', zh: '主题与现代视角' } },
     ] as const;
 
-    return (
+    const renderNavigation = () => (
       <div className="mt-32 pt-12 border-t border-ink/10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <button 
