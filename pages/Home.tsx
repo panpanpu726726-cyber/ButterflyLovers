@@ -10,11 +10,11 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
   // Navigation mapping for hotspots
   const navigationMap = [
-    { id: SectionId.LEGEND, label: { en: 'The Legend', zh: '传说' }, x: '2%', y: '15%', w: '18%', h: '70%' },
-    { id: SectionId.HISTORY, label: { en: 'History', zh: '背景' }, x: '21%', y: '15%', w: '18%', h: '70%' },
-    { id: SectionId.HERITAGE, label: { en: 'Heritage', zh: '非遗' }, x: '41%', y: '15%', w: '18%', h: '70%' },
-    { id: SectionId.MODERN, label: { en: 'Modern', zh: '演绎' }, x: '61%', y: '15%', w: '18%', h: '70%' },
-    { id: SectionId.RESOURCES, label: { en: 'Resources', zh: '资料' }, x: '81%', y: '15%', w: '16%', h: '70%' },
+    { id: SectionId.LEGEND, label: { en: 'The Legend', zh: '传说' }, x: '4.7%', y: '52%',},
+    { id: SectionId.HISTORY, label: { en: 'History', zh: '背景' }, x: '20.3%', y: '70.6%',},
+    { id: SectionId.HERITAGE, label: { en: 'Heritage', zh: '非遗' }, x: '50.6%', y: '67.7%',},
+    { id: SectionId.MODERN, label: { en: 'Modern', zh: '演绎' }, x: '80.4%', y: '27.9%',},
+    { id: SectionId.RESOURCES, label: { en: 'Resources', zh: '资料' }, x: '93.9%', y: '61.9%'},
   ];
 
   return (
@@ -22,7 +22,7 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
       {/* Background - Kept original logic */}
       <div className="absolute inset-0 z-0 opacity-10 grayscale brightness-110 contrast-125">
         <div className="w-full h-full bg-ink/10 flex items-center justify-center">
-          <img src="/images/placeholder.jpg" alt="placeholder" className="w-full h-full object-cover" />
+          <img src="/assets/images/home/home-map.png" alt="Interactive Navigation Map" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.01]" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-paper/40 via-transparent to-paper"></div>
       </div>
@@ -73,24 +73,40 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
               <div
                 key={spot.id}
                 onClick={() => onNavigate(spot.id)}
-                className="absolute cursor-pointer transition-all duration-500 group/hotspot"
+                className="absolute cursor-pointer group"
                 style={{
                   left: spot.x,
                   top: spot.y,
-                  width: spot.w,
-                  height: spot.h,
                 }}
               >
-                {/* Visual Highlight on Hover (Step 4) */}
-                <div className="absolute inset-0 bg-white/0 group-hover/hotspot:bg-white/5 border border-white/0 group-hover/hotspot:border-white/10 transition-all duration-300 backdrop-blur-[1px] opacity-0 group-hover/hotspot:opacity-100 flex items-center justify-center">
-                  <span className="text-ink font-serif text-sm tracking-widest uppercase bg-paper/80 px-4 py-2 shadow-sm">
+                {/* White Square */}
+                <div
+                  className="
+                    w-4 h-4
+                    bg-paper
+                    border-2 border-amber-800
+                    transition-transform duration-300
+                    group-hover:scale-125
+                  "
+                />
+
+                {/* Label */}
+                <div
+                  className="
+                    absolute top-6 left-1/2 -translate-x-1/2
+                    opacity-0 group-hover:opacity-100
+                    transition-all duration-300
+                    pointer-events-none
+                  "
+                >
+                  <span className="bg-paper/90 text-ink text-xs font-serif px-3 py-1 tracking-widest uppercase shadow">
                     {language === 'en' ? spot.label.en : spot.label.zh}
                   </span>
                 </div>
               </div>
-            ))}
-          </div>
-        </motion.div>
+          ))}
+                    
+              
 
         {/* Original Action Button - Preserved structure */}
         <motion.div
