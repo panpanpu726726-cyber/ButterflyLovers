@@ -539,3 +539,4 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
 };
 
 export default Contemporary;
+}
