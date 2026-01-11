@@ -194,9 +194,9 @@ const Contemporary: React.FC<ContemporaryProps> = ({ language }) => {
                 <p className="text-ink-soft text-sm font-serif">{language === 'en' ? 'High-fidelity scan of the core artifact, preserving the texture and calligraphic weight of the Confucian legacy.' : '核心文物的精细扫描，完整保留了儒家遗产的材质肌理与书法力道。'}</p>
               </div>
             </div>
+          </div>
   
        
-
         {/* 4. Project Overview Section */}
         <div className="p-12 bg-ink text-paper border border-white/10">
           <div className="flex flex-col gap-12">
